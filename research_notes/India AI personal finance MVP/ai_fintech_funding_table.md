@@ -176,7 +176,7 @@ Dollar totals of latest rounds, rough and mixing currencies:
 ### Inferences
 - Capital in this sample is going to agents that do professional work (audit, tax, bookkeeping, banking back office, underwriting), sold to firms and insurers, not to consumers.
 - Consumer AI personal finance is underrepresented in verified data. The India personal-finance category shows only Finanjo (2026) and an undated Bachatt round.
-- The trading/quant count is higher in 2025 than in 2026 in this sample. The 2026 trading/quant round found (Moment's $78M Series C) is outside the table because it was not in the first pass. Per the coordinator's scope, the 2026 Moment row could be added in a later pass.
+- Trading/quant shows 3 rows in 2025 and 0 rows in the 2026 fact table. Moment's later $78M Series C (2026) is noted under row 30 but is not counted as a separate row. Adding it would make trading/quant 2026 = 1.
 
 ### Gaps
 - Counts are based on sampled search results. They are not full market totals.
