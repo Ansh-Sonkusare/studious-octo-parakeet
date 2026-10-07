@@ -596,6 +596,85 @@ Pivot paths if the gates fail:
 - **Months 6–12:** port the engine to US health-denial appeals, using user-in-the-loop filing and HIPAA-compliant processing.
 - **After product-market fit:** register a corporate RIA and add the MF portfolio fixer as an upsell to users who already trust the brand. This is the friend's mutual-fund vision, reached through distribution the founder has earned rather than through a cold start.
 
+## From idea to product and revenue
+
+This section turns the recommendation into an operating plan. **All prices, conversion rates and unit economics below are the author's working assumptions, to be replaced with pilot data; none is a sourced fact.**
+
+### Principle: sell the outcome manually before automating it
+
+The cheapest way to test the riskiest assumption (will people pay to recover a claim?) is a concierge service run by the founders. The team should automate only the steps it has performed by hand at least 20 times.
+
+**Weeks 1–3: manual service, no product code.**
+
+- **Front door:** a WhatsApp Business number, a one-page site ("Health claim rejected or cut? Send us the letter") and a document-upload form.
+- **The work:** founders read each rejection, use a frontier model to map every deduction to a policy clause and IRDAI rule, draft the grievance, and guide the user through submission with the user's own login and OTP.
+- **Charge from the first case**, even a token ₹299. Payment is the signal being tested.
+- **In parallel:** commission the legal opinion, run the 30 interviews, and keep every consented case. These cases become the golden evaluation set.
+
+**Weeks 3–8: automate the repeated steps.**
+
+| Component | Suggested implementation |
+|---|---|
+| Intake | WhatsApp Cloud API (or an Indian BSP such as Gupshup or Interakt) plus web upload. Current frontier models read PDFs and photographed documents directly |
+| Knowledge base | Postgres with pgvector (e.g. Supabase): versioned wordings of the top 8–10 retail health products and the IRDAI rules library |
+| Reasoning | A mid-tier model for drafting and analysis and a small model for deduction classification. No fine-tuning |
+| Numbers | Deterministic code for proportionate deductions, sub-limits, waiting periods and deadlines. The model may quote only tool-computed figures or cited clauses |
+| Outputs | A "Claim X-ray" (each deduction, the clause, the recoverable amount, the route and the deadline) plus insurer, Bima Bharosa and Ombudsman drafts |
+| Controls | A human review console for every outbound letter, an append-only audit log and deadline reminders |
+| Payments | A payment gateway (e.g. Razorpay) for the upfront fee, and a UPI AutoPay or e-mandate for the success fee |
+
+### Revenue model
+
+**Consumer pricing to test:** ₹499 per filing upfront plus a 10–15% success fee on the amount recovered.
+
+**Never touching money:** the insurer pays the policyholder directly. The fee is collected separately, in one of two ways:
+
+- **E-mandate at onboarding.** RBI rules effective 21 April 2026 require pre-debit notice 24 hours ahead, and additional authentication above ₹15,000.
+- **Invoice with a UPI payment link** once the settlement is confirmed.
+
+**Illustrative unit economics (inference):**
+
+- Assumptions: average recoverable amount ₹40,000, a 40% recovery rate and a 12% success fee.
+- Revenue per filed case = ₹499 + (0.40 × 0.12 × ₹40,000) ≈ **₹2,400**.
+- Viability requires acquisition cost per filed case under about ₹700 and reviewer time under about 20 minutes.
+- About 420 filed cases a month yields about ₹10 lakh of monthly revenue.
+
+**B2B2C revenue, steadier than episodic consumer demand:**
+
+| Buyer | Offer | Pricing hypothesis |
+|---|---|---|
+| MFDs and RIAs | White-label "claim support" for client families | ₹5,000–15,000 a month per firm, tiered by client families |
+| Employer HR teams | Claim support as an employee benefit | Per employee per month |
+| Advisers without an IRDAI licence | Referral partnership | Revenue share on the success fee |
+
+The product must never accept money from insurers, brokers or hospitals. IRDAI's ₹1 crore fine on Acko shows the risk of commercial ties to unlicensed parties.
+
+**Cash-flow side line:** the SEBI-intermediary compliance copilot (idea 4) can be sold in parallel to fund the core product. For example, 100 firms at ₹25,000 a year is about ₹25 lakh of annual revenue (inference).
+
+### Go-to-market channels, in priority order
+
+1. **Intent search.** Hindi and English landing pages for "claim rejected", "room rent deduction" and insurer-specific queries, starting with the insurers that draw the most Ombudsman complaints.
+2. **Proof-led content.** Anonymised, documented recoveries (for example, "₹38,000 recovered from a proportionate room-rent deduction"). This builds the trust 1% Club built through education, but each post demonstrates an outcome.
+3. **Distribution partners.** 3–5 MFD, RIA or insurance-adviser partners, and 2 employer HR teams.
+4. **Communities.** Reddit, Facebook groups, consumer forums and housing-society WhatsApp groups.
+
+### Revenue ladder: growing revenue per household
+
+| Stage | Product | Revenue model |
+|---|---|---|
+| Months 0–3 | Health-claim recovery | Filing fee plus success fee |
+| Months 4–9 | Life-policy mis-selling audit; family money finder | Per-audit fee; success fee on unclaimed assets |
+| Months 6–12 | US health-denial appeals on the same engine | US-dollar success fees |
+| After product-market fit | Corporate RIA registration; MF portfolio fixer | Annual advisory fee from users who already trust the brand |
+
+### Company set-up checklist
+
+- **Entity:** a private limited company, needed for B2B contracts and fundraising. Register for GST once required.
+- **Contracts:** terms of service and a success-fee contract reviewed by counsel.
+- **Data protection:** a health-data consent, retention and deletion flow that meets the IT Act rules now and the main DPDP Act obligations expected from May 2027.
+- **Disclosures:** plain disclosure that AI drafts each letter and a human reviews it.
+- **Day-90 gates:** the validation thresholds in the earlier table, namely clause-citation precision of at least 95%, at least 25% reversals at the insurer stage, at least 30% fee acceptance and at least 70% of success fees collected.
+
 ## Conclusion
 
 The evidence moves the question from "which financial product can AI build?" to "where is money lost because no one is paid to fix it?" In Indian investing, the AI features incumbents are converging on (analyst-style insight, portfolio health checks, read-only connectors) are being given away by companies that earn on derivatives and balances. Competing there means fighting Groww's distribution with a weaker licence position.
