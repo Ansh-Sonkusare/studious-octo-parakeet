@@ -1,0 +1,51 @@
+# Node
+node_modules/
+.next/
+out/
+dist/
+build/
+coverage/
+.turbo/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.pnpm-store/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+.supabase/
+
+# Real family data: never commit
+data/
+uploads/
+private/
+*.pdf.private
+eval/golden/private/
+eval/reports/*
+!eval/reports/SUMMARY.md
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+Thumbs.db

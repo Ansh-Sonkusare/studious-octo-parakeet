@@ -1,0 +1,353 @@
+[
+  {
+    "title": "Commission legal opinion on the six open questions",
+    "body": "## Context\nHANDOFF section 7 lists six open legal questions: (1) whether drafting indemnities, affidavits and legal-heir declarations amounts to legal practice under the Advocates Act; (2) referral fees to or from advocates and CAs; (3) DPDP treatment of a deceased person's data; (4) offshore LLM processing of PAN and death certificates; (5) consumer-protection risk of a success fee on inherited money; (6) state-wise stamp duty and notarisation for indemnities. No paid case and no model processing of identity or death documents may start until the relevant answer is in hand. Plan: [docs/PROTOTYPE_AND_MVP_PLAN.md](docs/PROTOTYPE_AND_MVP_PLAN.md) section 9.\n\n## Tasks\n- [ ] Shortlist two firms and request fixed-fee quotes (cost is an assumption of ₹1.5 to 3 lakh until quoted)\n- [ ] Send the brief: product description, flow, the six questions, the operating models under consideration (drafting software plus service)\n- [ ] Agree draft date 6 Nov 2026 and final date before the first paid case (target week 10)\n- [ ] Ask counsel to confirm the general principle that a power of attorney from the deceased ends at death, and the Aadhaar storage restriction (both unverified)\n- [ ] Record the answers in docs/DECISIONS.md as superseding or confirming ADRs\n\n## Acceptance criteria\n- Engagement letter signed by Fri 16 Oct 2026\n- Written opinion covers all six questions plus the two unverified points, or states clearly which are open\n- Each answer is mapped to a product control or a policy change\n",
+    "labels": [
+      "type:legal",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Compile bank transmission thresholds and claim procedures (top banks)",
+    "body": "## Context\nInstitution-specific thresholds (for example the value up to which an indemnity replaces a succession or legal-heir certificate) are not in the research notes and are the first research task (HANDOFF section 5). Banks are the most common asset class and feed the UDGAM route. Output feeds the requirement matrix in packages/matrix.\n\n## Tasks\n- [ ] Pick the top 10 banks by DEA Fund share and by interview frequency (start from the UDGAM bank list)\n- [ ] For each: nominee route, joint-holder survivor route, legal-heir route without nominee, documents, forms, indemnity and affidavit wording, branch versus online, nodal officer escalation\n- [ ] Record thresholds only where a source states them; otherwise leave null\n- [ ] For every entry capture source_url, retrieved_on, verified_by, effective_from; mark 'branch-reported' evidence as lower grade\n- [ ] Cross-check the RBI DEA Fund guidelines (revised 25 Jun 2025) for the claim-after-transfer route\n\n## Acceptance criteria\n- At least 8 of 10 banks have complete route and document entries with sources\n- Thresholds are either sourced or explicitly null\n- Entries pass a second-person review\n",
+    "labels": [
+      "type:research",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Compile mutual fund transmission procedures (CAMS, KFintech, MITRA)",
+    "body": "## Context\nMutual fund claims run through the RTAs. SEBI's MITRA (circular of 12 Feb 2025) traces inactive and unclaimed folios, and a new KRA mechanism lets nominees report a death once. MFCentral third-party pulls were curtailed Sep to Nov 2025, so CAS upload is the fallback. See docs/research/investor_pain_points.md section 2 (pain point E) and docs/research/tech_feasibility.md section 2.\n\n## Tasks\n- [ ] Collect CAMS and KFintech transmission forms, documents and value-based variations by route (nominee, legal heir, joint holders)\n- [ ] Document the MITRA search and nominee death-reporting steps from the SEBI circular and RTA pages\n- [ ] Note differences by AMC where the RTA defers to the AMC\n- [ ] Test the casparser path on a sample CAS and record limitations\n- [ ] Add entries to the matrix with source, date and verifier\n\n## Acceptance criteria\n- CAMS and KFintech entries complete for nominee and legal-heir routes\n- MITRA steps written as a versioned search guide\n- casparser limitations documented\n",
+    "labels": [
+      "type:research",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Compile insurer and EPF death-claim procedures",
+    "body": "## Context\nInsurance and EPF are in scope for the sweep. Insurance totals conflict (₹20,062 cr FY24 study versus ₹8,973.89 cr government reply). EPF has no death-claim data in the research; the 22% rejection rate (FY25) is context only. EPF packs are P1 in the MVP, insurance packs P0.\n\n## Tasks\n- [ ] Select the top 8 life insurers by interview frequency; collect claim-intimation and unclaimed-amount procedures\n- [ ] Document Bima Bharosa and insurer unclaimed-amount search pages as user-assisted guides\n- [ ] Collect the EPFO death-claim route (nominee and legal-heir) and the forms and attestation needed\n- [ ] Add entries to the matrix with source, date and verifier\n\n## Acceptance criteria\n- At least 6 insurers and the EPFO route have matrix entries\n- Unverified procedures are marked, not guessed\n",
+    "labels": [
+      "type:research",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Document the IEPF claim procedure and timelines",
+    "body": "## Context\nIEPF holds 166 crore shares in 1,671 companies worth ₹89,004 cr (30 Nov 2025). Claims use Form IEPF-5 plus company verification and are notoriously slow; 75,417 claims were approved in two years. No source gives a typical duration, which is why pilot metrics use leading indicators.\n\n## Tasks\n- [ ] Write the step-by-step claim path for shares and dividends, including the documents for legal heirs and transmission cases\n- [ ] Identify each handoff (claimant, company nodal officer, IEPF Authority) and the leading indicator available at each\n- [ ] Interview two fee-based IEPF agents or advocates on realistic durations and failure causes\n- [ ] Add entries to the matrix; mark durations as assumptions until observed\n\n## Acceptance criteria\n- IEPF path documented with stages that map to the Found, Ready, Filed, Engaged, Paid indicators\n- Duration estimates labelled as assumptions\n",
+    "labels": [
+      "type:research",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Run 20 family interviews and write the synthesis",
+    "body": "## Context\nHANDOFF phase 1 calls for interviews with adult children and NRIs, plus CAs and advocates. Participants may be recently bereaved; the guide must be gentle, optional-to-skip and not a sales call. Interviews also answer pricing (HANDOFF open question 1) and which assets families actually hold.\n\n## Tasks\n- [ ] Write the interview guide: what was found, what was not, time spent, who helped, cost paid, what would have helped\n- [ ] Add a gentle opening, an explicit right to skip questions, and no pitch in the first call\n- [ ] Recruit through personal networks, CA and advocate contacts, and NRI communities; offer a small thank-you\n- [ ] Run 20 interviews (target mix: 12 adult children, 5 NRIs, 3 CAs or advocates), recorded only with consent, notes stored outside the repo\n- [ ] Test reaction to the Estate Pack framing and price anchors without promising anything\n- [ ] Write a two-page synthesis: top assets, top pains, willingness to pay, trust barriers\n\n## Acceptance criteria\n- 20 interviews logged by Fri 23 Oct 2026\n- Synthesis states which assumptions in HANDOFF section 8 were supported or contradicted\n- No personal data from interviews committed to the repository\n",
+    "labels": [
+      "type:research",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Close the competitor sweep and verify headline figures",
+    "body": "## Context\nHANDOFF section 4 says no AI-native Indian competitor was found but the sweep was limited: fee-based IEPF agents and will startups were not researched. Separately, DEA Fund totals conflict (₹72,454 cr on 28 Jan 2026 versus ₹86,917 cr on 30 Jun 2026; also ₹97,545 cr and ₹98,073 cr in other reports) and insurance totals differ more than 2x.\n\n## Tasks\n- [ ] List and profile fee-based IEPF agents, estate and will startups, and CA or advocate services (pricing, claims, channels)\n- [ ] Find the Rajya Sabha answers and RBI annual report behind each DEA Fund figure and identify the definitional differences\n- [ ] Do the same for the IRDAI-based insurance totals\n- [ ] Update a 'figures to use externally' note with the chosen figure, date and source for each pool\n\n## Acceptance criteria\n- Competitor table with at least 10 entries and pricing where public\n- Each external figure has a primary source or an explicit 'secondary, conflicting' flag\n",
+    "labels": [
+      "type:research",
+      "priority:P1"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Draft the authority-verification policy and consent notice",
+    "body": "## Context\nNo deceased-person search may start until the death certificate and relationship proof are verified; searches for a living parent need that parent's consent (HANDOFF section 12). The consent notice must be plain, short and kind. Treatment of a deceased person's data under DPDP is open (question 3).\n\n## Tasks\n- [ ] Write the authority checklist: accepted proofs, mismatch handling, who may approve, what is logged\n- [ ] Draft the consent notice and the 'AI drafts, a human reviews' disclosure in plain English and Hindi\n- [ ] Define withdrawal and deletion on request, and the default 90-day retention after closure (assumption)\n- [ ] Define the decline and refer rules for contested estates and heir disputes\n- [ ] Send to counsel with the opinion request\n\n## Acceptance criteria\n- Policy and notice approved by the team and sent to counsel\n- Reading level suitable for a non-specialist; no upsell language\n",
+    "labels": [
+      "type:legal",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Set up repository, CI, landing page and intake form",
+    "body": "## Context\nWeek 1 setup from HANDOFF phase 0: an entity is still to be formed (private limited company), and leads need somewhere to go.\n\n## Tasks\n- [ ] Create the private repository from this folder; add branch protection and CI skeleton (lint, test, eval job placeholder)\n- [ ] Publish a simple landing page and an upload or contact form that collects nothing sensitive before the consent flow exists\n- [ ] Open a WhatsApp number or form-only intake (decision recorded)\n- [ ] Start incorporation, payment account and vendor data-processing agreements\n- [ ] Create the secrets policy: no real family data and no keys in the repo\n\n## Acceptance criteria\n- CI runs on pull requests\n- Landing page live\n- Incorporation and vendor DPA tracker created\n",
+    "labels": [
+      "type:ops",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Recruit and onboard 10 to 15 consented families",
+    "body": "## Context\nThe prototype is a concierge service for 10 to 15 consented families (assumption). Free discovery scan; fee terms are shown at the end to test intent only. Families are recently bereaved: short flows, human contact, no upsell in the first message.\n\n## Tasks\n- [ ] Convert interviewees, CA and advocate referrals and NRI community contacts into prototype families\n- [ ] Run the authority check and consent flow for each; log verifier and decision\n- [ ] Include at least 3 NRI heirs (interview-level at minimum)\n- [ ] Record the source of each lead for the acquisition-cost model\n\n## Acceptance criteria\n- At least 10 families onboarded by Fri 30 Oct 2026\n- Every deceased-person search is preceded by an approved authority check\n",
+    "labels": [
+      "type:gtm",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Run the concierge sweep with user-assisted portal guides",
+    "body": "## Context\nThe team builds each profile and guides the family through UDGAM, IEPF, MITRA or CAS upload, insurer pages and EPFO. The family performs every login and OTP (ADR-001). Hits are recorded in a structured sheet that becomes the asset_found schema.\n\n## Tasks\n- [ ] Write one-page search guides per portal with exact inputs to try (name variants, PAN, DOB, address)\n- [ ] Walk each family through the searches on a call; record hits, non-hits and time taken\n- [ ] Classify each hit by asset class, institution and estimated value; flag low-confidence matches\n- [ ] Measure the share of families with a previously unknown claimable asset\n- [ ] Record where the guide confused users\n\n## Acceptance criteria\n- Sweep completed for at least 10 families\n- Discovery rate and time per family reported\n- No portal credentials or OTPs were collected\n",
+    "labels": [
+      "type:ops",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Build the procedures knowledge base and matrix loader",
+    "body": "## Context\nThe M0 requirement matrix must be loadable, versioned and queryable, with source, retrieval date, verifier and effective dates on every entry. Retrieval supplies citations; it is never the source of thresholds (ADR-002).\n\n## Tasks\n- [ ] Define the YAML schema for matrix entries and validate it in CI\n- [ ] Load M0 entries into Postgres with pgvector for retrieval (procedure and procedure_chunk tables)\n- [ ] Implement citation assembly for a given institution and route\n- [ ] Add a lint that fails on an entry with a threshold but no source or verifier\n\n## Acceptance criteria\n- Matrix loads and validates in CI\n- Retrieval returns the entry with its source and date for 20 sample queries\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Prototype the rules engine: route and document list",
+    "body": "## Context\nDeterministic code decides route and required documents from asset class, institution, nominee present, joint holder, balance bucket, will present and number of heirs (PROTOTYPE_AND_MVP_PLAN section 6). Unknown thresholds return 'unknown, ask the institution'.\n\n## Tasks\n- [ ] Implement the route function and ordered document list over the matrix\n- [ ] Return the matrix entry ids behind each line\n- [ ] Handle null thresholds without guessing\n- [ ] Write unit tests for each route in the matrix\n\n## Acceptance criteria\n- Engine reproduces expert document lists for the first 10 golden cases\n- Every output line links to a matrix entry\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Pack generator v0: bank deceased-depositor claim pack",
+    "body": "## Context\nBanks are the most common asset class. The pack contains the claim form or letter, indemnity draft, affidavit draft where required, checklist and cover letter. Templates use merge fields; the model drafts only the cover letter and explainer from structured, masked fields.\n\n## Tasks\n- [ ] Build merge-field templates for the top 3 banks' forms and a generic fallback\n- [ ] Generate PDF and editable DOCX outputs\n- [ ] Add the checklist with the order of documents and the branch visit notes\n- [ ] Add the output validator: no threshold, amount or form number that is not in the inputs\n\n## Acceptance criteria\n- Pack generates for 3 banks from a synthetic family\n- Reviewer checklist passes with no invented fields\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Pack generator v0: mutual fund RTA transmission pack",
+    "body": "## Context\nMutual fund transmission runs through CAMS and KFintech. The pack includes the transmission request, KYC and bank proof lists, indemnity where applicable, and nominee or legal-heir variations.\n\n## Tasks\n- [ ] Build templates for the CAMS and KFintech nominee and legal-heir routes\n- [ ] Include the MITRA or CAS-based folio list as the cover sheet\n- [ ] Generate PDF and DOCX outputs and a checklist\n- [ ] Reuse the output validator from the bank pack\n\n## Acceptance criteria\n- Pack generates for both RTAs on a synthetic family\n- Reviewer checklist passes\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Pack generator v0: IEPF Form IEPF-5 pack",
+    "body": "## Context\nIEPF is the largest pool and the slowest route. The pack prepares the claim documents (Form IEPF-5 plus company verification support), a covering explanation setting expectations, and an expected-stage timeline. IEPF packs are priced flat, not success-only.\n\n## Tasks\n- [ ] Map Form IEPF-5 fields to the family profile and document set\n- [ ] Generate the supporting document list and the company-verification cover letter\n- [ ] Write plain-language expectations: slow, staged, no promised dates\n- [ ] Add the Found, Ready, Filed, Engaged, Paid stage markers\n\n## Acceptance criteria\n- IEPF pack generates for a synthetic family\n- Expectation text reviewed for tone and accuracy\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Build the eval harness and the first 30 golden items",
+    "body": "## Context\nThe golden set runs in CI on every prompt, model, template or matrix change (HANDOFF section 6). Items are claim-level; 10 to 15 families are expected to yield about 30 items (assumption). Items must be expert-verified, and no real family data enters the repository.\n\n## Tasks\n- [ ] Create eval/golden item schema (input facts, expected requirements, expected route, expert, consent reference)\n- [ ] Write runners for requirement accuracy, critical omissions and route accuracy\n- [ ] Create synthetic families from the matrix for items that cannot come from real cases\n- [ ] Have a CA or advocate verify each item\n- [ ] Publish a baseline report (summary only) in eval/reports\n\n## Acceptance criteria\n- 30 verified items by Fri 30 Oct 2026\n- Baseline requirement accuracy published (M1 target at least 90%, assumption)\n- Runner executes in CI in under 10 minutes\n",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Create the reviewer checklist and reason-code taxonomy",
+    "body": "## Context\nEvery outbound document is reviewed (ADR-003). Reviewer edits need reason codes so failure causes can be ranked weekly.\n\n## Tasks\n- [ ] Write the release checklist per pack type\n- [ ] Define reason codes: missing document, wrong form, wrong route, wrong threshold, name mismatch, tone, other\n- [ ] Track reviewer time per family from the first case\n- [ ] Record decisions in a sheet now, in the console later\n\n## Acceptance criteria\n- Checklist used on every prototype pack\n- Reviewer time and edit reasons recorded for all families\n",
+    "labels": [
+      "type:ops",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Rehearse and record the prototype demo on a synthetic family",
+    "body": "## Context\nThe demo is about 10 minutes: consent and authority, profile with name variants, guided sweep, ranked list, route with citation, pack generation, reviewer rejection and correction, eval replay (PROTOTYPE_AND_MVP_PLAN section 4).\n\n## Tasks\n- [ ] Create a fully synthetic family with seeded assets across five asset classes and a deliberate name mismatch\n- [ ] Script the eight demo steps and rehearse twice\n- [ ] Record a short walkthrough for advisors and counsel\n- [ ] List issues found for the M2 backlog\n\n## Acceptance criteria\n- Demo runs end to end without manual patching\n- Backlog updated with findings\n",
+    "labels": [
+      "type:design",
+      "priority:P1"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Intake, consent and authority-check flow",
+    "body": "## Context\nH1 and H2 (P0): the heir uploads the death certificate and relationship proof, consents in plain language, and can withdraw consent and request deletion. A deceased-person search cannot start before approval.\n\n## Tasks\n- [ ] Build the consent screen with versioned notice text and a consent record\n- [ ] Build upload and authority review with approve, request-more and decline outcomes\n- [ ] Block the search flow until approved; log every state change\n- [ ] Add a visible human-contact option on every screen\n\n## Acceptance criteria\n- A search cannot start before approval (tested)\n- Consent and withdrawal events appear in the audit log\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Vault: encrypted storage, PAN field encryption and Aadhaar redaction",
+    "body": "## Context\nThe product holds PAN, bank statements, death certificates and relationship proofs. Build to the DPDP standard now (core duties from about May 2027). Aadhaar policy is unverified: do not store the full number; accept a masked copy and redact at upload.\n\n## Tasks\n- [ ] Per-case encryption keys for stored files\n- [ ] Field-level encryption of PAN; masking helpers used in logs, lists and prompts\n- [ ] Aadhaar detection and redaction at upload with a reviewer fallback\n- [ ] Role-based access: reviewers see only assigned cases\n- [ ] Penetration checklist and secrets scan in CI\n\n## Acceptance criteria\n- No unmasked PAN appears in logs or prompts (tested)\n- Redaction tested on sample documents\n- Access control tests pass\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Document extraction with validators",
+    "body": "## Context\nExtraction by model begins only after the hosting decision and counsel's view on offshore processing (week 4). Use the small model for classification and the mid-tier model for document understanding. Outputs are validated against schemas and flagged when uncertain.\n\n## Tasks\n- [ ] Implement extraction for death certificate, relationship proofs, bank statements, CAS and policy documents\n- [ ] Return structured fields with per-field confidence\n- [ ] Route low-confidence fields to the reviewer\n- [ ] Log model identifier and prompt version for every call\n- [ ] Measure extraction accuracy on the golden documents\n\n## Acceptance criteria\n- Extraction accuracy reported per document type\n- Low-confidence fields never auto-accepted\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Entity matching with a reviewer queue",
+    "body": "## Context\nMatching handles spelling variants across bank, folio, policy and portal records (name, address, folio). Low-confidence matches go to a reviewer.\n\n## Tasks\n- [ ] Generate name variants, initials, transliteration variants\n- [ ] Score candidate matches using rules plus the small model\n- [ ] Set thresholds; low-confidence matches enter the reviewer queue\n- [ ] Measure precision and recall on seeded test families\n\n## Acceptance criteria\n- Precision at least 95% and recall at least 85% on the seeded set (assumption)\n- Every auto-accepted match is explainable in the UI\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Rules engine v1: versioned matrix with effective dates",
+    "body": "## Context\nExtend the prototype to all five asset classes with effective-dated entries so that a case is evaluated against the entry in force on its filing date. Gaps return 'unknown, ask the institution'.\n\n## Tasks\n- [ ] Add effective_from and effective_to handling and version history\n- [ ] Cover banks, mutual funds, IEPF, insurance and EPF routes\n- [ ] Add warnings (contested heirs, will present, missing nominee)\n- [ ] Admin screen for matrix entries with verifier sign-off\n- [ ] Block publication of an entry without source and verifier\n\n## Acceptance criteria\n- Rules pass the golden set at route accuracy of at least 95% (assumption)\n- Matrix change history is auditable\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Ranking and the ranked claim list",
+    "body": "## Context\nH3 (P0): the heir sees what was found with value, difficulty and usual timeline. Rank by value, probability, effort and expected time. IEPF claims are marked slow and flat-priced.\n\n## Tasks\n- [ ] Implement the ranking function and make its weights configurable\n- [ ] Display value, route, documents needed, branch visit yes or no, and expected time as an assumption-labelled range\n- [ ] Allow the family to hide or defer items\n- [ ] Test ordering against reviewer judgement on 20 cases\n\n## Acceptance criteria\n- Ranking agrees with reviewer judgement on at least 80% of cases (assumption)\n- Timelines are labelled as estimates\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Pack generator v1: insurance packs and EPF death-claim pack",
+    "body": "## Context\nInsurance packs are P0, the EPF death-claim pack is P1. Insurance totals conflict across sources (₹20,062 cr versus ₹8,973.89 cr), so the pack must not quote totals. A death often leaves pending health and life claims (assumption); note the link to Project 1.\n\n## Tasks\n- [ ] Templates for the top insurers' claim intimation and unclaimed-amount routes\n- [ ] EPF nominee and legal-heir death-claim pack\n- [ ] Cover-letter drafting by the mid-tier model from structured fields, with the output validator\n- [ ] Add the packs to the golden set\n\n## Acceptance criteria\n- Packs generate for 3 insurers on synthetic families\n- EPF pack passes the reviewer checklist\n- Validator blocks any unsupported statement\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Reviewer console",
+    "body": "## Context\nR1 to R4 (P0): a queue with flagged items, per-document approve, edit or reject with reason code, the source and effective date next to each requirement, and outcome logging.\n\n## Tasks\n- [ ] Queue with flags (low-confidence match, missing document, rule warning)\n- [ ] Case view with checklist, document diff and source citations\n- [ ] Reason-code capture and reviewer time tracking\n- [ ] Release action that writes the approval to the audit log and blocks release without it\n- [ ] Outcome logging that optionally adds a consented case to the golden set\n\n## Acceptance criteria\n- No pack can be released without recorded approval (tested)\n- Reviewer time per family measurable in the console\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Claim tracker, reminders, escalation drafts and heir status page",
+    "body": "## Context\nH5 (P0): the heir sees where each claim stands. States: draft, in_review, released, filed, acknowledged, query_raised, approved, paid, with rejected and withdrawn exits. Leading indicators matter because IEPF is slow.\n\n## Tasks\n- [ ] Implement the claim state machine with audit events\n- [ ] Reminders and follow-up schedule per institution type\n- [ ] Escalation drafts to nodal officers, reviewed before release\n- [ ] Heir status page in plain language\n- [ ] Short, kind notification templates; no upsell in the first message\n\n## Acceptance criteria\n- Every transition is logged\n- Status page tested with 3 prototype families\n- Stage counts exportable for the pilot dashboard\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Audit log, retention and deletion",
+    "body": "## Context\nAppend-only audit log of prompts, retrieved documents, tool calls, rule and model versions, reviewer identity and user confirmations. Deletion on request and default retention of 90 days after closure (assumption).\n\n## Tasks\n- [ ] Append-only audit table with write-only service role\n- [ ] Capture prompts and retrieved ids with PII masked\n- [ ] Deletion job across storage, extracted fields and embeddings\n- [ ] Quarterly deletion test and a test in CI\n- [ ] Breach-response runbook and a drill before the pilot opens\n\n## Acceptance criteria\n- Deletion verified by test\n- Breach drill completed and written up\n- Audit entries cannot be updated or deleted by the app role\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Extend the golden set to 60 items and add the CI regression gate",
+    "body": "## Context\nGates: requirement accuracy at least 95%, zero critical omissions, route accuracy at least 95% (assumption), unsupported statements 0. The runner executes on every change to a prompt, model, template or matrix entry.\n\n## Tasks\n- [ ] Add 30 items from new cases and synthetic families covering insurance, EPF and NRI variants\n- [ ] Make CI fail below the gates or on any regression of a passing item\n- [ ] Re-verify items affected by each matrix change\n- [ ] Weekly source-page diff job that alerts the verifier on procedure changes\n\n## Acceptance criteria\n- 60 verified items\n- CI gate enforced on the main branch\n",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "NRI remote-consent flow, local-representative marker and repatriation checklist",
+    "body": "## Context\nN1 (P0) and N2 (P1): NRIs cannot attend branches. NRO repatriation is capped at $1M a year; Forms 15CA and 15CB require a CA. Cross-border inheritance demand evidence is weak, so validate first (ADR-005).\n\n## Tasks\n- [ ] Remote consent and identity capture without a branch visit\n- [ ] Mark each step as remote, local representative or branch\n- [ ] Repatriation checklist referencing the CA step (cost about ₹3 to 10 thousand, vendor estimate)\n- [ ] Test with 3 NRI interviewees\n\n## Acceptance criteria\n- NRI dry-run case completes with at least one local-representative step identified\n- Checklist reviewed by a CA\n",
+    "labels": [
+      "type:build",
+      "priority:P1"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Flat-fee payments in test mode",
+    "body": "## Context\nH6 (P1): Estate Pack fee (hypothesis ₹4,999) charged only after counsel clears terms. The success-fee e-mandate is later; RBI rules effective 21 Apr 2026 require a 24-hour pre-debit notice and extra authentication above ₹15,000.\n\n## Tasks\n- [ ] Integrate a payment gateway in test mode\n- [ ] Invoice, refund and complaint flows\n- [ ] Terms and fee disclosure screen with the AI-drafts, human-reviews statement\n- [ ] Success-fee mandate design note for the pilot\n\n## Acceptance criteria\n- Test payment and refund succeed\n- No live charging before counsel sign-off\n",
+    "labels": [
+      "type:build",
+      "priority:P1"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Decide model hosting and complete the compliance pre-pilot review",
+    "body": "## Context\nHANDOFF open question 7: offshore LLM API or India-region deployment for PAN and death certificates. Cross-border processing is allowed unless the destination is blacklisted but is flagged for legal review.\n\n## Tasks\n- [ ] Obtain counsel's answer to question 4\n- [ ] Evaluate an India-region inference option, if available, against cost and quality\n- [ ] Record the decision as an ADR and update the model client config\n- [ ] Confirm vendor DPAs, no-training terms and retention for each vendor\n- [ ] Run the pre-pilot checklist from HANDOFF section 7\n\n## Acceptance criteria\n- Decision recorded in docs/DECISIONS.md by Fri 6 Nov 2026\n- Checklist complete before pilot onboarding\n",
+    "labels": [
+      "type:legal",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Pilot onboarding: terms, fee flow and operations runbook",
+    "body": "## Context\nWeek 10 start. Counsel-cleared terms are live; the flat Estate Pack is charged from the first paying case. No commission from institutions; the product never holds client money. Plain language and a human contact option throughout.\n\n## Tasks\n- [ ] Publish terms, fee disclosure and refund policy cleared by counsel\n- [ ] Write the ops runbook: intake, review SLA, escalation, declines and referral of contested estates\n- [ ] Define the referral path to advocates for succession certificates and probate\n- [ ] Set a weekly cadence for metrics and eval runs\n\n## Acceptance criteria\n- Counsel sign-off recorded\n- First paid family onboarded by Fri 18 Dec 2026\n",
+    "labels": [
+      "type:ops",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Acquire 40 to 50 pilot families across channels",
+    "body": "## Context\nTarget 40 to 50 families (assumption) including at least 10 NRI cases. HANDOFF's funnel assumes about 250 qualified leads to 100 families by week 12; this plan is capacity-limited to a smaller pilot. Channels: search content, NRI communities, CA and advocate referrals, Project 1 base, advisers.\n\n## Tasks\n- [ ] Publish Hindi and English pages for the main intent queries; publish anonymised, documented proof stories with consent\n- [ ] Track lead source, upload rate (continue at least 40%), fee acceptance (continue at least 30%) and acquisition cost against the 30% of revenue ceiling\n- [ ] Offer the free or token discovery scan, then the Estate Pack\n- [ ] Review channel mix weekly\n\n## Acceptance criteria\n- At least 40 families onboarded by 29 Jan 2027\n- Funnel and cost by channel reported\n",
+    "labels": [
+      "type:gtm",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Recruit local representatives for NRI cases in two cities",
+    "body": "## Context\nNRI heirs cannot attend branches; some steps need a local representative. Scope of any representative's authority must be recorded in writing, and the claimant signs and submits (power of attorney limits are unverified; counsel to confirm).\n\n## Tasks\n- [ ] Define the role, fee and written authority template\n- [ ] Recruit and brief representatives in two cities, ideally CAs, advocates or experienced estate assistants\n- [ ] Run one live NRI case through each\n- [ ] Add representative steps to the status page\n\n## Acceptance criteria\n- Two cities covered by week 12 (end of Dec 2026)\n- Authority template reviewed by counsel\n",
+    "labels": [
+      "type:ops",
+      "priority:P1"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Weekly eval runs and the leading-indicator dashboard",
+    "body": "## Context\nIEPF claims are slow, so the dashboard reports Found, Ready, Filed, Engaged and Paid counts per asset class, with and without IEPF, plus requirement accuracy, first-submission acceptance, reviewer edit rate and reviewer hours per family.\n\n## Tasks\n- [ ] Build the dashboard from the claim and pack tables\n- [ ] Run the golden set weekly and after every change\n- [ ] Report day-90 (8 Jan 2027) and week-16 (29 Jan 2027) numbers against HANDOFF section 11\n- [ ] Add new consented cases to the golden set (about 150 items by the end of M3, assumption)\n\n## Acceptance criteria\n- Dashboard live by 4 Jan 2027\n- Weekly eval report posted\n",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Partner outreach and Project 1 cross-sell test",
+    "body": "## Context\nHANDOFF phase 3: 3 CA or advocate partners and 2 adviser partners (white-label hypothesis ₹5,000 to 15,000 a month per firm). Check fee-sharing rules first (question 2). Both products share one engine; Project 1 users with elderly parents are warm leads.\n\n## Tasks\n- [ ] Prepare a one-page partner offer with anonymised results\n- [ ] Confirm with counsel that no referral fees are paid or received until question 2 is answered\n- [ ] Meet at least 8 firms; sign 3 CA or advocate partners and 2 adviser partners if terms are clear\n- [ ] Run a small cross-sell message to Project 1 users if that project is live\n\n## Acceptance criteria\n- Partner conversations logged\n- Referral rules documented\n- Cross-sell conversion measured or noted as not run\n",
+    "labels": [
+      "type:gtm",
+      "priority:P1"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Day-90 checkpoint and week-16 decision review",
+    "body": "## Context\nInterim review on Fri 8 Jan 2027 and final review on Fri 29 Jan 2027 against HANDOFF section 11. Pivot paths: white-label to CAs and advocates, flat per-pack fees, nominee and KYC audit, or fold into Project 1.\n\n## Tasks\n- [ ] Compile metrics: upload rate, discovery value, acceptance, accuracy, fee acceptance, success fees collected, claims paid with and without IEPF, reviewer hours, acquisition cost\n- [ ] Recompute unit economics from actuals (base case contribution per family was about ₹5,049 on assumptions)\n- [ ] Write the decision memo: continue, pivot or stop, with the reasons\n- [ ] Update docs/DECISIONS.md and the roadmap\n\n## Acceptance criteria\n- Checkpoint note on 8 Jan 2027\n- Decision memo on 29 Jan 2027\n",
+    "labels": [
+      "type:ops",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  }
+]

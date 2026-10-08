@@ -1,0 +1,353 @@
+[
+  {
+    "title": "Locate notified Common Advertisement Code text and log effective date and reporting channel",
+    "body": "**Milestone due:** Fri 23 Oct 2026\n\n## Context\nThe SEBI board approved the Common Advertisement Code on 24 Sept 2026, but the notified text and effective date were not found in the research (HANDOFF section 1, 13). The draft proposed a six-month transition. Everything about the 24-hour report depends on this. See `docs/PROTOTYPE_AND_MVP_PLAN.md` section 3.3 for contingency scenarios A to E.\n\n## Tasks\n- [ ] Search sebi.gov.in circulars and press releases for the notified code; record URL, circular number, date, effective date and transition period, or record 'not published as of <date>'\n- [ ] Extract: scope by entity type, definition of advertisement and celebrity, who receives the 24-hour report, format, channel (portal or API), record-retention period, treatment of WhatsApp broadcasts, research reports and education content\n- [ ] Compare notified or draft text against the June 2026 consultation as summarised in docs/research/b2b_fintech_gaps.md section 2\n- [ ] Start the weekly Monday SEBI watch (circulars, press releases, board minutes) and keep a change log in planning/\n- [ ] Select the contingency scenario (A to E) and note it in the plan\n\n## Acceptance criteria\n- A dated status note exists with primary-source links, or an explicit statement that the text is unpublished\n- Every [Unconfirmed] item in HANDOFF section 13 about the code is either answered with a citation or still marked [Unconfirmed]\n- Weekly watch is scheduled and has at least one logged entry\n",
+    "labels": [
+      "type:research",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Commission legal opinion on the no-licence position and suitability drafting",
+    "body": "**Milestone due:** Fri 23 Oct 2026\n\n## Context\nHANDOFF section 7 states the product needs no SEBI licence because it does not advise investors, execute trades or hold client money. This is an assumption until counsel confirms it, especially for the suitability-rationale feature that supports an RIA's advice.\n\n## Tasks\n- [ ] Shortlist 2 to 3 securities-law firms or counsel with SEBI intermediary experience; request fixed-fee quotes\n- [ ] Write the brief: product description, data flows, the 'tool advises, firm decides' principle (ADR-001), suitability drafting scope, advice audit trail scope\n- [ ] Include questions on liability cap enforceability, disclaimers, and whether any feature could be viewed as providing investment advice or research\n- [ ] Sign engagement; agree delivery by about 27 Nov 2026 (Week 7)\n\n## Acceptance criteria\n- Engagement letter signed with scope covering all questions above\n- Delivery date agreed and tracked\n- Suitability feature stays behind a feature flag until the opinion is received\n",
+    "labels": [
+      "type:legal",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Confirm record-retention, data-localisation and offshore-model position; select hosting and model vendor terms",
+    "body": "**Milestone due:** Fri 23 Oct 2026\n\n## Context\nWhether CSCRF imposes data-localisation on small RIAs was not researched; sending content to a foreign model API is cross-border processing (docs/research/regulation_and_rails.md Q8). Retention periods for ad and suitability records are [Unconfirmed]. HANDOFF section 13 lists hosting region and model vendors as open decisions (ADR-007).\n\n## Tasks\n- [ ] Ask counsel (as part of the legal opinion or separately) for a written position on offshore model use for firm-authored drafts and public posts\n- [ ] Read the IA/RA record-keeping rules and notified code text to identify retention periods; make retention configurable per firm until confirmed\n- [ ] Request zero-retention terms and sub-processor lists from candidate model vendors; compare India-region hosting options for Postgres and object storage\n- [ ] Record the choice in a new ADR that supersedes the Proposed state of ADR-007\n\n## Acceptance criteria\n- Written position on offshore processing received or the absence is recorded as a blocker for partner data\n- Vendor shortlist table with retention terms, region and cost per item\n- No design-partner data sent to any model API before this issue is closed\n",
+    "labels": [
+      "type:legal",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Run 15 interviews with RIAs, RAs and compliance officers",
+    "body": "**Milestone due:** Fri 23 Oct 2026\n\n## Context\nHANDOFF Phase 0 asks for 20 interviews; M0 targets 15 and the remaining 5 finish by 13 Nov 2026. The goal is to validate the problem, current process, willingness to pay (₹20-50k a year is an assumption) and segment order (ADR-006). Also verify whether any Indian specialist vendor exists (HANDOFF section 4).\n\n## Tasks\n- [ ] Write an interview script covering: current ad/review process, what 'pre-approval' cost them, WhatsApp broadcast practice, record-keeping pain, AI-use disclosure, tools in use, price reactions\n- [ ] Recruit across segments: solo RIA, RA, PMS compliance officer, broker compliance, top MFD, compliance consultant (target mix 6 RIA/RA, 3 PMS/broker, 3 MFD, 3 consultants)\n- [ ] Record notes in a consistent template; do not store client data\n- [ ] Synthesise: top pains, process steps that can be automated, price anchors, blockers, tools named\n- [ ] Update the buyer-segment decision (ADR-006) after the synthesis\n\n## Acceptance criteria\n- 15 completed interviews with notes\n- Synthesis memo of at most 2 pages with quoted evidence\n- List of named competitors or alternatives with a note on whether any is a specialist Indian ad-compliance vendor\n",
+    "labels": [
+      "type:research",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Recruit and sign three design partners with data-use consent",
+    "body": "**Milestone due:** Fri 23 Oct 2026\n\n## Context\nDesign partners supply real archives for the labelled set, review output and become first references. HANDOFF plans free 90 days then a 50% discount. Data-use consent must cover evaluation use.\n\n## Tasks\n- [ ] Prepare a one-page offer, a consent form (data use, evaluation use, retention, deletion on request) and a simple pilot agreement\n- [ ] Outreach via compliance consultants, associations and communities named in HANDOFF section 9\n- [ ] Aim for a mix: at least 1 RIA, 1 RA or MFD, and 1 PMS or broker compliance officer\n- [ ] Have counsel review the consent form before first use\n\n## Acceptance criteria\n- 3 signed consent forms\n- Each partner has a named contact and a weekly check-in slot\n- No partner data is used before consent and the offshore-processing check are complete\n",
+    "labels": [
+      "type:gtm",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Collect first 60 public posts and define the collection protocol for the labelled dataset",
+    "body": "**Milestone due:** Fri 23 Oct 2026\n\n## Context\nThe prototype needs 150 labelled items by 30 Oct (90 real public posts, 40 synthetic variants, 20 clear non-ads). Platform terms on scraping are [Unconfirmed], so collection is manual and low-volume.\n\n## Tasks\n- [ ] Write the sampling frame: entity types, channels (X, LinkedIn, YouTube, Instagram), post types (return claims, education, research, promotional, celebrity-adjacent)\n- [ ] Collect 60 public posts by registered RIAs, RAs, PMS managers, brokers and MFDs; record URL, capture time, handle, entity type and registration status where visible\n- [ ] Store items and screenshots in a private store (not git); keep only schema and synthetic examples in the repo\n- [ ] Record the platform-terms assumptions and have counsel review before any automated collection\n\n## Acceptance criteria\n- 60 items collected with metadata in the private store\n- Protocol document committed under eval/labelling/\n- Zero personal data of clients or non-public content in the repository\n",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Write the labelling guide and set up annotation tooling",
+    "body": "**Milestone due:** Fri 23 Oct 2026\n\n## Context\nGround truth quality sets the ceiling for every metric. Two compliance professionals label each item and a third adjudicates (HANDOFF section 6).\n\n## Tasks\n- [ ] Define label schema: ad / not ad, celebrity, entity type, channel, violated rules with severity, supporting clause, free-text rationale\n- [ ] Write decision rules for hard cases: research reports vs promotion, education vs advice, WhatsApp broadcasts to existing clients\n- [ ] Build a simple annotation sheet or tool that exports to the eval schema\n- [ ] Recruit two labellers and one adjudicator (part-time contractors); run a 20-item calibration round and compute Cohen's kappa\n\n## Acceptance criteria\n- Guide v1 reviewed by a practising compliance professional\n- Calibration kappa at least 0.6, or the guide is revised and re-run\n- Label export validates against the schema in eval/labelling/\n",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Define the rule schema and load rules corpus v0 with sources",
+    "body": "**Milestone due:** Fri 23 Oct 2026\n\n## Context\nRules need id, citation, trigger, check type (deterministic, model-judged, human), severity, effective date and status (HANDOFF section 6). Sources: draft CAC, finfluencer circulars (Aug 2024, Oct 2024, 29 Jan 2025), IA/RA circulars of 8 Jan 2025, IA master circular of 17 Feb 2026, Feb 2025 AI-liability amendments, CSCRF circulars. Exact rule content must be read from the circulars; secondary summaries are not enough.\n\n## Tasks\n- [ ] Define the YAML rule schema and a JSON Schema validator in rules/schema/\n- [ ] Download and store the circular text with clause identifiers in rules/sources/\n- [ ] Write 15 to 25 rules for pack v0; mark draft-derived rules advisory_pending_notification\n- [ ] Write unit tests with at least 2 positive and 2 negative examples per deterministic rule\n\n## Acceptance criteria\n- Pack v0 validates against the schema and every rule cites a source clause\n- Every rule has a status flag and an effective date or 'unknown'\n- Unit tests pass in CI\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Bootstrap repository, CI and environments",
+    "body": "**Milestone due:** Fri 23 Oct 2026\n\n## Context\nA small team needs fast, safe delivery from day one. The plan assumes TypeScript, Next.js, Postgres on Supabase and GitHub Actions (plan section 6.2).\n\n## Tasks\n- [ ] Initialise the monorepo layout from plan section 7 (apps, packages, rules, eval, supabase)\n- [ ] Set up lint, type-check, unit tests and secret scanning in GitHub Actions\n- [ ] Create dev and staging environments; store secrets in the platform vault; add an .env.example with no real values\n- [ ] Add the pull-request template reflecting CONTRIBUTING.md\n\n## Acceptance criteria\n- CI runs on every pull request and blocks on failure\n- No secrets or data files in the repository; .gitignore covers data/ and .env\n- A new developer can run the project from the README in under 30 minutes\n",
+    "labels": [
+      "type:ops",
+      "priority:P1"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Build ad / not-ad and celebrity classifier (small model, structured output)",
+    "body": "**Milestone due:** Fri 30 Oct 2026\n\n## Context\nHANDOFF specifies a small model for classification. The classifier outputs: is_ad, is_celebrity (draft definition: more than 500,000 followers on at least one platform, OTT/reality-TV names, AI avatars), entity type and channel, each with confidence.\n\n## Tasks\n- [ ] Define the JSON output schema and the prompt (versioned in packages/ai)\n- [ ] Implement the call with retries, schema validation and logging of model id and prompt version\n- [ ] Add few-shot examples from the calibration items; keep a held-out test set untouched\n- [ ] Handle research reports and education content per the Storyboard18 note that research reports are not ads unless they promote the RA's own products (cited in HANDOFF section 2)\n\n## Acceptance criteria\n- Ad / not-ad F1 at least 0.80 on the 150-item set\n- Every output validates against the schema; failures are retried then flagged\n- Prompt and model versions are recorded on every classification\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Implement the deterministic rule checker v0",
+    "body": "**Milestone due:** Fri 30 Oct 2026\n\n## Context\nDeterministic checks run first and supply facts the model must not invent: disclaimers, registration number, banned phrases, follower threshold, price-data lag, and the 24-hour clock (HANDOFF section 6).\n\n## Tasks\n- [ ] Implement the rule runner in packages/core that loads a pack and executes check functions\n- [ ] Implement the checks for the 15 to 25 rules in pack v0; unit-test each\n- [ ] Implement the deadline clock (published_at + 24 hours; calendar-versus-business-hour handling is [Unconfirmed] and configurable)\n- [ ] Return structured findings with rule id, citation, severity and matched text span\n\n## Acceptance criteria\n- All pack v0 deterministic rules pass their unit tests\n- Findings include a quoted source clause from the pack\n- Numbers and dates in findings come from code, never from model output\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Implement model-judged checks with retrieval and a citation validator",
+    "body": "**Milestone due:** Fri 30 Oct 2026\n\n## Context\nImplied guarantees, performance claims and advice-versus-education need judgement. The model must return a clause id and a verbatim quote; a validator rejects quotes not found in the indexed corpus (ADR-005).\n\n## Tasks\n- [ ] Index rules/sources chunks (with clause numbers) in pgvector plus keyword search\n- [ ] Write the judged-check prompt: inputs are the item, the retrieved clauses and the classification; output is a finding with clause id, verbatim quote, explanation and confidence\n- [ ] Implement the citation validator and fail closed: no valid quote means no finding is shown, and the item goes to human review\n- [ ] Log retrieval results and model output for audit\n\n## Acceptance criteria\n- Citation validity is 100% by construction (invalid quotes never reach the user)\n- Clause-relevance precision at least 90% on a 50-finding manual review\n- Prompt-injection test items in the corpus do not change the output format\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Build the evidence archive prototype (hash, timestamp, snapshot)",
+    "body": "**Milestone due:** Fri 30 Oct 2026\n\n## Context\nUnder the code a firm must show items were supportable later. The prototype captures the content, an HTML or screenshot snapshot, SHA-256 and UTC time (HANDOFF section 6).\n\n## Tasks\n- [ ] Implement Playwright capture for URLs and a paste path for text\n- [ ] Compute SHA-256 over content and screenshot; write to local object storage with a manifest\n- [ ] Write an integrity-check script that recomputes hashes and reports mismatches\n- [ ] Document the prototype-to-MVP gap: object lock and hash-chained audit log land in M2\n\n## Acceptance criteria\n- Recomputed hashes match for 100% of the 150 evidence records\n- Each record stores rule-pack version, model id and time of capture\n- Tampering test: editing a stored file makes the integrity script fail\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Generate the sample 24-hour report (template, format unconfirmed)",
+    "body": "**Milestone due:** Fri 30 Oct 2026\n\n## Context\nThe official report format and recipient are [Unconfirmed]. The prototype shows the idea: a pack with the item, classification, findings, evidence reference and deadline, clearly labelled as a template.\n\n## Tasks\n- [ ] Define the report fields from interview findings and the draft code; record every field as an assumption\n- [ ] Render an HTML or PDF pack from a template in packages/reports\n- [ ] Add a visible 'template - official format unconfirmed' banner\n- [ ] Include the deadline clock and a placeholder for the filing receipt\n\n## Acceptance criteria\n- One sample pack generated from a real labelled item\n- The pack never claims to be an official filing\n- Compliance reviewers can say which fields they would change\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Build the evaluation harness v0",
+    "body": "**Milestone due:** Fri 30 Oct 2026\n\n## Context\nMetrics must be reproducible and re-run on every rule or model change (HANDOFF section 6). The harness is the basis for regression tests in M2.\n\n## Tasks\n- [ ] Implement a runner that executes the pipeline over a labelled set and stores results with pack version, prompt version and model id\n- [ ] Compute precision, recall and F1 per rule class, channel and entity type; ad/not-ad and celebrity metrics; citation precision\n- [ ] Add a comparer that diffs two runs per item and lists lost and gained detections\n- [ ] Output a markdown report with the misses listed\n\n## Acceptance criteria\n- One command runs the full eval and writes a report\n- Two runs with the same inputs produce the same metrics (temperature and seeds controlled or variance reported)\n- Report lists every missed high-severity item\n",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Label 150 items double-blind with adjudication",
+    "body": "**Milestone due:** Fri 30 Oct 2026\n\n## Context\nPrototype labelled set: 90 real public posts, 40 synthetic variants, 20 clear non-ads (plan section 4). Two labellers per item and a third adjudicates disagreement.\n\n## Tasks\n- [ ] Finish collection to 90 real items and write 40 synthetic variants for rare breaches\n- [ ] Run double labelling; adjudicate; freeze the set as v1\n- [ ] Compute and report kappa per label field\n- [ ] Keep the data in the private store; commit only the schema and synthetic examples that contain no real content\n\n## Acceptance criteria\n- 150 items labelled and frozen as set v1\n- Kappa reported; any field below 0.6 has a guideline fix logged\n- Hold-out split defined before any prompt tuning\n",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Prepare and run the prototype demo and reviewer walkthroughs",
+    "body": "**Milestone due:** Fri 30 Oct 2026\n\n## Context\nThe demo script (plan section 4) is how the team learns whether compliance professionals would trust the output on real posts.\n\n## Tasks\n- [ ] Finalise the 10-minute script and a sample set of 5 posts including one near-miss that is correctly left alone\n- [ ] Run walkthroughs with at least 3 and up to 5 compliance professionals, including two design partners\n- [ ] Capture feedback in a structured form: trust, missing rules, wording of findings, what they would pay for\n- [ ] Update the backlog from the feedback\n\n## Acceptance criteria\n- At least 3 walkthroughs completed with written notes\n- At least 3 of 5 reviewers call the output worth a first pass, or the gap is documented\n- Backlog updated with prioritised changes\n",
+    "labels": [
+      "type:design",
+      "priority:P1"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Publish prototype baseline results and the top-10 misses",
+    "body": "**Milestone due:** Fri 30 Oct 2026\n\n## Context\nA baseline fixes expectations and shows where rules, retrieval or examples must improve before the Week 6 checkpoint (F1 at least 0.85, recall at least 90%).\n\n## Tasks\n- [ ] Run the eval harness on set v1 and write the results note\n- [ ] Analyse the 10 worst misses: cause (rule gap, retrieval, model judgement, label dispute) and fix owner\n- [ ] Compare against targets in plan section 8 and flag any that are missed\n- [ ] Share with design partners\n\n## Acceptance criteria\n- Results note committed under eval/reports/ (aggregate only)\n- Each miss has a root cause and a ticket\n- Decision recorded on what to change before 20 Nov\n",
+    "labels": [
+      "type:eval",
+      "priority:P1"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Design and migrate the core data model with row-level security",
+    "body": "**Milestone due:** Fri 11 Dec 2026\n\n## Context\nMulti-tenant storage for firms, items, captures, classifications, rule packs, findings, reviews, reports and audit log (plan section 6.3).\n\n## Tasks\n- [ ] Write migrations for the core tables in supabase/migrations/\n- [ ] Implement row-level security so every table is scoped to firm membership\n- [ ] Write a tenant-isolation test: user in firm A cannot read or write firm B rows via API, storage or direct queries\n- [ ] Seed a demo firm and a rule pack\n\n## Acceptance criteria\n- Migrations apply cleanly from scratch\n- Tenant-isolation test passes in CI\n- No table with firm data lacks an RLS policy\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Implement authentication, firm onboarding and role-based access",
+    "body": "**Milestone due:** Fri 11 Dec 2026\n\n## Context\nRoles are author, reviewer and admin (user stories A1, A2). MFA is part of the security baseline.\n\n## Tasks\n- [ ] Implement sign-in with MFA and invite-by-email\n- [ ] Implement firm onboarding capturing entity type, registration number and consent to data use\n- [ ] Enforce role permissions in the API and UI\n- [ ] Log all sign-in and permission changes to the audit log\n\n## Acceptance criteria\n- A new firm is onboarded in under 10 minutes\n- Authors cannot approve their own items if the firm sets dual control\n- Role changes appear in the audit log\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Implement web paste, URL and email-forward intake",
+    "body": "**Milestone due:** Fri 11 Dec 2026\n\n## Context\nThe no-API-dependency intake path (plan section 6.2). Items are normalised, de-duplicated, hashed and queued.\n\n## Tasks\n- [ ] Build the paste form and URL submission, with Playwright capture for URLs\n- [ ] Provision a forward-to email address per firm; parse body and attachments\n- [ ] Normalise, de-duplicate by content hash and enqueue\n- [ ] Treat all ingested content as untrusted data; strip active content; apply prompt-injection filtering\n\n## Acceptance criteria\n- A pasted draft shows a check result in under 60 seconds\n- Forwarded emails create items attributed to the correct firm\n- Injection test cases do not alter system behaviour\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Implement WhatsApp broadcast intake via export upload and forwarded drafts",
+    "body": "**Milestone due:** Fri 11 Dec 2026\n\n## Context\nWhatsApp broadcasts are central for RIAs and MFDs, and whether broadcasts to existing clients count as advertisements is [Unconfirmed] (HANDOFF section 13). Start with export upload and forwarded drafts; Cloud API or an Indian BSP (Gupshup, Interakt) comes later.\n\n## Tasks\n- [ ] Parse WhatsApp chat exports (text and zip) into items; handle media references\n- [ ] Support forwarded drafts to a firm-specific number or email as an interim step\n- [ ] Strip recipient personal data; store only content needed for the check\n- [ ] Record the open question on broadcast treatment and make the rule configurable\n\n## Acceptance criteria\n- An export with 100 messages is imported and de-duplicated\n- Recipient names and numbers are not stored unless a feature requires them\n- Broadcast treatment is a configurable rule tied to the pack version\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Build the review console with approvals and decision logging",
+    "body": "**Milestone due:** Fri 11 Dec 2026\n\n## Context\nThe human decides (ADR-001). Compliance officers triage a severity-sorted queue (user stories C1 to C3).\n\n## Tasks\n- [ ] Build the queue: filters by severity, channel, state; side-by-side original and suggested fix\n- [ ] Implement approve, edit, reject and comment; every decision writes an audit entry\n- [ ] Show rule-pack version and status (advisory or in force) on each finding\n- [ ] Add a false-positive reason that feeds the eval backlog (C5)\n\n## Acceptance criteria\n- A reviewer can clear 20 flagged items in a session without leaving the console\n- Every decision is attributable to a named user and time\n- No item can be marked reported without a named human\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Build rule-pack versioning, status flags and the release workflow",
+    "body": "**Milestone due:** Fri 11 Dec 2026\n\n## Context\nADR-003: packs are versioned in git with status (draft, advisory_pending_notification, in_force, superseded). Findings store the pack version; re-checking creates new findings.\n\n## Tasks\n- [ ] Implement pack loading from git into Postgres with version and status\n- [ ] Add UI labels for advisory versus in-force findings\n- [ ] Implement activation as a reviewed pull request that triggers the regression suite\n- [ ] Implement re-check of an old item against a new pack as a new finding\n\n## Acceptance criteria\n- Activating a new pack never alters previous findings\n- Advisory findings are visibly labelled in UI and exports\n- Regression suite runs automatically on any pack change\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Build the 24-hour report pack and deadline tracker",
+    "body": "**Milestone due:** Fri 11 Dec 2026\n\n## Context\nIf the notified code keeps the 24-hour reporting duty, firms need a ready pack and a clock. HANDOFF kill trigger: any tool-caused miss stops onboarding until fixed. The official format and recipient are [Unconfirmed], so the tool prepares and a human files.\n\n## Tasks\n- [ ] Compute deadline_at for each published item from published_at; alert at 12 h, 4 h and 1 h\n- [ ] Generate the pack (item, classification, findings, evidence reference, reviewer) as PDF and structured data\n- [ ] Capture the filing receipt upload and the filer's name\n- [ ] Make the format configurable so it can be updated when the official format is confirmed\n\n## Acceptance criteria\n- 100% of test items have correct deadlines, including across time zones and daylight-saving handling\n- An item cannot be closed as reported without a receipt or an explicit 'filed outside tool' note\n- Format changes ship as a template version, not a code rewrite\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Implement immutable evidence store and hash-chained audit log",
+    "body": "**Milestone due:** Fri 11 Dec 2026\n\n## Context\nADR-004: object storage with Object Lock, SHA-256 and UTC time; append-only audit log with previous-entry hash; daily chain-head anchoring.\n\n## Tasks\n- [ ] Provision the object-lock bucket (compliance mode) in the chosen India region\n- [ ] Write captures and report packs once; store key, hash and time in the database\n- [ ] Implement the audit log with hash chaining and database roles that cannot update or delete\n- [ ] Implement the nightly integrity job and the daily chain-head anchor; alert on mismatch\n\n## Acceptance criteria\n- Chain verification passes over all entries in CI and nightly\n- An attempted update or delete of evidence or audit rows fails\n- Retention is configurable per firm and enforced by the lock\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Implement the AI-use disclosure generator",
+    "body": "**Milestone due:** Fri 11 Dec 2026\n\n## Context\nSince the 8 Jan 2025 guidelines, RIAs and RAs must disclose to clients the extent of AI tools used in advice and research (docs/research/b2b_fintech_gaps.md section 2; regulation_and_rails.md Q1, Reg 18(9)).\n\n## Tasks\n- [ ] Design a questionnaire on which AI tools the firm uses, for what, and with what human review\n- [ ] Generate disclosure text for client agreements, websites and report footers\n- [ ] Version each generated disclosure and store who approved it and when\n- [ ] Have counsel review the template language\n\n## Acceptance criteria\n- A firm produces a disclosure in under 5 minutes\n- Output states the human-review step and does not claim compliance\n- Counsel has reviewed the template\n",
+    "labels": [
+      "type:build",
+      "priority:P1"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Implement the suitability rationale drafter (RIA approves)",
+    "body": "**Milestone due:** Fri 11 Dec 2026\n\n## Context\nA draft that supports an RIA's own decision; the tool never selects securities (ADR-001, HANDOFF section 7). Shipped behind a feature flag until the legal opinion arrives.\n\n## Tasks\n- [ ] Define input: client risk profile summary (minimal data) and the adviser's chosen recommendation\n- [ ] Generate a rationale draft linking risk profile to recommendation, with placeholders where facts are missing\n- [ ] Require adviser edit and approval; store versions and approver\n- [ ] Gate behind a feature flag tied to the legal opinion\n\n## Acceptance criteria\n- The tool refuses to suggest securities\n- Drafts store only the minimum personal data (no PAN or holdings)\n- Feature flag is off in production until the opinion is on file\n",
+    "labels": [
+      "type:build",
+      "priority:P1"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Scale the labelled set to 300 and enforce evaluation gates in CI",
+    "body": "**Milestone due:** Fri 11 Dec 2026\n\n## Context\nWeek 6 checkpoint (20 Nov): ad/not-ad F1 at least 0.85, high-severity recall at least 90%, citation precision at least 92%, on 300+ items. Gates run on every rule, prompt, schema or model change (plan section 8).\n\n## Tasks\n- [ ] Label 150 more items, including consented partner archives\n- [ ] Add the regression comparer to CI with the thresholds from plan section 8\n- [ ] Fail the build on lost high-severity detections without an approved reason\n- [ ] Publish an eval dashboard or report per release\n\n## Acceptance criteria\n- 300+ items labelled, adjudicated and frozen as set v2\n- CI blocks a merge that breaks a gate\n- Week 6 and M2 metrics are recorded in planning/\n",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Publish the CSCRF-lite calendar and templates before 30 Nov 2026",
+    "body": "**Milestone due:** Fri 11 Dec 2026\n\n## Context\nThe action-taken/revalidation report is due 30 Nov 2026 for self-certification, small, mid-size and qualified entities (circular number not fully verified). Small REs may keep IT asset inventories in Excel and some brokers are exempt (docs/research/b2b_fintech_gaps.md section 2). ADR-008 treats this as an add-on and lead-generation asset.\n\n## Tasks\n- [ ] Read the source circulars and the 30 Apr 2025 clarification; list obligations by entity category, marking unverified items\n- [ ] Build a deadline calendar and reminder emails\n- [ ] Write templates: policy outline, asset inventory (spreadsheet), IT committee pack outline\n- [ ] Add a clear disclaimer that it is not a VAPT and refer to CERT-In-empanelled auditors\n\n## Acceptance criteria\n- Calendar and templates live before 30 Nov 2026\n- Every applicability claim is cited or labelled [Unconfirmed]\n- At least 10 firms or contacts download or request the kit, as a demand signal\n",
+    "labels": [
+      "type:build",
+      "priority:P1"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Build the monthly ad register and audit-pack export",
+    "body": "**Milestone due:** Fri 11 Dec 2026\n\n## Context\nThe annual audit and on-demand requests need a register of every ad with its evidence (HANDOFF feature 9; user stories S7, C4).\n\n## Tasks\n- [ ] Generate a register by month with channel, author, verdict, rule-pack version, reviewer and report status\n- [ ] Export CSV and a PDF audit pack with evidence references and hashes\n- [ ] Add filters, including overridden findings\n\n## Acceptance criteria\n- A year of demo data exports in under a minute\n- Each row links to its evidence record\n- Exports label advisory versus in-force rules\n",
+    "labels": [
+      "type:build",
+      "priority:P1"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Draft terms of service, DPA and liability cap for counsel review",
+    "body": "**Milestone due:** Fri 11 Dec 2026\n\n## Context\nThe regulated entity remains solely responsible for AI outputs; the product is decision support. The firm is the data fiduciary and the team its processor (HANDOFF section 7). Needed before the pilot starts in Week 10.\n\n## Tasks\n- [ ] Draft terms: decision-support positioning, human sign-off, no legal advice, liability cap\n- [ ] Draft the DPA: roles, sub-processors, security measures, breach notice, retention and deletion\n- [ ] List professional-indemnity and cyber insurance options and quotes\n- [ ] Send to counsel; finalise before pilot onboarding\n\n## Acceptance criteria\n- Counsel-reviewed terms and DPA ready for signature by Week 10\n- Insurance decision recorded\n- No customer data processed without signed terms\n",
+    "labels": [
+      "type:legal",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Onboard and support at least five design-partner firms on live workflows",
+    "body": "**Milestone due:** Fri 29 Jan 2027\n\n## Context\nTarget from HANDOFF: at least 5 firms using the tool weekly by day 90. At risk if the ad code is not notified, because the 24-hour duty is not yet binding.\n\n## Tasks\n- [ ] Run onboarding sessions and set up channels for each firm\n- [ ] Hold a weekly check-in with each partner; log items processed, overrides and missed findings\n- [ ] Track weekly active use and time saved\n- [ ] Add partner-specific misses to the eval set with consent\n\n## Acceptance criteria\n- At least 5 firms with at least one item processed each week\n- 100+ real items processed in total\n- Usage and override rates reported weekly\n",
+    "labels": [
+      "type:gtm",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Run pricing tests at 20k, 35k and 50k rupees a year",
+    "body": "**Milestone due:** Fri 29 Jan 2027\n\n## Context\nPrices are assumptions anchored to ₹20-50k (HANDOFF section 8). Kill trigger: median accepted price below ₹12,000 a year.\n\n## Tasks\n- [ ] Define the tiers (Solo, Firm, Enterprise) and the CSCRF add-on in a one-page price sheet\n- [ ] Present different price points to comparable firms; record reactions and conversion\n- [ ] Test annual pre-pay discount and the 50% post-pilot discount\n- [ ] Record the median accepted price\n\n## Acceptance criteria\n- At least 15 price conversations logged\n- Median accepted price calculated and compared with the ₹20,000 target and ₹12,000 kill trigger\n- At least 10 paying firms is the target, with the actual number reported\n",
+    "labels": [
+      "type:gtm",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Final evaluation on 500 labelled items against gates",
+    "body": "**Milestone due:** Fri 29 Jan 2027\n\n## Context\nM3 gates (targets [Assumption]): high-severity recall at least 95%, precision at least 85%, citation precision at least 95%, ad/not-ad F1 at least 0.90, plus explanation-faithfulness audit of 100 findings.\n\n## Tasks\n- [ ] Label to 500 items with consented partner data and synthetic variants\n- [ ] Run the final evaluation and report per rule class, channel and entity type\n- [ ] Audit 100 explanations for faithfulness with a compliance professional\n- [ ] Write recommendations if any gate fails: the HANDOFF fallback is a service-assisted model if recall stays below 90% after two iterations\n\n## Acceptance criteria\n- Evaluation report with all metrics versus targets\n- Reviewer override rate reported; alarm threshold 40%\n- Decision on each gate recorded: met, missed with plan, or kill trigger hit\n",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Commission and complete an external penetration test",
+    "body": "**Milestone due:** Fri 29 Jan 2027\n\n## Context\nCustomers run vendor-risk reviews; HANDOFF plans a penetration test before wide sales. Generic web-app VAPT ranges ₹40k to ₹1.5 lakh (TCSA, cited in docs/research/b2b_fintech_gaps.md).\n\n## Tasks\n- [ ] Scope the test: web app, API, storage permissions, tenant isolation, prompt injection\n- [ ] Select a qualified tester and agree dates around Weeks 12 to 14\n- [ ] Fix critical and high findings; retest\n- [ ] Prepare a short security summary for customer questionnaires\n\n## Acceptance criteria\n- Test report received; no open critical findings\n- Security summary document ready for customers\n- Findings tracked to closure\n",
+    "labels": [
+      "type:ops",
+      "priority:P1"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Launch the consultant-partner programme",
+    "body": "**Milestone due:** Fri 29 Jan 2027\n\n## Context\nHANDOFF suggests a referral fee of about 20% of year-one fees (an assumption) and a white-label dashboard for compliance consultants serving RIAs and RAs. Target: three consultant partners.\n\n## Tasks\n- [ ] Prepare a partner pack: one-page offer, demo, referral terms\n- [ ] Approach consultants identified during interviews\n- [ ] Sign 3 partners; record the expected firms per partner\n- [ ] Offer a read-only multi-client view as a pilot, if demanded\n\n## Acceptance criteria\n- 3 consultant partners signed\n- Referral terms reviewed by counsel\n- Pipeline of expected referrals recorded\n",
+    "labels": [
+      "type:gtm",
+      "priority:P1"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Review DPDP consent, retention and deletion flows",
+    "body": "**Milestone due:** Fri 29 Jan 2027\n\n## Context\nDPDP fiduciary duties bind around May 2027 (sources differ by a day); penalties up to ₹250 crore (docs/research/regulation_and_rails.md Q8). Evidence retention under object lock interacts with erasure requests (ADR-004).\n\n## Tasks\n- [ ] Map personal data in the product: handle names, client references, user data\n- [ ] Design deletion by retention expiry and crypto-shredding where law permits\n- [ ] Check consent, notice and breach flows with counsel\n- [ ] Create tickets for any remaining work before May 2027\n\n## Acceptance criteria\n- Data map and gap list reviewed by counsel\n- Deletion approach documented and tested with demo data\n- Roadmap items created for gaps\n",
+    "labels": [
+      "type:legal",
+      "priority:P1"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Write the scale, pivot or stop decision memo",
+    "body": "**Milestone due:** Fri 29 Jan 2027\n\n## Context\nHANDOFF section 11 defines targets and kill criteria. The decision window ends 29 Jan 2027, three weeks past day 90, so January conversions count (plan section 3.1).\n\n## Tasks\n- [ ] Collect metrics: weekly firms, paying firms, median price, high-severity recall, precision, citation precision, 24-hour pack punctuality, margin\n- [ ] Report the status of the notified ad code and its effect on demand\n- [ ] Score every HANDOFF section 11 row and propose scale, pivot (audit trail, CSCRF kit, platform sale) or stop\n- [ ] Review with design partners and advisers; record the decision\n\n## Acceptance criteria\n- Memo scores all rows of the HANDOFF section 11 table with evidence\n- A clear recommendation and next-90-day plan or wind-down plan is included\n- Decision date recorded in planning/milestones.md\n",
+    "labels": [
+      "type:ops",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  }
+]
