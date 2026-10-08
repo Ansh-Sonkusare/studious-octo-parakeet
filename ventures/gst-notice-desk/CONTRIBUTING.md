@@ -7,7 +7,7 @@ This is a private repository for a small team. These rules keep the work reviewa
 - Never commit GSTINs, supplier or client names, invoices, 2B or register exports, ledgers, notices, replies or screenshots from a real firm, even partially redacted.
 - Design-partner data is anonymised by the partner with `tools/anonymise` and kept in the access-controlled store described in [docs/DECISIONS.md](docs/DECISIONS.md) (ADR-008). Labelled sets live there too.
 - Only synthetic fixtures under `evals/fixtures/` may be committed. Generate them with `scripts/` tooling.
-- Never paste real data into prompts, issues, pull requests or chat tools.
+- Never paste real data into prompts, issues, pull requests or messaging tools.
 - If real data is committed by mistake: stop, tell the team the same day, and remove it from history (not just the latest commit) before anything else is pushed.
 - Secrets (API keys, database URLs) go in a secret manager or an untracked `.env`; commit only `.env.example`.
 
