@@ -1,39 +1,39 @@
 # Prototype and MVP Plan
 
-*Version 1.0, 8 October 2026. Planning start: Monday 12 October 2026. Companion to [HANDOFF.md](HANDOFF.md), which is the source for product facts; this document is the source for scheduling and engineering.*
+*Version 1.0, 8 October 2026. Start: Monday 12 October 2026. Companion to [HANDOFF.md](HANDOFF.md), the source for product facts; this document covers scheduling and engineering.*
 
-**Legend.** **[A]** working assumption, to be replaced with data. **[V]** to be verified against a primary source or by counsel. Market evidence lives in HANDOFF.md section 2 and [docs/research](research/README.md) and is not restated here.
+**Legend.** **[A]** working assumption, to be replaced with data. **[V]** to verify against a primary source or with counsel. Market evidence is in HANDOFF.md section 2 and [docs/research](research/README.md).
 
 ## 1. Goals and non-goals
 
 **Goals (by 29 January 2027)**
 
-1. Correctness: every deduction maps to a real clause and every number comes from a tool, measured on a held-out golden set.
+1. Correctness: every deduction maps to a real clause and every number comes from a tool, measured on a golden set.
 2. Willingness to pay: 50+ filed cases, at least 30% fee acceptance, at least 70% of owed success fees collected.
 3. Recovery: at least 25% full or partial reversal at the insurer stage within 30 days.
 4. Economics: reviewer time under 20 minutes per case; acquisition cost under 30% of expected fee.
 5. A continue, pivot or stop decision on 29 January 2027, with a memo.
 
-**Non-goals:** selling or comparing policies; money from insurers, brokers or hospitals; client money; autonomous filing; legal advice; group policies; hospital-bill audit; US claims; fine-tuning; insurer APIs or Bima Sugam; scale beyond roughly 100 live cases.
+**Non-goals:** selling or comparing policies; money from insurers, brokers or hospitals; client money; autonomous filing; legal advice; group policies; hospital-bill audit; US claims; fine-tuning; insurer APIs or Bima Sugam; scale beyond about 100 cases.
 
 ## 2. Definitions
 
-| Term | Meaning | Customers and money |
-|---|---|---|
-| **Prototype** (M1) | Concierge service plus a working Claim X-ray pipeline and eval harness on real documents; no customer app beyond a consent-first upload page and WhatsApp Business. | 10-20 hand-held cases; token fee once the entity can collect |
-| **MVP** (M2) | Automated intake, analysis, drafting, review console, tracking and payments; a human approves every letter. | Live cases in shadow mode, then paid |
-| **Pilot** (M3) | The MVP run on 50-100 live cases across three channels, ending in a decision memo. | Public, limited by lead flow |
+| Term | Meaning |
+|---|---|
+| **Prototype** (M1) | Concierge service plus a working Claim X-ray pipeline and eval harness on real documents; no customer app beyond a consent-first upload page and WhatsApp Business. 10-20 hand-held cases. |
+| **MVP** (M2) | Automated intake, analysis, drafting, review console, tracking and payments; a human approves every letter. Live cases run in shadow mode. |
+| **Pilot** (M3) | The MVP run on 50-100 live cases across three channels, ending in a decision memo. |
 
 ## 3. Timeline
 
-Team **[A]**: a product/go-to-market lead and a full-stack/AI engineer, both full-time; a part-time ex-TPA or insurer claims specialist (8-10 hours a week); external counsel; part-time ops from 16 November. One person alone cannot hit these dates (M1 and M2 would each slip about two weeks).
+Team **[A]**: a product/go-to-market lead and a full-stack/AI engineer, both full-time; a part-time ex-TPA or insurer claims specialist (8-10 hours a week); external counsel; part-time ops from 16 November. One person alone would slip M1 and M2 by about two weeks each.
 
-| Milestone | Window | Due | Exit in one line |
-|---|---|---|---|
-| **M0 Discovery & legal** | Weeks 1-2 | Fri 23 Oct 2026 | 30 interviews, 20+ would pay, no legal blocker for concierge |
-| **M1 Prototype** | Weeks 1-3 | Fri 30 Oct 2026 | X-ray on real documents, eval harness, 5 cases filed |
-| **M2 MVP** | Weeks 4-9 | Fri 11 Dec 2026 | End-to-end flow, release gates passed, legal gates closed |
-| **M3 Pilot & decision** | Weeks 10-16 | Fri 29 Jan 2027 | 50-100 cases, metrics, decision memo |
+| Milestone | Window | Due |
+|---|---|---|
+| **M0 Discovery & legal** | Weeks 1-2 | Fri 23 Oct 2026 |
+| **M1 Prototype** | Weeks 1-3 | Fri 30 Oct 2026 |
+| **M2 MVP** | Weeks 4-9 | Fri 11 Dec 2026 |
+| **M3 Pilot & decision** | Weeks 10-16 | Fri 29 Jan 2027 |
 
 This is 16 weeks, three more than HANDOFF.md section 10, to build the full MVP before the pilot and let the 30-day insurer window close before the decision. Concierge cases start in week 2.
 
@@ -51,7 +51,7 @@ This is 16 weeks, three more than HANDOFF.md section 10, to build the full MVP b
 | 10 | 14-18 Dec | Pilot opens; landing pages (EN/HI); first partners; every letter reviewed |
 | 11 | 21-25 Dec | **Cohort cut-off Mon 21 Dec**: 50 filed, so the 30-day window closes by 20 Jan. Holiday-reduced |
 | 12 | 28 Dec-1 Jan | Monitoring; first escalations (cases filed mid-November). Holiday-reduced |
-| 13 | 4-8 Jan | Partner and HR-team tests; weekly metrics review |
+| 13 | 4-8 Jan | Partner and HR-team tests; metrics review |
 | 14 | 11-15 Jan | CAC by channel; fee collection; escalation filings for unresolved cases |
 | 15 | 18-22 Jan | Cohort window closes; **data freeze Fri 22** |
 | 16 | 25-29 Jan | Unit economics on actuals; memo draft Mon 25, review Wed 27, **decision Fri 29** |
@@ -77,7 +77,7 @@ Cumulative filed-case targets **[A]**: 5 by 30 Oct; 12 by 13 Nov; 22 by 27 Nov; 
 **Demo script (12 minutes, Fri 30 October).**
 
 1. A real consented case is uploaded; extracted fields show page references and confidence.
-2. Claim X-ray: each deduction with clause quote and page, calculator trace (for example the room-rent ratio), recoverable range, route, deadline.
+2. Claim X-ray: each deduction with clause quote, calculator trace (for example the room-rent ratio), recoverable range, route, deadline.
 3. A deduction marked "likely valid, do not contest": the product will not charge for unwinnable items.
 4. Failure handling: unknown wording version flagged for a human; "guarantee I will get the money" refused.
 5. Eval report on golden set v0, including the hard-fail check for invented clauses.
@@ -85,18 +85,18 @@ Cumulative filed-case targets **[A]**: 5 by 30 Oct; 12 by 13 Nov; 22 by 27 Nov; 
 
 **Success criteria (all required).**
 
-- Runs end to end on 20+ real consented document sets without developer intervention.
+- Runs end to end on 20+ real consented document sets unaided.
 - On the dev split: clause-citation precision at least 90%; **zero invented clauses**; class accuracy at least 80%; amounts within ±2% on at least 90% of deductions **[A: looser than release gates]**.
 - Median upload-to-X-ray under 10 minutes.
 - 10+ concierge cases received, 5 filed, 2 paying the token fee.
-- Eval reproducible from a clean checkout; results stored without customer data.
+- Eval reproducible from a clean checkout.
 
 ## 5. MVP specification (M2)
 
 | ID | Pri | Story | Acceptance criteria |
 |---|---|---|---|
 | US-01 | P0 | Claimant or caregiver submits documents by WhatsApp or web | Itemised consent stored with text version; caregiver uploads policyholder authorisation; nothing processed before consent |
-| US-02 | P0 | Receives a Claim X-ray | Per deduction: class, clause quote, amount, contestable or likely-valid, route, deadline; p90 under 5 minutes; held for a human, with notice, if version unknown or confidence low |
+| US-02 | P0 | Receives a Claim X-ray | Per deduction: class, clause quote, amount, verdict, route, deadline; p90 under 5 minutes; held for a human, with notice, if version unknown or confidence low |
 | US-03 | P0 | Told which deductions look valid | Listed with reason; excluded from fee base |
 | US-04 | P0 | Accepts terms, pays upfront fee | Terms state fees and "no guaranteed outcome"; webhook confirms payment before drafting |
 | US-05 | P0 | Gets reviewed letter and submission walkthrough | Released only after approval; user records acknowledgement number |
@@ -111,7 +111,7 @@ Cumulative filed-case targets **[A]**: 5 by 30 Oct; 12 by 13 Nov; 22 by 27 Nov; 
 | US-14 | P1 | Partner tracked link | Cases carry `channel`, `partner_id`; partner sees counts, never content |
 | US-15 | P1 | Lead sees funnel and CAC by channel | Funnel counts per channel |
 
-**Flows.** Customer: landing (EN/HI), consent and upload, status, X-ray with fee terms, payment, reviewed letter and walkthrough, acknowledgement entry, timeline, outcome and fee. WhatsApp mirrors this as a fixed state machine (menu, media, status, "talk to a human"), not a free-form chatbot; out-of-window messages use approved templates. Reviewer console: queue by age; case view with documents, deductions, calculation trace, letter editor and validator result. Admin: corpus manager, rules library, deadline board, payments ledger, audit viewer.
+**Flows.** Customer: landing (EN/HI), consent and upload, status, X-ray with fee terms, payment, reviewed letter and walkthrough, acknowledgement entry, timeline, outcome and fee. WhatsApp mirrors this as a fixed state machine, not a free-form chatbot; out-of-window messages use approved templates. Reviewer console: queue by age; case view with documents, deductions, calculation trace, letter editor, validator result. Admin: corpus manager, rules library, deadline board, payments ledger, audit viewer.
 
 ## 6. Technical design
 
@@ -157,7 +157,7 @@ flowchart LR
 | Messaging | WhatsApp Cloud API; Indian BSP (Gupshup, Interakt) if verification lags. |
 | Payments | **Razorpay** payment links for upfront fee and success-fee invoices; UPI AutoPay as P1. |
 | Other | Static Astro site for SEO pages; Sarvam speech-to-text (about ₹30 per audio hour, [pricing](https://docs.sarvam.ai/api-reference-docs/getting-started/pricing)), P1. |
-| Hosting | Docker on an India region (Fly.io `bom` or AWS `ap-south-1`) **[V]**; logs never hold document text. |
+| Hosting | Docker on an India region (Fly.io `bom` or AWS `ap-south-1`) **[V]**. |
 
 ### 6.3 Data model
 
@@ -169,7 +169,7 @@ flowchart LR
 
 ### 6.4 Deterministic calculators
 
-Pure functions; parameters come from the matched wording or `rules`; each returns a result and a readable trace; each has unit and property tests. The model never does arithmetic.
+Pure functions with parameters from the matched wording or `rules`, a readable trace and unit and property tests. The model never does arithmetic.
 
 - `compute_proportionate_deduction`: eligible over actual room rent, applied to the charge categories the wording names; ICU variant.
 - `apply_copay`, `apply_sublimit`: order of application read from the wording.
@@ -179,23 +179,23 @@ Pure functions; parameters come from the matched wording or `rules`; each return
 - `compute_deadlines`: grievance, 30-day escalation and Ombudsman windows from effective-dated rules **[V]**.
 - `compute_fee`: upfront fee and success-fee base (recovered amount only); GST per counsel **[V]**.
 
-These feed the tools named in HANDOFF.md section 6.3 (`get_clause`, `search_irdai_rules(as_of)`, `check_waiting_period`, `compute_deadlines`, `draft_letter`).
+They back the tools named in HANDOFF.md section 6.3.
 
 ### 6.5 Retrieval corpus
 
-Wordings for 4 products (M1), then 8-10 (M2) across Star Health, Care, Niva Bupa and Aditya Birla (FY25 Ombudsman complaints 12,186; 4,423; 3,983; 2,354, per [Cafemutual](https://cafemutual.com/news/industry/36635-41-of-health-insurance-complaints-were-resolved-in-favour-of-policyholders-in-fy25)); the IRDAI master circular effective 1 August 2024; Ombudsman rules and the complaint form (Annexure VI-A); circulars on non-payables and grievances **[V]**. Every document keeps effective dates and a file hash; a case is matched to the version in force, and an unknown version blocks automation. Chunking is by clause, keeping numbering and page. Retrieval runs inside the matched wording plus the rules table; wordings are assumed to be 30-60k tokens **[A]**, so full text is the fallback when confidence is low. The specialist owns the rules library; changes are dated rows, never overwrites.
+Wordings for 4 products (M1), then 8-10 (M2) across Star Health, Care, Niva Bupa and Aditya Birla (FY25 Ombudsman complaints 12,186; 4,423; 3,983; 2,354, per [Cafemutual](https://cafemutual.com/news/industry/36635-41-of-health-insurance-complaints-were-resolved-in-favour-of-policyholders-in-fy25)); the IRDAI master circular effective 1 August 2024; Ombudsman rules and the complaint form (Annexure VI-A); circulars on non-payables and grievances **[V]**. Every document keeps effective dates and a file hash; a case is matched to the version in force, and an unknown version blocks automation. Chunking is by clause, keeping numbering and page. Retrieval runs inside the matched wording plus the rules table; with wordings of an assumed 30-60k tokens **[A]**, full text is the fallback when confidence is low. The specialist owns the rules library.
 
 ### 6.6 Prompt and agent design
 
-An explicit state machine, not an open agent loop; each step is one bounded, schema-constrained model call.
+An explicit state machine, not an open agent loop; each step is one bounded, schema-constrained call.
 
 1. Classify document type (small model). 2. Extract fields with page references and confidence (mid-tier, vision). 3. Classify deductions (small; mid-tier on low confidence). 4. Cite: the model may choose only `clause_id`s from retrieved candidates, and code checks each quote appears verbatim. 5. Calculate: code only. 6. Write: X-ray and letters are templates with model-written reasoning; numbers, dates, names and quotations are placeholders (`{{amount_3}}`) filled by code. 7. **Grounding validator** (code): every numeral and date traces to a tool result or source; every quote matches the corpus; no "guaranteed" or legal-advice language. One regeneration, then block.
 
-Requests for guaranteed outcomes, legal advice or policy recommendations are declined. Instructions inside uploaded documents are treated as data and flagged. Prompt, schema and model-ID hashes are stored on every analysis.
+Requests for guaranteed outcomes, legal advice or policy recommendations are declined. Instructions inside uploaded documents are treated as data and flagged. Prompt, schema and model-ID hashes are stored with every analysis.
 
 ### 6.7 Human review and audit
 
-Every outbound letter is approved by a reviewer through the pilot (ADR-004); cases over ₹1 lakh claimed, or with a pre-existing-disease or non-disclosure ground, also need specialist sign-off **[A]**. Edits carry a reason code (wrong clause, wrong amount, tone, missing fact, other) and become candidate golden-set items. Reviewer SLA: 4 working hours **[A]**.
+A reviewer approves every outbound letter through the pilot (ADR-004); cases over ₹1 lakh, or with a pre-existing-disease or non-disclosure ground, also need specialist sign-off **[A]**. Edits carry a reason code (wrong clause, wrong amount, tone, missing fact) and become candidate golden-set items. Reviewer SLA: 4 working hours **[A]**.
 
 The audit log is append-only and hash-chained, with insert-only rights for the application role. Prompts, retrieved text and drafts sit in a separate encrypted payload store referenced by hash, so deletion removes content but keeps non-identifying event metadata (retention per counsel **[V]**).
 
@@ -203,10 +203,10 @@ The audit log is append-only and hash-chained, with insert-only rights for the a
 
 - Treat every document as health data. TLS; encryption at rest; application-level encryption of names, contacts and policy numbers with KMS keys; private buckets, short-lived signed URLs.
 - Before model calls, replace identifiers with tokens that code re-inserts; diagnoses stay. The eval measures whether redaction hurts accuracy.
-- Row-level security; reviewers see assigned cases only; production access is break-glass and logged; staff MFA.
-- Obtain zero-retention or equivalent model-vendor terms; record default retention in a short impact assessment in M0 **[V]**.
-- Itemised consent; separate, default-off consent for anonymised proof content; one-click withdrawal and deletion. Documents deleted 90 days after closure unless kept by the user; backups age out within 30 days **[A]**.
-- IT Act SPDI Rules apply now; DPDP duties from about May 2027, so build to that standard now ([regulation_and_rails.md](research/regulation_and_rails.md) Q8). Offshore model processing needs counsel's confirmation.
+- Row-level security; reviewers see assigned cases only; production access is break-glass, logged; staff MFA.
+- Obtain zero-retention model-vendor terms; record default retention in an M0 impact assessment **[V]**.
+- Itemised consent; separate, default-off consent for anonymised proof content; one-click withdrawal and deletion. Documents deleted 90 days after closure unless kept by the user; backups age out in 30 days **[A]**.
+- IT Act SPDI Rules apply now; DPDP duties from about May 2027, so build to that standard now ([regulation_and_rails.md](research/regulation_and_rails.md) Q8). Counsel confirms offshore model processing.
 - Breach runbook with named owners; notification timelines per counsel **[V]**. Verified WhatsApp Business profile, because fake Bima Bharosa sites exist.
 - No real customer data in the repository ([CONTRIBUTING.md](../CONTRIBUTING.md)).
 
@@ -247,7 +247,7 @@ The golden set lives in access-controlled encrypted storage outside the reposito
 | Output numbers not traceable to a tool or source | 0 |
 | Deduction-class accuracy | at least 90% **[A]** |
 | Required-field extraction (amounts, dates, policy period) | at least 98% **[A]** |
-| Likely-valid deductions wrongly marked contestable | at most 10% **[A]** |
+| Likely-valid deductions marked contestable | at most 10% **[A]** |
 | Correct refusals on adversarial set | 100% |
 | X-ray latency p90 | under 5 minutes |
 
@@ -257,7 +257,7 @@ The first three gates come from HANDOFF.md section 6.4. At 250 deductions, 96% o
 
 ## 9. Legal and compliance gates
 
-Open questions: HANDOFF.md section 7. Counsel decides each gate; nothing here is legal advice.
+Open questions: HANDOFF.md section 7. Counsel decides each gate; this is not legal advice.
 
 | Gate | Blocks | Evidence | Target |
 |---|---|---|---|
@@ -298,20 +298,20 @@ Non-people cost is about ₹10.3 lakh over 16 weeks. Team time at HANDOFF.md sec
 |---|---|
 | **M0** (23 Oct) | 30 interviews synthesised; 20+ would pay; no concierge blocker in counsel's preliminary view; G0 closed; specialist engaged; 25+ consented files; incorporation filed; four wordings acquired |
 | **M1** (30 Oct) | Section 4 criteria met; demo delivered; golden set v0 stored securely |
-| **M2** (11 Dec) | P0 stories accepted; section 8 gates passed on the sealed holdout; G1-G5 closed; deletion and restore drills passed; reviewer SLA met in shadow mode on 20+ cases; `v0.1.0` tagged |
-| **M3** (29 Jan) | Data frozen 22 Jan; all five HANDOFF.md section 11 metrics reported with sample sizes; unit-economics model on actuals; decision memo reviewed |
+| **M2** (11 Dec) | P0 stories accepted; section 8 gates passed on the sealed holdout; G1-G5 closed; deletion and restore drills passed; reviewer SLA met on 20+ shadow cases; `v0.1.0` tagged |
+| **M3** (29 Jan) | Data frozen 22 Jan; the five HANDOFF.md section 11 metrics reported with sample sizes; unit economics on actuals; decision memo reviewed |
 
 ## 12. Risks to the timeline and dependencies
 
 | Risk | Mitigation and trigger |
 |---|---|
-| Lead supply short of about 420 qualified leads | Interviews and communities from week 1; weekly lead target; if under 60% of plan at 27 Nov, add partners and extend the pilot up to two weeks |
+| Lead supply short of about 420 qualified leads | Communities from week 1; weekly lead target; if under 60% of plan at 27 Nov, add partners and extend the pilot up to two weeks |
 | Legal opinion late or negative | Commission in week 1; fall back to user-signed drafting only |
 | Fewer than 100 consented files by 20 Nov | Free X-ray in exchange for consent; keep a holdout of at least 80 deductions |
 | Meta verification or BSP delay | Apply in week 1; web intake is the primary path |
 | Specialist unavailable; wordings hard to obtain | Contract two specialists; limit to public wordings and flag unknowns |
-| Payment approval slow for a new entity | Incorporate in week 1; free design-partner cases are excluded from willingness-to-pay metrics |
-| Festivals and year-end (weeks 2, 5, 11, 12); scope creep; single engineer | Four-day weeks; nothing enters M2 without removing equal scope; weekly walkthroughs and runbooks |
+| Payment approval slow for a new entity | Incorporate in week 1; free design-partner cases excluded from willingness-to-pay metrics |
+| Festivals and year-end (weeks 2, 5, 11, 12); scope creep; single engineer | Four-day weeks; nothing enters M2 without removing equal scope; runbooks |
 
 **Dependencies.** Counsel by 12 Oct and specialist by 16 Oct. Model API access and vendor terms by 19 Oct. Entity and payment account by 26 Oct. WhatsApp verification by 13 Nov. Razorpay onboarding by 23 Nov. Consented files: 25 by 23 Oct, 40 by 30 Oct, 100 by 20 Nov. Wordings: 4 by 23 Oct, 8-10 by 20 Nov.
 

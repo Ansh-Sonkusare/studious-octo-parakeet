@@ -10,7 +10,7 @@
   },
   {
     "title": "Competitor teardown: Clear, Suvit, Zoho Books, Tally (TallyIra), Accu Reco",
-    "body": "**Context.** HANDOFF flags Clear, Zoho and Vayana as not surveyed and notice-drafting at Clear, Zoho and Suvit as unknown. Tally shipped built-in AI in June 2026; Suvit holds the ICAI channel and price anchor. The wedge is the action and notice layer, so the teardown must test exactly that.\n\n**Tasks**\n- [ ] Use trial accounts or partner screenshares to test reconciliation, supplier chasing, notice handling and multi-client views in each product\n- [ ] Record pricing, plans and ICAI discounts where visible\n- [ ] Score each against a fixed checklist: 2B vs books, IMS support, supplier chase, notice intake, draft reply, audit trail, multi-client dashboard\n- [ ] Write findings to docs/research-notes (committed, no screenshots of customer data)\n\n**Acceptance criteria**\n- Five products assessed against the same checklist\n- Each cell marked verified-by-test or unverified\n- Threat levels in HANDOFF section 4 confirmed or updated",
+    "body": "**Context.** HANDOFF flags Clear, Zoho and Vayana as not surveyed and notice-drafting at Clear, Zoho and Suvit as unknown. Tally shipped built-in AI in June 2026; Suvit holds the ICAI channel and price anchor. The wedge is the action and notice layer, so the teardown must test exactly that.\n\n**Tasks**\n- [ ] Use trial accounts or partner screenshares to test reconciliation, supplier chasing, notice handling and multi-client views in each product\n- [ ] Record pricing, plans and ICAI discounts where visible\n- [ ] Score each against a fixed checklist: 2B vs books, IMS support, supplier chase, notice intake, draft reply, audit trail, multi-client dashboard\n- [ ] Write findings to docs/teardown/ (committed; no customer data in screenshots)\n\n**Acceptance criteria**\n- Five products assessed against the same checklist\n- Each cell marked verified-by-test or unverified\n- Threat levels in HANDOFF section 4 confirmed or updated",
     "labels": [
       "type:research",
       "priority:P0"
@@ -190,7 +190,7 @@
   },
   {
     "title": "Supplier chasing: templates, email, assisted WhatsApp and reply tracking",
-    "body": "**Context.** HANDOFF P1. WhatsApp BSP approval is slow, so the MVP uses email and a prefilled WhatsApp link opened by the assistant. Messages go out only after CA approval.\n\n**Tasks**\n- [ ] Message templates per cause in English and Hindi (Hindi review by the advisor)\n- [ ] Send email from the firm's domain after approval; log delivery\n- [ ] Generate prefilled WhatsApp links; log that the link was opened\n- [ ] Track reply status and follow-up cadence (D+3, D+7, D+14, assumption); opt-out list\n\n**Acceptance criteria**\n- No message sends without CA approval\n- Reply status visible per supplier\n- Opt-outs honoured",
+    "body": "**Context.** HANDOFF P1. WhatsApp BSP approval is slow, so the MVP uses email and a prefilled WhatsApp link opened by the assistant. Messages go out only after CA approval.\n\n**Tasks**\n- [ ] Message templates per cause in English (Hindi and regional languages are P2 in HANDOFF)\n- [ ] Send email from the firm's domain after approval; log delivery\n- [ ] Generate prefilled WhatsApp links; log that the link was opened\n- [ ] Track reply status and follow-up cadence (D+3, D+7, D+14, assumption); opt-out list\n\n**Acceptance criteria**\n- No message sends without CA approval\n- Reply status visible per supplier\n- Opt-outs honoured",
     "labels": [
       "type:build",
       "priority:P1"
@@ -343,7 +343,7 @@
   },
   {
     "title": "ICAI member-benefits listing: requirements and application",
-    "body": "**Context.** Suvit and Accu Reco are listed on ICAI's portal, so the channel accepts third-party GST tools; criteria and fees are not in the sources (HANDOFF section 9). HANDOFF plans to apply around day 45 with references; this plan prepares it during the pilot.\n\n**Tasks**\n- [ ] Find the listing criteria, discount expectations, fee and timeline\n- [ ] Prepare references from two pilot firms and a one-page product sheet\n- [ ] Submit the application or record the reason to defer\n\n**Acceptance criteria**\n- Requirements documented\n- Application submitted or deferral reasoned\n- Findings added to docs/research-notes",
+    "body": "**Context.** Suvit and Accu Reco are listed on ICAI's portal, so the channel accepts third-party GST tools; criteria and fees are not in the sources (HANDOFF section 9). HANDOFF plans to apply around day 45 with references; this plan prepares it during the pilot.\n\n**Tasks**\n- [ ] Find the listing criteria, discount expectations, fee and timeline\n- [ ] Prepare references from two pilot firms and a one-page product sheet\n- [ ] Submit the application or record the reason to defer\n\n**Acceptance criteria**\n- Requirements documented\n- Application submitted or deferral reasoned\n- Findings added to docs/teardown/",
     "labels": [
       "type:gtm",
       "priority:P2"

@@ -1,7 +1,6 @@
 # Prototype and MVP Plan
 
-Status: draft for ratification at kickoff, Mon 12 Oct 2026. Plan date: 8 Oct 2026.
-Parent document: [HANDOFF.md](HANDOFF.md). Where this plan restates a HANDOFF fact, the HANDOFF wording and its flag win. Labels follow HANDOFF: **Fact**, **Inference**, **Assumption**, **Unverified** (confirm before relying on it).
+Draft for ratification at kickoff, Mon 12 Oct 2026 (plan date 8 Oct 2026). Parent: [HANDOFF.md](HANDOFF.md); its wording and flags win. Labels: **Fact**, **Inference**, **Assumption**, **Unverified** (confirm before relying on it).
 
 ## 1. Goals and non-goals
 
@@ -37,7 +36,7 @@ Assumes a dedicated team of 1-3 from Mon 12 Oct 2026 (Assumption: product and CA
 | M2 MVP | Weeks 4-9 | Fri 11 Dec 2026 | HANDOFF P0 features live for design-partner CAs; 300-case golden set at 100% |
 | M3 Pilot and decision | Weeks 10-16 | Fri 29 Jan 2027 | Outcome data and a continue/pivot/stop memo |
 
-**Note (Inference).** HANDOFF Section 10 runs 13 weeks with the pilot in weeks 6-12; this plan runs 16 weeks because it adds a 3-week prototype first. The 60-day recovery metric is readable only for invoices first reminded by 30 Nov 2026 (30 Nov + 60 days = 29 Jan). Later cohorts are read at 30 days and labelled interim. The holdout is a delayed-start group: matched invoices get their first reminder 30 days later (Assumption), so no supplier is denied the service.
+**Note (Inference).** HANDOFF Section 10 runs 13 weeks; this plan runs 16 because it adds a 3-week prototype first. The 60-day recovery metric is readable only for invoices first reminded by 30 Nov 2026 (30 Nov + 60 days = 29 Jan). Later cohorts are read at 30 days and labelled interim. The holdout is a delayed-start group: matched invoices get their first reminder 30 days later (Assumption), so no supplier is denied the service.
 
 ### Week by week
 
@@ -45,12 +44,12 @@ Assumes a dedicated team of 1-3 from Mon 12 Oct 2026 (Assumption: product and CA
 |---|---|---|---|
 | 1 | 12-16 Oct | M0 | Kickoff; ratify metrics and ADRs; brief counsel on HANDOFF Section 7 questions; outreach to 25 CAs; repo and CI; rule spec v0; WhatsApp verification started |
 | 2 | 19-23 Oct | M0, M1 build | At least 12 CAs committed (HANDOFF gate); 25 supplier and 15 CA interviews done; 2-3 prototype CAs signed; 3-5 suppliers' exports received under consent; engine v0 and golden set v0 under way |
-| 3 | 26-30 Oct | M1 | Dashboard on real exports; English and Hindi templates; first approved reminders sent; filing pack v0; demo and go/no-go Fri 30 Oct |
+| 3 | 26-30 Oct | M1 | Dashboard on real exports; English and Hindi templates; first approved reminders; filing pack v0; demo and go/no-go Fri 30 Oct |
 | 4 | 2-6 Nov | M2 | Schema, auth, row-level security; ingestion service; engine v1 with versioned rules |
 | 5 | 9-13 Nov | M2 | Payment matching; golden set at 150 cases. Diwali is about 8 Nov (Assumption: check calendar); expect slow replies |
 | 6 | 16-20 Nov | M2 | Reminder engine, cadence, contact rules; golden set at 300 with CA sign-off; 100 anonymised ledgers collected |
 | 7 | 23-27 Nov | M2 | WhatsApp and email sending, opt-out; reply classifier; CA dashboard v1; MVP-flow campaigns for prototype suppliers (30 Nov cohort) |
-| 8 | 30 Nov-4 Dec | M2 | Review console; filing pack v1; audit log; regional-language templates; 200-letter grading |
+| 8 | 30 Nov-4 Dec | M2 | Review console; filing pack v1; audit log; regional templates; 200-letter grading |
 | 9 | 7-11 Dec | M2 | Hardening; security checklist; full eval run; release Fri 11 Dec |
 | 10-12 | 14 Dec-1 Jan | M3 | Pilot launch with holdout; onboarding; weekly outcome review; holiday slack; 60-day reads for the 28-30 Oct cohort |
 | 13 | 4-8 Jan | M3 | First success-fee invoices; three real filings supported |
@@ -60,19 +59,18 @@ Assumes a dedicated team of 1-3 from Mon 12 Oct 2026 (Assumption: product and CA
 
 ## 4. Prototype specification (M1, by Fri 30 Oct 2026)
 
-**Scope.** Real receivables for 3-5 suppliers through 2-3 CA partners. Everything a buyer sees is approved by the supplier (and the CA for formal wording) first.
+**Scope.** Real receivables for 3-5 suppliers through 2-3 CA partners. Supplier approval (and CA approval for formal wording) precedes anything a buyer sees.
 
 | Step | Prototype handling |
 |---|---|
 | Intake | CA or supplier emails a Tally, Excel or CSV debtors export; consent signed first |
 | Ingest and match | **Automated** parser; **manual** fixing of rejected rows and bank-credit matching |
 | Due date, interest, 43B(h) | **Automated** engine v0, no model involvement |
-| Buyer score | **Manual** days-to-pay table |
 | Drafting | **Automated**: template plus model personalisation; English and Hindi |
 | Approval and send | **Manual**: supplier approves; ops sends from the supplier's own account or a shared mailbox (no WhatsApp API) |
-| Reply handling | **Manual** triage; classifier run offline on logged replies |
+| Replies | **Manual** triage; classifier run offline |
 | Filing pack | **Automated** PDF v0; CA reviews; supplier files |
-| TReDS | Eligibility noted on the dashboard only |
+| Buyer score, TReDS | **Manual** days-to-pay table; TReDS eligibility noted only |
 
 **Demo script (10 minutes).**
 1. Upload a real client debtors export (with consent); show parsed rows and rejects.
@@ -115,7 +113,7 @@ Roles: Supplier (S), CA (C), Admin (A, the team's ops). Priorities follow HANDOF
 
 ### Core flow
 
-Onboard (CA invites; supplier consents; Udyam number, contacts and tone captured; key accounts protected) -> ingest (parse, dedupe, reconcile, exposure report) -> campaign (cadence proposed, drafts rendered, supplier approves, scheduler sends within contact rules) -> listen (replies classified; dispute, opt-out or promise date pauses the ladder) -> escalate (CA reviews notice; pack built; supplier files; outcome recorded).
+Onboard (CA invites; supplier consents; Udyam number, contacts and tone captured; key accounts protected) -> ingest (parse, dedupe, reconcile, exposure report) -> campaign (cadence proposed, drafts rendered, supplier approves, scheduler sends within contact rules) -> listen (replies classified; pause on dispute, opt-out or promise date) -> escalate (CA reviews notice; pack built; supplier files; outcome recorded).
 
 ## 6. Technical design
 
@@ -154,11 +152,11 @@ flowchart LR
 |---|---|---|
 | Core logic | Python 3.12, `Decimal`, pytest | Exact money maths; easy parsing and eval harness; one package serves prototype and MVP |
 | API and worker | FastAPI; Postgres-backed job queue and scheduled jobs | One datastore for a 1-3 person team |
-| Web | Next.js (TypeScript) for dashboard, review console and buyer page; **Streamlit for the M1 prototype only** | Streamlit ships a dashboard on the core package in days and is deleted after M2. A Python-only team can use FastAPI with server-rendered templates instead (decide in M0) |
+| Web | Next.js (TypeScript) for dashboard, review console and buyer page; **Streamlit for the M1 prototype only** | Streamlit ships a dashboard on the core package in days and is deleted after M2; a Python-only team can use server-rendered FastAPI instead (decide in M0) |
 | Data | Postgres on Supabase with row-level security, object storage, pgvector (HANDOFF Section 6) | Tenant isolation without custom code. India-region availability: Unverified |
-| Models | Claude API: mid-tier model for drafting; small model for reply classification; model IDs in config, never hard-coded | Matches HANDOFF; classification volume is high and cheap. No fine-tuning |
+| Models | Claude API: mid-tier model for drafting, small model for reply classification; IDs in config | Matches HANDOFF; classification is high-volume and cheap. No fine-tuning |
 | Retrieval | Hybrid keyword plus embeddings over a small versioned corpus (MSMED Act, amendment, Section 43B(h), Samadhaan procedure) | Small corpus; effective date stored on each document |
-| Messaging | Prototype: manual send. MVP: WhatsApp Cloud API or a BSP (Gupshup, Interakt), decided in M0; email via a transactional provider (for example SES or Postmark) | WhatsApp template and opt-in rules are unverified; email must work alone |
+| Messaging | Prototype: manual send. MVP: WhatsApp Cloud API or a BSP (Gupshup, Interakt), decided in M0; email via a transactional provider (for example SES) | WhatsApp template and opt-in rules unverified; email must work alone |
 | GST, e-invoice, Tally | Uploaded exports and Tally XML/Excel in the MVP; GST API via a licensed GSP/ASP later (Unverified); live Tally connector is P1 | Avoids licence delay and any dependence on Tally, whose TallyIra is a competitor |
 | PDF | HTML-to-PDF with embedded Noto Devanagari and regional fonts | Hindi notices must render correctly |
 
@@ -178,7 +176,7 @@ Three pure functions own every number. They take a `rule_set` version and return
 
 ### 6.5 Messages, ladder and conduct
 
-**Drafting design.** Each step has a reviewed template per language with named slots (`{principal}`, `{due_date}`, `{interest_accrued}`, `{interest_as_of}`, `{limit_date_43bh}`). The model personalises phrasing around the slots; the renderer fills them from tool output. The post-check blocks any message containing a numeral, date or legal citation outside the slot values and the approved citation list, or any banned phrase (threats, false legal claims). Failures are logged and never sent.
+**Drafting design.** Each step has a reviewed template per language with named slots (`{principal}`, `{due_date}`, `{interest_accrued}`, `{interest_as_of}`, `{limit_date_43bh}`). The model personalises phrasing around slots; the renderer fills them from tool output. The post-check blocks any message containing a numeral, date or legal citation outside the slot values and the approved citation list, or any banned phrase (threats, false legal claims). Failures are logged and never sent.
 
 **Default escalation ladder (Assumption, HANDOFF Section 5).** Days count from the acceptance date A for the standard 45-day case; other terms re-anchor to the due date D and the 15/45-day limit in config. HANDOFF does not say what anchors "day-30"; this plan uses A and confirms it in M0 interviews.
 
@@ -194,7 +192,7 @@ Three pure functions own every number. They take a `rule_set` version and return
 
 Protected buyers skip steps 1-3. A dispute, opt-out or promise date pauses the ladder until a human resumes it. Letters cite only confirmed provisions, excluding the amendment until assent and commencement are confirmed (HANDOFF Section 12).
 
-**Contact rules, enforced in code (HANDOFF Section 7).** Contact 8am-9pm only; at most 7 contacts per 7 days per buyer contact (Assumption); only named AP, finance or tax staff; no threats or false legal claims; AI-assistance and on-behalf-of disclosure on every message; opt-out honoured at once; pause on dispute.
+**Contact rules, enforced in code (HANDOFF Section 7).** 8am-9pm only; at most 7 contacts per 7 days per contact (Assumption); named AP, finance or tax staff only; no threats or false legal claims; AI-assistance and on-behalf-of disclosure; opt-out honoured at once; pause on dispute.
 
 **Consent.** Supplier consent (purpose, data, contacts, retention) is recorded before any upload. The lawful basis for messaging a buyer's named employee is an open legal question (HANDOFF Section 7); until counsel answers, the first message carries a notice and an opt-out.
 
@@ -250,7 +248,7 @@ Suites run in CI on every change touching `packages/core`, `templates`, `corpus`
 | Adversarial replies (prompt injection) | 50 | Replies causing any tool action or policy bypass | 0 | Yes |
 | Tenant isolation | Automated | Cross-tenant reads | 0 | Yes |
 
-**Golden set (300 cases):** due date with and without agreement or deemed acceptance, 60; single-period interest, 80; interest across rate changes, 40; partial payments, 50; 43B(h) year boundaries, 40; edge cases (leap years, month ends, same-day payment), 30. A CA computes each case independently of the code; disagreements go to counsel and are recorded in the rule set.
+**Golden set (300 cases):** due date with and without agreement or deemed acceptance, 60; single-period interest, 80; interest across rate changes, 40; partial payments, 50; 43B(h) year boundaries, 40; edge cases (leap years, month ends, same-day payment), 30. A CA computes each case independently; disagreements go to counsel and are recorded in the rule set.
 
 **Regression rule.** Every fixed bug adds a case to its suite; every rule-set change reruns all suites and attaches the report to the pull request.
 
@@ -279,7 +277,7 @@ No gate is passed on assumption; counsel's written answers are recorded in [DECI
 | Contingency | 15% | ₹4-4.5 lakh |
 | **Total** | | **About ₹30-34 lakh** |
 
-A smaller team lowers the first line proportionally. HANDOFF Section 8 break-even is about 273 suppliers (about 28 CAs) on the base case and about 1,500 on the downside; the pilot tests its inputs (attributable recovery, fee collection, review minutes per case).
+A smaller team lowers the first line. HANDOFF Section 8 break-even is about 273 suppliers (about 28 CAs) on the base case and about 1,500 on the downside; the pilot tests its inputs (attributable recovery, fee collection, review minutes per case).
 
 ## 11. Definition of done
 
@@ -306,5 +304,4 @@ A smaller team lowers the first line proportionally. HANDOFF Section 8 break-eve
 - Counsel engaged by 16 Oct; a practising CA for the golden set (60 cases by 27 Oct, 300 by 20 Nov).
 - 2-3 prototype CAs and 3-5 consenting suppliers.
 - WhatsApp verification started in week 1; Anthropic API, Supabase and email accounts.
-- Native-speaker reviewers (regional language pending: HANDOFF Section 13).
-- RBI bank-rate history with URLs and effective dates.
+- Native-speaker reviewers (regional language pending: HANDOFF Section 13); RBI bank-rate history with sources.

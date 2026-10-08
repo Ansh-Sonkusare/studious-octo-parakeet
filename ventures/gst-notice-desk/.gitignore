@@ -1,0 +1,62 @@
+# OS and editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+htmlcov/
+dist/
+build/
+
+# Node
+node_modules/
+.next/
+out/
+.turbo/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tsbuildinfo
+coverage/
+
+# Local databases and logs
+*.sqlite3
+*.db
+*.log
+supabase/.temp/
+
+# Real data: never commit (see CONTRIBUTING.md)
+data/
+evals/private/
+evals/labels/
+partner-data/
+*.xlsx
+*.xls
+*.csv
+*.pdf
+!evals/fixtures/**/*.xlsx
+!evals/fixtures/**/*.csv
+!evals/fixtures/**/*.pdf
+!docs/**/*.pdf
+!docs/**/*.csv
