@@ -1,0 +1,353 @@
+[
+  {
+    "title": "Commission legal opinion on the HANDOFF open legal questions",
+    "body": "## Context\nHANDOFF Section 7 lists open questions that gate messaging, notices, filing packs and fees. Counsel's written answers drive the rule set and gates G1-G4 in docs/PROTOTYPE_AND_MVP_PLAN.md. Nothing below is confirmed yet.\n\n## Tasks\n- [ ] Shortlist 2-3 firms with MSME, tax and data-protection experience; get fixed-fee quotes\n- [ ] Send a written scope covering: assent, commencement and transition of the MSMED (Amendment) Bill 2026; whether non-lawyers may assemble Council filings; enforceability of success-fee contracts; interest basis, compounding and eligibility (registration before contract, trading-only suppliers); lawful basis for messaging a buyer's named employee; WhatsApp policy fit for payment reminders\n- [ ] Ask for a preliminary view on the messaging question by 30 Oct (gate G1) and a full opinion by 20 Nov (gates G2-G3)\n- [ ] Record each answer, date and author in a decision record\n\n## Acceptance criteria\n- Engagement letter signed and scope sent by Fri 16 Oct 2026\n- Each open question has an owner and a due date\n- Budget approved (planning estimate Rs 2-4 lakh, Assumption)\n",
+    "labels": [
+      "type:legal",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Draft consent, notice and DPDP terms for suppliers and buyer contacts",
+    "body": "## Context\nSupplier consent is required before any upload (gate G0). Buyer contacts are individuals; DPDP rules were notified Nov 2025 with most duties from about May 2027 and IT Act SPDI Rules applying meanwhile. The supplier is the fiduciary and the product the processor (Inference; counsel to confirm).\n\n## Tasks\n- [ ] Draft supplier consent covering purpose, data, buyer contacts, retention and deletion, in English and Hindi\n- [ ] Draft the first-message notice and opt-out wording for buyer contacts\n- [ ] Draft the processor terms and a one-page data-handling note for design-partner CAs\n- [ ] Send drafts to counsel for review\n\n## Acceptance criteria\n- Consent text is versioned and linkable from the consents table\n- Counsel has reviewed drafts, or the review date is set\n- No supplier data is accepted before the consent is signed\n",
+    "labels": [
+      "type:legal",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Recruit CA design partners (25 approached, at least 12 committed)",
+    "body": "## Context\nThe CA is the buyer and channel (ADR-001). HANDOFF gate for weeks 0-2: at least 12 CAs commit. Late October is tax-audit and ITR season, so CA availability is an Assumption risk.\n\n## Tasks\n- [ ] List 25 CAs from warm networks and ICAI branch contacts\n- [ ] Prepare a one-page offer: free 43B(h) and interest exposure audit, pilot terms, review responsibilities\n- [ ] Run outreach and track in a CRM sheet\n- [ ] Select 2-3 prototype CAs by Fri 23 Oct\n\n## Acceptance criteria\n- At least 12 CAs have confirmed in writing (email suffices) by Fri 23 Oct 2026\n- 2-3 prototype CAs each name 1-3 willing suppliers\n- Reasons for declines logged\n",
+    "labels": [
+      "type:gtm",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Run 25 supplier and 15 CA interviews",
+    "body": "## Context\nHANDOFF Section 10 weeks 0-2. Interviews test willingness to pay, relationship-guard needs, tone, language and the anchor for the day-30 warning step.\n\n## Tasks\n- [ ] Write the interview guides (supplier, CA)\n- [ ] Schedule and run 15 CA and 25 supplier interviews\n- [ ] Ask about Zoho, Clear and Recordent (HANDOFF notes these were not surveyed)\n- [ ] Write a synthesis note without personal data\n\n## Acceptance criteria\n- 40 interviews logged with dates by Fri 23 Oct 2026\n- Synthesis note lists top 5 findings and any change to the plan\n- Questions on regional language, pricing model and first buyer segment have evidence\n",
+    "labels": [
+      "type:research",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Collect anonymised ledgers and exports (25 by 23 Oct, 100 by 20 Nov)",
+    "body": "## Context\nReal Tally, Excel and CSV exports are needed to build parsers and the ledger-matching eval (100 ledgers; at least 95% precision and 90% recall). The repo must never contain customer data; see CONTRIBUTING.md.\n\n## Tasks\n- [ ] Define the anonymisation procedure (names, GSTIN, phones removed; amounts and dates kept)\n- [ ] Collect exports through prototype and design-partner CAs under consent\n- [ ] Store originals outside the repository with access limited to named staff\n- [ ] Log format variants found (Tally versions, Excel layouts)\n\n## Acceptance criteria\n- 25 anonymised ledgers by Fri 23 Oct and 100 by Fri 20 Nov 2026\n- Anonymisation checked by a second person per batch\n- Format variant list published in docs/\n",
+    "labels": [
+      "type:research",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Start WhatsApp Business verification and choose the sending route",
+    "body": "## Context\nWhatsApp is the primary channel but API approval is a flagged hard part and template and opt-in rules are unverified (HANDOFF Section 6). Email is the fallback. Decision pending: Cloud API directly or a BSP (Gupshup, Interakt).\n\n## Tasks\n- [ ] Compare Cloud API and two BSPs on onboarding time, template approval, cost and data location\n- [ ] Start business verification with the chosen route\n- [ ] Read current policy on utility templates and opt-in; record gaps for counsel\n- [ ] Set up a fallback email sender\n\n## Acceptance criteria\n- Route chosen and recorded as a decision by Fri 23 Oct 2026\n- Verification submitted\n- Template and opt-in rules written up with source links, flagged Unverified until confirmed\n",
+    "labels": [
+      "type:ops",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Decide open product questions from HANDOFF Section 13",
+    "body": "## Context\nSeveral decisions block M1 and M2: regional language after Hindi, first CA cluster, lead pricing model, first TReDS platform, first buyer segment (CPSEs or private large corporates), reviewer arrangement, offshore model processing acceptability, Recordent compete or partner.\n\n## Tasks\n- [ ] Prepare a one-page options note per question using interview evidence\n- [ ] Hold a decision session at the end of week 2\n- [ ] Record each decision in docs/DECISIONS.md\n\n## Acceptance criteria\n- Every question is answered or has an owner and date\n- Regional language chosen so templates and native reviewers can be lined up\n- Pricing hypothesis for the prototype agreed (success fee with CA share is the lead hypothesis)\n",
+    "labels": [
+      "type:research",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Write rule specification v0 and verify Sections 15, 16 and 43B(h) sources",
+    "body": "## Context\nThe calculators implement rules some of which are Unverified: interest at three times the RBI bank rate compounded monthly; deemed acceptance; whether the GST component counts; treatment of payments after year end. Also monitor assent and commencement of the amendment weekly.\n\n## Tasks\n- [ ] Collect primary texts (Act, Finance Act 2023 provision, RBI bank-rate notifications) with URLs and dates\n- [ ] Write the rule spec: inputs, outputs, parameters, defaults, and every Unverified item with an owner\n- [ ] Build the RBI bank-rate history table with effective dates\n- [ ] Set a weekly check for assent and commencement news and record the outcome\n\n## Acceptance criteria\n- Rule spec v0 reviewed by a practising CA by Fri 23 Oct 2026\n- Each Unverified item has an owner and an expected resolution date\n- Rate table has sources for every row\n",
+    "labels": [
+      "type:legal",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Set up repository, CI and development environment",
+    "body": "## Context\nThe layout is in docs/PROTOTYPE_AND_MVP_PLAN.md Section 7. CI must be able to run the eval harness from M1.\n\n## Tasks\n- [ ] Create the private repo and branch protection\n- [ ] Add Python and Node tooling, linters, pre-commit, secret scanning\n- [ ] Create a CI job skeleton that runs unit tests and a placeholder eval step\n- [ ] Add a synthetic-data fixture folder and a check that rejects files outside it in evals/\n\n## Acceptance criteria\n- CI is green on main by Fri 16 Oct 2026\n- Secret scanning enabled\n- CONTRIBUTING.md rules enforced by a pre-commit check where possible\n",
+    "labels": [
+      "type:ops",
+      "priority:P1"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Build due-date, interest and 43B(h) engine v0",
+    "body": "## Context\nDeterministic tools own every number (ADR-003). Functions: compute_due_date, compute_interest, compute_43bh_exposure. Use Decimal and integer paise. Rule parameters (multiplier, compounding, day count, allocation order) live in a versioned rule set because the legal basis is Unverified.\n\n## Tasks\n- [ ] Implement the three functions with a trace output (inputs, rule IDs, rate rows)\n- [ ] Implement the rate table lookup by effective date\n- [ ] Support partial payments and the configurable allocation order\n- [ ] Add unit tests per rule and property tests (monotonic interest, zero-day cases)\n\n## Acceptance criteria\n- Matches the 60-case golden set at 100% (issue: Golden set v0)\n- No floating-point money arithmetic anywhere in packages/core/calc\n- Every result carries the rule-set version and a human-readable trace\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Create golden set v0 (60 cases) with CA sign-off",
+    "body": "## Context\nThe CA computes each case independently of the code. Cases: due date 12, single-period interest 16, interest across rate changes 8, partial payments 10, 43B(h) year boundaries 8, edge cases 6 (proportional to the 300-case target).\n\n## Tasks\n- [ ] Agree the case file format (YAML or JSON)\n- [ ] CA authors 60 cases with workings\n- [ ] Run against the engine and resolve disagreements; send rule questions to counsel\n- [ ] Commit the cases (synthetic data only)\n\n## Acceptance criteria\n- 60 cases signed off by the CA by Tue 27 Oct 2026\n- Disagreements recorded with resolution\n- Cases load in the eval harness\n",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Build Tally XML, Excel and CSV importers v0",
+    "body": "## Context\nPrototype input is debtors exports from Tally, Excel and CSV. Target: at least 90% of rows from real exports parse without manual fix (Assumption).\n\n## Tasks\n- [ ] Implement parsers for Tally XML and common Excel/CSV debtor layouts\n- [ ] Map to invoice, buyer and payment records; output a reject report with reasons\n- [ ] Handle date formats, number formats and duplicate invoice numbers\n- [ ] Test against the anonymised ledgers collected so far\n\n## Acceptance criteria\n- At least 90% of rows from the first 20 ledgers parse without manual fixes\n- Rejects list names the row and reason\n- No customer data in test fixtures\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Build receivables dashboard prototype on real exports",
+    "body": "## Context\nStreamlit on top of packages/core (plan Section 6.2). Shows overdue totals, 43B(h) exposure at 31 Mar 2027, interest accrued by buyer and invoice, with trace links. Doubles as the free exposure audit lead magnet.\n\n## Tasks\n- [ ] Upload, parse and display screens\n- [ ] Buyer table sorted by exposure and age\n- [ ] Invoice detail with due-date and interest working\n- [ ] Export to PDF or Excel for the CA\n\n## Acceptance criteria\n- Upload to report in under 5 minutes for a 5,000-row ledger\n- Every figure shown equals engine output\n- Used live in at least 2 CA demos\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Write message templates v0 (English, Hindi) and the escalation ladder config",
+    "body": "## Context\nSeven-step ladder (plan Section 6.5): heads-up A+30, courtesy D-3, due-date nudge D, notice with 43B(h) and interest A+46, finance-head statement A+52, formal notice A+60, filing pack A+60 to A+75. Anchors and offsets are Assumptions; no threats; AI-assistance and on-behalf-of disclosure; opt-out line.\n\n## Tasks\n- [ ] Write templates with named slots for steps 1-5 in English and Hindi\n- [ ] Put the cadence in a config file with the 15/45-day limit parameter\n- [ ] Define the banned phrase list and the approved citation list (only confirmed provisions)\n- [ ] Native-speaker review of the Hindi text\n\n## Acceptance criteria\n- Templates render with fake data and pass the post-check\n- Hindi reviewed by a native speaker\n- No template cites the amendment (gate G2)\n",
+    "labels": [
+      "type:design",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Build drafting with slot rendering and post-check v0",
+    "body": "## Context\nThe model personalises phrasing around slots; a renderer fills values from tool output; the post-check blocks any numeral, date or citation not in slots or the approved list (ADR-003). Model IDs are configuration.\n\n## Tasks\n- [ ] Implement slot rendering and the Claude API call with tokenised personal data\n- [ ] Implement the post-check (numerals, dates, citations, banned phrases)\n- [ ] Log every blocked draft with the reason\n- [ ] Add 40 test drafts including adversarial prompts\n\n## Acceptance criteria\n- Zero messages with figures outside tool output across the 40 test drafts\n- Blocked drafts are never sent\n- Personal data tokenisation verified by test\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Create the eval harness and CI wiring",
+    "body": "## Context\nEvals gate every change (plan Section 8). Suites at M1: golden set 60, letters 40, replies 150, ledgers 20.\n\n## Tasks\n- [ ] Implement evals/run_evals.py reading evals/thresholds.yaml\n- [ ] Report per-suite results as a CI artifact and PR comment\n- [ ] Fail the build when a blocking suite misses its threshold\n- [ ] Document how to add a case\n\n## Acceptance criteria\n- CI fails when a golden case is deliberately broken\n- Report is readable by a non-engineer\n- Runs in under 10 minutes\n",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Run the concierge service for 3-5 suppliers and write the ops runbook",
+    "body": "## Context\nManual collections via 2-3 CAs. Supplier approves each message; ops sends from the supplier's own account or a shared mailbox. Charge terms follow a counsel-reviewed paid-pilot letter, or the pilot runs unpaid if review is late (ADR-007).\n\n## Tasks\n- [ ] Sign consents (gate G0) and load exports\n- [ ] Agree protected buyers and tone per supplier\n- [ ] Send and log at least 20 approved reminders; log replies and outcomes in a tracking sheet\n- [ ] Write the runbook: steps, timings, exceptions, escalation to the CA\n- [ ] Record time spent per step to find what to automate (about 20 repetitions)\n\n## Acceptance criteria\n- 3-5 suppliers live by Wed 28 Oct 2026\n- At least 20 reminders sent, each approved and logged\n- Time-per-step data captured\n",
+    "labels": [
+      "type:ops",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Build filing pack v0 and get a CA defect review",
+    "body": "## Context\nThe pack holds invoices, PO, GRN, IRN where supplied, GST filings, ledger, correspondence log and interest computation. The supplier files with their own login and OTP. Whether non-lawyers may assemble filings is an open legal question (gate G3), so v0 is a draft for CA review only.\n\n## Tasks\n- [ ] Implement the pack builder with a missing-items list\n- [ ] Render Hindi and English cover pages with correct fonts\n- [ ] Generate one pack from a real consenting supplier\n- [ ] CA reviews and returns a written defect list\n\n## Acceptance criteria\n- One pack reviewed with a defect list by Thu 29 Oct 2026\n- Missing documents listed rather than silently omitted\n- Not delivered to any buyer or authority\n",
+    "labels": [
+      "type:build",
+      "priority:P1"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Prototype demo, CA readout and M2 go/no-go",
+    "body": "## Context\nFri 30 Oct is the M1 gate. Evidence for continuing: prototype success criteria in plan Section 4.\n\n## Tasks\n- [ ] Run the 10-minute demo script with at least 2 CAs\n- [ ] Ask each CA whether they would pay and on what terms\n- [ ] Compile a one-page readout against the M1 criteria\n- [ ] Hold the go/no-go and record it\n\n## Acceptance criteria\n- Demo delivered to at least 2 CAs by Fri 30 Oct 2026\n- Go/no-go recorded with reasons\n- Changes to the M2 plan listed\n",
+    "labels": [
+      "type:gtm",
+      "priority:P1"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Multi-tenant schema, authentication and row-level security",
+    "body": "## Context\nTenant isolation per CA and supplier on Postgres (Supabase). The India-region option is Unverified. Data model in plan Section 6.3; amounts stored as integer paise.\n\n## Tasks\n- [ ] Write migrations for core tables with tenant_id\n- [ ] Implement roles (ca, supplier, admin) and invitation flows\n- [ ] Write RLS policies and an automated cross-tenant access test\n- [ ] Choose the region and record residency in a decision record\n\n## Acceptance criteria\n- Cross-tenant test returns zero rows in CI\n- Roles enforced on every route\n- Migrations reproducible from scratch\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Production ingestion service with dedupe and error reports",
+    "body": "## Context\nProductionises the M1 importers: upload, async parse, dedupe, row-level error report. Includes e-invoice JSON and bank CSV/PDF where available.\n\n## Tasks\n- [ ] Move parsers behind the ingestion API with batch records\n- [ ] Add dedupe and idempotent re-upload\n- [ ] Add e-invoice JSON and bank CSV parsers\n- [ ] Show rejects to the supplier and CA\n\n## Acceptance criteria\n- At least 90% automatic parse rate on the 100-ledger set (Assumption)\n- Re-uploading the same file creates no duplicates\n- Batch history visible in the console\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Payment matching with precision and recall thresholds",
+    "body": "## Context\nMatch bank credits to invoices; flag duplicates and unmatched receipts. HANDOFF target on 100 anonymised ledgers: at least 95% precision, 90% recall.\n\n## Tasks\n- [ ] Implement match_payments with amount, date, reference and fuzzy narration rules\n- [ ] Surface low-confidence matches for human confirmation\n- [ ] Add the ledger suite to the eval harness\n- [ ] Tune against 100 ledgers without overfitting; hold out 20\n\n## Acceptance criteria\n- Precision at least 95% and recall at least 90% on the held-out set\n- Unmatched items land in the admin exception queue\n- Suite is blocking in CI\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Engine v1: versioned rule sets, rate tables and the 300-case golden set",
+    "body": "## Context\nCompletes the correctness gate. Golden set composition: due date 60, single-period interest 80, rate changes 40, partial payments 50, 43B(h) boundaries 40, edge cases 30. Rate changes need a second person's approval (story A-2).\n\n## Tasks\n- [ ] CA authors the remaining 240 cases by Fri 20 Nov\n- [ ] Version rule sets by effective date with a legal-confirmation status\n- [ ] Add an admin screen for rate tables with two-person approval\n- [ ] Re-run the full suite automatically on rule-set change\n\n## Acceptance criteria\n- 300 cases at 100% and blocking in CI by Fri 20 Nov 2026\n- Each rule set shows which counsel answers it depends on\n- Rule-set change attaches an eval report to the PR\n",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Reminder engine: scheduler, cadence and contact rules in code",
+    "body": "## Context\nEnforces HANDOFF conduct rules: contact 8am-9pm only; at most 7 contacts per 7 days per contact (Assumption); named AP, finance or tax staff only; no threats; disclosure on every message; pause on dispute or opt-out.\n\n## Tasks\n- [ ] Implement the cadence from config with re-anchoring for 15- and 45-day cases\n- [ ] Enforce the time window and contact cap at send time\n- [ ] Block sends to non-named contacts and protected buyers\n- [ ] Property-test the rules\n\n## Acceptance criteria\n- No message can be sent outside the window or over the cap (test proves it)\n- Protected buyers never receive automated messages\n- Every skip is logged with a reason\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Approval gates and relationship guard",
+    "body": "## Context\nNo automated message before approval (ADR-004). The supplier approves each campaign and each escalation wording; a CA approves formal notices; protected buyers are excluded.\n\n## Tasks\n- [ ] Build campaign approval and per-buyer pause controls\n- [ ] Implement CA approval for formal notices with edit history\n- [ ] Log every approval in the audit log\n- [ ] Add a one-click stop that takes effect in under a minute\n\n## Acceptance criteria\n- Stories S-2, S-4 and C-2 pass their acceptance criteria\n- Send API rejects any unapproved message\n- Approver and time recorded for each message\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "WhatsApp and email sending, delivery receipts and opt-out",
+    "body": "## Context\nDepends on the verification started in M0 (plan Section 12 risk). Email must work alone. Opt-out must block all channels immediately.\n\n## Tasks\n- [ ] Integrate the chosen WhatsApp route and an email provider\n- [ ] Store delivery and read receipts as message events\n- [ ] Process STOP replies and links as opt-outs across channels\n- [ ] Add rate limiting and retry with backoff\n\n## Acceptance criteria\n- Opt-out blocks all channels within 1 minute in a test\n- Delivery receipts stored for both channels\n- Email-only mode passes the full flow test\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Reply classification, pause logic and adversarial test suite",
+    "body": "## Context\nA small model classifies replies as acknowledged, promise date, dispute or stop. Replies are untrusted text; they never trigger tool actions directly. Thresholds: macro-F1 at least 0.90; opt-out recall at least 99%; dispute recall at least 97% (Assumption).\n\n## Tasks\n- [ ] Label 300 replies across English, Hindi, mixed and the regional language\n- [ ] Implement the classifier and the pause/resume logic\n- [ ] Build 50 prompt-injection replies and assert zero tool actions\n- [ ] Add both suites to CI\n\n## Acceptance criteria\n- Thresholds met on a held-out set\n- Zero policy bypasses in the adversarial suite\n- Promise dates create follow-up tasks (story S-5)\n",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "CA multi-client dashboard and review console",
+    "body": "## Context\nNext.js app (plan Section 6.2): all clients on one dashboard, exposure sorting, formal notice review queue, exception queue for admin.\n\n## Tasks\n- [ ] Build dashboard, client detail and review queue\n- [ ] Add an exceptions queue with owner, age and reason codes\n- [ ] Add exports for CA billing records\n- [ ] Usability test with 2 design-partner CAs\n\n## Acceptance criteria\n- Stories C-1, C-2 and A-1 pass\n- A CA sees only own clients\n- Both CAs complete the review task unaided\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Filing pack v1 and TReDS eligibility flag",
+    "body": "## Context\nBuilds on pack v0 and CA defect list. Gate G3 (counsel's view on non-lawyers assembling filings) governs delivery. TReDS is referral only; eligibility needs buyer and invoice on a platform, and platform terms are not researched.\n\n## Tasks\n- [ ] Fix defects from the v0 review; add a completeness checklist\n- [ ] Add the TReDS eligibility flag from buyer and invoice attributes\n- [ ] Research one platform's onboarding terms and record them\n- [ ] Produce 3 packs for review before M3\n\n## Acceptance criteria\n- Story C-3 passes\n- Missing items listed on the first page\n- Flag stored without any money movement\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Third-language templates and native-speaker review",
+    "body": "## Context\nHANDOFF requires English, Hindi and one regional language. The regional language is chosen in M0. Reviewed templates are the fixed text the model personalises around.\n\n## Tasks\n- [ ] Translate and adapt the ladder templates\n- [ ] Native-speaker review of each template and the notice\n- [ ] Test font rendering in PDF and WhatsApp\n- [ ] Add reviewer sign-off to the template metadata\n\n## Acceptance criteria\n- All ladder steps 1-5 approved by a native reviewer\n- PDF renders correctly\n- Letter suite includes the language\n",
+    "labels": [
+      "type:design",
+      "priority:P1"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Letter evaluation: 200 generated letters graded",
+    "body": "## Context\nHANDOFF target: citation precision at least 95%, zero invented provisions, reviewer edit rate under 30% by week 12. Native-speaker review per language.\n\n## Tasks\n- [ ] Generate 200 letters across steps, buyers and languages\n- [ ] CA and native reviewers grade using a rubric (citation, tone, accuracy, completeness)\n- [ ] Fix templates or prompts and re-run\n- [ ] Add the rubric and results to evals/letters\n\n## Acceptance criteria\n- Citation precision at least 95% and zero invented provisions\n- Edit-rate baseline recorded\n- Result attached to the M2 release\n",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Append-only audit log with hash chain",
+    "body": "## Context\nRecords inputs, retrieved document versions, tool calls, model version, drafts, approver and delivery receipts. Hash-chained (Inference). Application role has no UPDATE or DELETE.\n\n## Tasks\n- [ ] Create the audit table and write path in API and worker\n- [ ] Hash chain with daily head export to write-once storage\n- [ ] Write a verification script and CI test with a tampered fixture\n- [ ] Build an audit view for the admin\n\n## Acceptance criteria\n- Verification script detects a modified row\n- Every outbound message traces to its inputs and approver\n- DB grants verified by test\n",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "DPDP retention, deletion flow, breach runbook and security checklist",
+    "body": "## Context\nRules notified Nov 2025, most duties from about May 2027. Build notice, retention and deletion now. Includes redaction before model calls and vendor no-training terms.\n\n## Tasks\n- [ ] Define retention periods per table (counsel to confirm)\n- [ ] Implement deletion for a supplier or buyer contact\n- [ ] Write the breach runbook and test it once\n- [ ] Complete a security checklist: secrets, backups, access review, dependency scanning\n\n## Acceptance criteria\n- Story A-3 passes\n- Runbook rehearsed with a tabletop exercise\n- No personal data in model prompts (test)\n",
+    "labels": [
+      "type:legal",
+      "priority:P1"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Buyer confirm, dispute and promise-date page",
+    "body": "## Context\nThe agent should make paying easy for the buyer: one statement, clear references, a no-login link to confirm, dispute or give a promise date (HANDOFF Section 3).\n\n## Tasks\n- [ ] Build a signed-link page and statement view\n- [ ] Capture response and route it to the classifier outcome\n- [ ] Show payment references clearly\n- [ ] Mobile layout test\n\n## Acceptance criteria\n- Story A-5 passes\n- A dispute pauses the ladder\n- Links expire and cannot be guessed\n",
+    "labels": [
+      "type:build",
+      "priority:P1"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Launch the pilot cohorts with a delayed-start holdout",
+    "body": "## Context\nThe 60-day recovery metric is readable only for invoices first reminded by 30 Nov 2026. Later cohorts are read at 30 days and marked interim. Holdout: matched invoices get their first reminder 30 days later (Assumption), so no supplier is denied the service.\n\n## Tasks\n- [ ] Define cohorts and the matching rule before launch\n- [ ] Onboard cohorts from Mon 14 Dec; close onboarding Fri 15 Jan\n- [ ] Track every invoice's first-reminder date and payment date\n- [ ] Publish a weekly outcome report\n\n## Acceptance criteria\n- Pilot live Mon 14 Dec 2026\n- Holdout method written and reviewed before the first holdout invoice\n- Target 100 suppliers via 15 CAs; floor 40 via 8\n",
+    "labels": [
+      "type:ops",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Weekly outcome review and reviewer-minutes tracking",
+    "body": "## Context\nReview minutes per case target under 20 and contribution per supplier above Rs 15,000 a year (HANDOFF Section 11). Relationship damage is measured as suppliers disabling automation for a buyer (continue if under 10%).\n\n## Tasks\n- [ ] Log reviewer minutes per case and edit rates\n- [ ] Record disabled-buyer events and reasons\n- [ ] Review weekly and adjust cadence within the contact rules\n- [ ] Keep an error log of any wrong figure or citation\n\n## Acceptance criteria\n- Weekly report issued every Friday from 18 Dec 2026\n- Any wrong figure triggers a new golden-set case within 2 working days\n- Metrics defined as in HANDOFF Table 7\n",
+    "labels": [
+      "type:ops",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Test fee collection: invoices first, e-mandate if compliant",
+    "body": "## Context\nLead hypothesis is a success fee with a CA share, SaaS as fallback (Assumption). Fee collection of at least 70% is the continue threshold. Automated debit needs RBI e-mandate compliance (24-hour notice; extra authentication above Rs 15,000) and counsel review of the contract (gate G4).\n\n## Tasks\n- [ ] Issue fee invoices with a payment link for attributable recoveries\n- [ ] Agree attribution rules with CAs before first invoice\n- [ ] Evaluate an e-mandate flow only if counsel clears the contract\n- [ ] Record disputes about attribution\n\n## Acceptance criteria\n- Fee terms signed with each paying CA\n- Collection rate tracked weekly\n- At least 30% of design-partner CAs on paid terms is measured\n",
+    "labels": [
+      "type:gtm",
+      "priority:P1"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Support three real filings with suppliers",
+    "body": "## Context\nHANDOFF target: at least 10 packs generated, 3 filed, none rejected for pack defects. The supplier files with their own login and OTP. Never mass-file.\n\n## Tasks\n- [ ] Select suppliers with eligible, unpaid invoices past A+60\n- [ ] CA reviews each pack; supplier files\n- [ ] Record outcomes, rejections and reasons\n- [ ] Update the pack checklist from lessons\n\n## Acceptance criteria\n- At least 10 packs generated and 3 filed by Fri 22 Jan 2027\n- No pack rejected for a pack defect, or defects fixed and logged\n- Counsel's gate G3 view is on file before delivery\n",
+    "labels": [
+      "type:ops",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Unit-economics read-out and decision memo",
+    "body": "## Context\nFinal deliverable on Fri 29 Jan 2027: continue, pivot or stop, using HANDOFF Section 11 thresholds. Pivots listed there: per-client CA licences; sell the interest and pack engine as a CA tool; reuse CA relationships for the GST reconciliation and notice desk.\n\n## Tasks\n- [ ] Rebuild the HANDOFF Section 8 unit economics on actuals (recovery, fee collection, review minutes)\n- [ ] Compute every Section 11 metric with the holdout method stated\n- [ ] Interview pilot CAs and suppliers on willingness to pay\n- [ ] Draft the memo with a recommendation and next-90-day plan; read out to stakeholders\n\n## Acceptance criteria\n- Memo delivered Fri 29 Jan 2027\n- Each metric shows value, threshold and verdict\n- Limitations (cohort sizes, interim reads) stated\n",
+    "labels": [
+      "type:gtm",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  }
+]
