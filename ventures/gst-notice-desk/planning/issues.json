@@ -1,0 +1,362 @@
+[
+  {
+    "title": "Interview 20 CA firms on GST notice and reconciliation pain",
+    "body": "**Context.** HANDOFF phase 0 needs at least 8 of 20 CAs to confirm a paid pain. Two evidence gaps are open: notice volume per client and CA time and fee per notice (no official or independent data; see docs/research/unsolved_smb_payments.md, Problem 3 gaps). Interviews also recruit design partners.\n\n**Tasks**\n- [ ] Write the interview script (workflow, tools used, notices per client per year, hours and fee per notice, supplier-chasing habits, willingness to pay, data-sharing concerns)\n- [ ] Book 8+ interviews in week 1 and finish 20 by 23 Oct 2026 via warm introductions, ICAI branch events and CA groups\n- [ ] Log each interview in a shared sheet (no client names or data)\n- [ ] Write a one-page synthesis: confirmed paid pain count, notice volume range, time and fee per notice, objections\n\n**Acceptance criteria**\n- 20 interviews logged by 23 Oct 2026\n- Synthesis states the count of CAs confirming a paid pain against the 8-of-20 gate\n- Notice volume and time-per-notice ranges are labelled as interview-based estimates, not facts",
+    "labels": [
+      "type:research",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Competitor teardown: Clear, Suvit, Zoho Books, Tally (TallyIra), Accu Reco",
+    "body": "**Context.** HANDOFF flags Clear, Zoho and Vayana as not surveyed and notice-drafting at Clear, Zoho and Suvit as unknown. Tally shipped built-in AI in June 2026; Suvit holds the ICAI channel and price anchor. The wedge is the action and notice layer, so the teardown must test exactly that.\n\n**Tasks**\n- [ ] Use trial accounts or partner screenshares to test reconciliation, supplier chasing, notice handling and multi-client views in each product\n- [ ] Record pricing, plans and ICAI discounts where visible\n- [ ] Score each against a fixed checklist: 2B vs books, IMS support, supplier chase, notice intake, draft reply, audit trail, multi-client dashboard\n- [ ] Write findings to docs/research-notes (committed, no screenshots of customer data)\n\n**Acceptance criteria**\n- Five products assessed against the same checklist\n- Each cell marked verified-by-test or unverified\n- Threat levels in HANDOFF section 4 confirmed or updated",
+    "labels": [
+      "type:research",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Recruit and sign 3-5 design-partner CA firms",
+    "body": "**Context.** The prototype needs real anonymised 2B and purchase-register exports and real notices from 3-5 firms by 23 Oct 2026. Partners get free shadow-mode use and a say in the product; the team gets data and labelling access.\n\n**Tasks**\n- [ ] Shortlist 10 candidates from interviews, favouring firms with 20+ GSTINs on Tally or Excel\n- [ ] Agree what each partner provides: 2 months of 2B plus matching purchase registers for 3-10 GSTINs, 5+ notices\n- [ ] Sign the data-sharing terms (see legal issue) and hand over the anonymiser\n- [ ] Schedule a 30-minute demo slot for 30 Oct\n\n**Acceptance criteria**\n- 3-5 firms signed by 23 Oct 2026\n- Each has a named contact who can run the anonymiser\n- First exports received from at least 2 firms by 23 Oct",
+    "labels": [
+      "type:gtm",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Engage external counsel and brief on representation, liability and DPDP",
+    "body": "**Context.** HANDOFF section 7 lists the open legal points: drafting versus representation (unverified background knowledge), liability caps, DPDP roles, GSP/ASP route, WhatsApp policy. The G2 opinion is needed by 14 Dec 2026, so counsel must start in week 1.\n\n**Tasks**\n- [ ] Shortlist two firms with GST and data-protection experience and obtain quotes\n- [ ] Prepare a two-page brief: product description, draft-only and CA-signs model, data flows, model vendor, fiduciary versus processor question\n- [ ] Agree scope and dates: data-sharing terms (23 Oct), opinion on drafting versus representation (by 14 Dec), terms of service and processing agreement (by 4 Jan)\n\n**Acceptance criteria**\n- Counsel engaged by 16 Oct 2026\n- Written scope and delivery dates agreed\n- Budget compared with the placeholder in docs/PROTOTYPE_AND_MVP_PLAN.md section 10",
+    "labels": [
+      "type:legal",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Draft data-sharing terms and anonymisation protocol for design partners",
+    "body": "**Context.** Gate G1 blocks receipt of any partner file. ADR-008 requires anonymisation at source and no real client data in the repository. Partners need a short, readable agreement.\n\n**Tasks**\n- [ ] Write a 2-page data-sharing agreement: purpose, anonymised data only, no onward sharing, deletion on request, no model training on partner data\n- [ ] Write the anonymisation protocol: GSTIN replacement rules, name replacement, narration removal, what must not be shared (portal credentials, bank details)\n- [ ] Counsel review\n- [ ] Define the storage location and access list for partner data outside the repo\n\n**Acceptance criteria**\n- Signed template ready by 20 Oct 2026\n- Protocol approved by counsel\n- Access list limited to named team members",
+    "labels": [
+      "type:legal",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Appoint a part-time CA advisor and define the labelling protocol",
+    "body": "**Context.** The CA advisor labels golden sets, reviews drafts and opens community doors (HANDOFF roles). Labelling is a likely bottleneck for M1 and M2, and compensation is an open decision.\n\n**Tasks**\n- [ ] Agree scope, hours per week and compensation (placeholder INR 0.75 lakh per month; see plan section 10)\n- [ ] Create the labelling spreadsheet for recon cases: counterpart lines, correct outcome, cause, notes\n- [ ] Define the second-review rule (20% of cases) and the notice-draft rating scale (accept as is, minor edits, rewrite)\n\n**Acceptance criteria**\n- Advisor appointed by 16 Oct 2026\n- Labelling template tested on 10 synthetic cases\n- Rating scale documented",
+    "labels": [
+      "type:ops",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Scaffold repository, CI and synthetic data generator",
+    "body": "**Context.** Engine work starts in week 1 on synthetic data so M1 is reachable on 30 Oct. Code layout is in docs/PROTOTYPE_AND_MVP_PLAN.md section 7.\n\n**Tasks**\n- [ ] Create the monorepo layout (apps, packages, evals, tools, db, infra)\n- [ ] Set up Python tooling (lint, type-check, pytest) and CI on pull requests; add secret and dependency scanning\n- [ ] Write a synthetic generator for 2B and register files with planted mismatches of each cause type and known ground truth\n- [ ] Add a pre-commit hook that blocks files under evals/private and common export extensions with real-looking GSTINs\n\n**Acceptance criteria**\n- CI green on an empty change\n- Generator produces a 5,000-line pair with a ground-truth file\n- No real data paths are committable",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Build the anonymisation tool for design-partner exports",
+    "body": "**Context.** Partners run the tool locally so raw data never reaches the team (ADR-008). Matching must still work after anonymisation, so invoice-number structure must be preserved.\n\n**Tasks**\n- [ ] Implement a one-command CLI that reads 2B and register files and replaces GSTINs with checksum-valid synthetic GSTINs, preserving state code and PAN structure\n- [ ] Replace supplier and client names; drop narration and address columns\n- [ ] Write the mapping file to a location the partner keeps and never uploads\n- [ ] Test that matching results before and after anonymisation are identical on synthetic data\n\n**Acceptance criteria**\n- Same match outcomes before and after anonymisation on the synthetic set\n- Runs on Windows and macOS from a single file or installer (partners use varied machines)\n- Delivered to partners by 21 Oct 2026",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Importers and normalisers for 2B, purchase register and notices metadata",
+    "body": "**Context.** Real exports vary in columns, date formats and invoice-number styles. Importers read portal Excel/JSON and Tally/Excel registers through per-partner YAML mappings; normalisers follow plan section 6.3. Amounts use Decimal.\n\n**Tasks**\n- [ ] Implement GSTIN validation (structure and check character), state code and PAN derivation\n- [ ] Implement invoice-number, date and amount normalisation with the original value retained\n- [ ] Parse 2B B2B and credit-note sheets (verify on real files whether IRN is present) and register exports\n- [ ] Write mapping files for each partner and a clear error report for unmapped columns\n\n**Acceptance criteria**\n- Round-trip tests pass on synthetic and first real exports\n- Unparseable rows are reported, never dropped silently\n- Normalisation is unit-tested with at least 50 invoice-number variants",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Deterministic matching engine, tiers 1-4",
+    "body": "**Context.** Every rupee figure originates in this engine (ADR-004). Tiers 1-2 auto-accept; tiers 3-4 are suggestions. Tolerances and similarity thresholds are starting assumptions to be tuned on the labelled set.\n\n**Tasks**\n- [ ] Implement tier 1 exact, tier 2 tolerance (default INR 1 value, INR 2 tax, configurable), tier 3 fuzzy invoice number (similarity 90+ or edit distance 2 or less, date within 10 days), tier 4 supplier identity (same PAN, one-character GSTIN typo)\n- [ ] Handle credit and debit notes as separate document types\n- [ ] Guarantee each line is in at most one group; lower tiers run only on leftovers\n- [ ] Property tests: partition of inputs, totals to the paisa, deterministic reruns\n\n**Acceptance criteria**\n- Property tests pass\n- No wrong auto-accept on the synthetic ground truth\n- Run time under 2 minutes for 5,000 lines",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Cause classifier and ITC-at-risk calculation",
+    "body": "**Context.** The action list is only as good as the cause and the rupees attached. Rules are in plan section 6.3; blocked-credit categories are set with the CA advisor. Legal tolerance claims are unverified, so the engine does not encode them.\n\n**Tasks**\n- [ ] Implement the nine ordered cause rules and the evidence payload for each\n- [ ] Compute ITC at risk per mismatch and per supplier (IGST, CGST, SGST, cess) with traceable line lists\n- [ ] Add the firm-level blocked-credit list (category or HSN) with the advisor's first version\n- [ ] Document each rule in a table with an example\n\n**Acceptance criteria**\n- Every unmatched line has exactly one cause\n- Supplier totals equal the sum of their lines\n- Advisor signs off the rule table",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Per-supplier action list report (Excel and HTML)",
+    "body": "**Context.** The prototype's visible output. A partner must see ITC at risk, causes and recommended steps at a glance and drill into lines.\n\n**Tasks**\n- [ ] Generate an Excel workbook: summary, supplier ranking by rupees at risk, line-level sheet per supplier\n- [ ] Generate a single-file HTML report with drill-down\n- [ ] Recommended step per cause (for example: ask supplier to file or amend, hold credit, reverse, record the purchase)\n- [ ] Draft supplier message text per action (not sent)\n\n**Acceptance criteria**\n- Report generated by one command from a run\n- Opens correctly in Excel and a browser\n- Three CA reviewers rate the layout understandable without explanation",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Label recon golden set v1 (100 cases) from partner data",
+    "body": "**Context.** Ground truth for match precision and recall comes from the CA advisor, not from the engine. HANDOFF targets 100 golden items by day 45; this issue delivers the first 100 by 28 Oct 2026.\n\n**Tasks**\n- [ ] Select 100 supplier-period cases across partners, including hard cases (typos, splits, credit notes, timing)\n- [ ] Advisor labels the true counterpart lines, outcome and cause using the template\n- [ ] Second reviewer checks 20 cases; resolve disagreements and record them\n- [ ] Store labels outside the repo with an access list; commit only the schema\n\n**Acceptance criteria**\n- 100 labelled cases\n- Inter-reviewer agreement on the 20 double-checked cases recorded\n- Labels loadable by the eval harness",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Notice field extractor for DRC-01C, DRC-01, DRC-01B and ASMT-10",
+    "body": "**Context.** Notices are increasingly templated (inference in docs/research/unsolved_smb_payments.md). Extraction must be near 100% on deadline and demand. Notices are untrusted input.\n\n**Tasks**\n- [ ] Define the schema: form type, section, tax period, demand by head, deadline, reference number, issuing officer\n- [ ] Implement extraction with a small model reading PDFs and photos, schema-constrained, with confidence and a manual-entry fallback\n- [ ] Add validators: date logic, demand totals, form-type whitelist\n- [ ] Run on 15-20 real anonymised notices and record errors\n\n**Acceptance criteria**\n- Deadline and demand correct on at least 95% of the test notices\n- Validation failures route to manual entry, not silent guesses\n- Instruction-like text inside a notice never changes behaviour (3 injection tests)",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Seed the law corpus with effective dates and search_law(query, as_of)",
+    "body": "**Context.** Section 74A applies from FY2024-25 and Sections 73/74 to earlier years (TaxGuru, cited in docs/HANDOFF.md section 2), so retrieval must filter by the notice period. Use official texts first; commercial databases are licensed, not scraped.\n\n**Tasks**\n- [ ] Collect CGST Act and Rules text (Sections 16, 17(5), 73, 74, 74A first) from official sources, with amendment dates\n- [ ] Chunk by section and sub-section; store effective_from/effective_to and source\n- [ ] Implement hybrid retrieval (BM25 plus embeddings) with a reranker and an as_of filter\n- [ ] Write 20 retrieval tests (query, expected section, period)\n\n**Acceptance criteria**\n- Top-3 retrieval contains the expected section on at least 90% of the 20 tests\n- Every chunk has a date range and source\n- No scraped commercial content",
+    "labels": [
+      "type:build",
+      "priority:P1"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Notice-reply drafter with citation and figure verifier",
+    "body": "**Context.** The drafter outputs structured paragraphs whose claims carry citation ids from the retrieved set and figure references to tool calls (plan section 6.6). A code verifier blocks unsupported claims. The model has no send or file tool.\n\n**Tasks**\n- [ ] Implement tools: get_2b, match_invoices, itc_at_risk, supplier_status, search_law, build_annexure, compute_interest (read-only or draft-only)\n- [ ] Implement plan, draft and verify steps; pin model versions in config\n- [ ] Verifier: citation ids must exist in the retrieved set; every number must equal a tool output; unsupported claims are removed and flagged\n- [ ] Export a DOCX with a blank signature block\n\n**Acceptance criteria**\n- 10 drafts produced from real anonymised notices\n- 100% of citations resolve to corpus text and 100% of figures trace to tool output\n- Advisor rates at least 50% of drafts edit-not-rewrite",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Eval harness v0 with CI gate",
+    "body": "**Context.** Only the golden set judges correctness (HANDOFF). The harness must run in one command and fail CI when thresholds fall; thresholds are in plan section 9.\n\n**Tasks**\n- [ ] Implement scorers: match precision and recall per tier, line-level agreement, ITC-at-risk exactness, cause accuracy, extraction accuracy, citation existence and precision, figure fidelity\n- [ ] Write evals/baselines.json and the comparison rule (fail on any drop or newly wrong case)\n- [ ] Run recon eval on PRs touching recon, importers or configs; run notice evals on prompt, model or corpus changes and nightly\n- [ ] Cache model responses by input hash\n\n**Acceptance criteria**\n- One-command local run and a CI job\n- Report lists every failing case\n- M1 thresholds encoded and checked",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "M1 partner demos and findings memo",
+    "body": "**Context.** The prototype's purpose is evidence. Demo to at least 3 partners using the script in plan section 4 and record what must change before they would use it on a live client.\n\n**Tasks**\n- [ ] Run the 12-minute demo script with each partner on their anonymised data\n- [ ] Capture verbatim feedback and willingness to join the MVP and the pilot\n- [ ] Write a two-page memo: metrics against M1 criteria, failure list, scope changes for M2, go or fix decision\n\n**Acceptance criteria**\n- At least 3 demos by 30 Oct 2026 (6 Nov if exports slip)\n- Memo lists measured values against each M1 criterion\n- M2 scope changes agreed",
+    "labels": [
+      "type:gtm",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Database schema, tenancy and authentication",
+    "body": "**Context.** Multi-tenant by firm and client with row-level security. Roles: ca_reviewer, assistant, admin; ICAI membership number recorded for approvers. Data model is in plan section 6.4.\n\n**Tasks**\n- [ ] Write migrations for firm, user, client, gstin, source_file, lines, runs, matches, mismatches, actions, messages, notices, replies, versions, citations, law tables, audit_event\n- [ ] Implement auth, invitations and role checks\n- [ ] Enable row-level security on every tenant table; per-tenant storage prefixes with signed URLs\n- [ ] Seed script with synthetic firms\n\n**Acceptance criteria**\n- Isolation test: user from firm A cannot read firm B rows or files via API or storage\n- Migrations apply cleanly on an empty database\n- Roles enforced server-side",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "API service, background jobs and file upload",
+    "body": "**Context.** FastAPI service exposing the engine and notice pipeline with an OpenAPI schema for the typed web client. Long runs use a Postgres-backed job queue.\n\n**Tasks**\n- [ ] Endpoints for upload, mapping, run, results, actions, notices, drafts, exports\n- [ ] Job queue with retries and run status\n- [ ] Store file hashes; reject duplicate uploads for the same period\n- [ ] Structured logging with run ids\n\n**Acceptance criteria**\n- 5,000-line run completes in under 2 minutes\n- Runs are reproducible from engine version and config hash\n- OpenAPI schema generates the web client in CI",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Web: import wizard, reconciliation workbench and action list",
+    "body": "**Context.** The article assistant's daily screens (stories AA-1, AA-2) and the partner's bulk approval (CP-1, CP-2). Overrides require a note and are audited.\n\n**Tasks**\n- [ ] Import wizard with saved column mappings\n- [ ] Run view with summary tiles; supplier queue with matched and unmatched lines, tier and cause\n- [ ] Confirm or reject suggested matches; override with note\n- [ ] Action list ranked by rupees at risk with bulk approve for CA reviewers\n\n**Acceptance criteria**\n- AC-1 to AC-4 in plan section 5.3 pass\n- Every rupee figure links to its lines\n- Usability test: an assistant completes import to approved action list unaided",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Supplier chasing: templates, email, assisted WhatsApp and reply tracking",
+    "body": "**Context.** HANDOFF P1. WhatsApp BSP approval is slow, so the MVP uses email and a prefilled WhatsApp link opened by the assistant. Messages go out only after CA approval.\n\n**Tasks**\n- [ ] Message templates per cause in English and Hindi (Hindi review by the advisor)\n- [ ] Send email from the firm's domain after approval; log delivery\n- [ ] Generate prefilled WhatsApp links; log that the link was opened\n- [ ] Track reply status and follow-up cadence (D+3, D+7, D+14, assumption); opt-out list\n\n**Acceptance criteria**\n- No message sends without CA approval\n- Reply status visible per supplier\n- Opt-outs honoured",
+    "labels": [
+      "type:build",
+      "priority:P1"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Notice inbox, extraction review and deadline tracker",
+    "body": "**Context.** Missing a deadline is the pilot's pause trigger (HANDOFF section 11). Intake by upload and email forward; extraction output is always shown for correction.\n\n**Tasks**\n- [ ] Upload and email-forward intake; link a notice to a GSTIN\n- [ ] Extraction review screen with field-level confidence\n- [ ] Reminders at D-7, D-3, D-1; overdue items on the firm dashboard\n- [ ] Open-notices view across clients sorted by deadline\n\n**Acceptance criteria**\n- AC-6 passes\n- Corrections are stored with the user and time\n- Zero missed reminders in a 2-week soak test on synthetic notices",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Evidence pack builder with numbered annexures",
+    "body": "**Context.** Evidence assembly is half the time saved: ledgers, invoices, 2B rows, supplier status and payments compiled into numbered annexures per issue in the notice.\n\n**Tasks**\n- [ ] Map each notice type and issue to required evidence\n- [ ] Pull reconciliation lines and uploaded documents into annexures with stable numbering\n- [ ] Show missing evidence as tasks for the assistant\n- [ ] Export the pack as PDF with an index\n\n**Acceptance criteria**\n- Annexure numbers stay stable across draft versions\n- Missing evidence is flagged before drafting\n- Two partner firms confirm the pack structure",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Notice workspace: draft editor, citations pane and figure provenance",
+    "body": "**Context.** The CA must trust a draft quickly. Each legal statement links to its source text with effective-date status; each figure links to the tool call and lines.\n\n**Tasks**\n- [ ] Design and build the side-by-side view: draft, citations, evidence\n- [ ] Show verifier flags and removed claims\n- [ ] Version history and diff between drafts\n- [ ] Test with three CAs reviewing five drafts each; record time and edits\n\n**Acceptance criteria**\n- AC-3 and AC-7 pass\n- CAs can trace any figure to source lines within two clicks\n- Median review time recorded against the 30-minute target",
+    "labels": [
+      "type:design",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "CA sign-off gate, append-only audit log and export",
+    "body": "**Context.** ADR-002: only the CA reviewer role approves; export is an unsigned DOCX or PDF; the product has no path to any authority. The audit log is hash-chained and append-only.\n\n**Tasks**\n- [ ] Implement the draft, in_review, approved, exported/sent state machine; edits after approval create a new version\n- [ ] Audit rows for inputs, retrieved sources, tool calls, outputs, model and prompt versions, edits, approvals, outbound messages\n- [ ] Application database role with insert and select only on audit_event; nightly hash-chain verification\n- [ ] Egress allow-list that blocks government domains\n\n**Acceptance criteria**\n- AC-4, AC-5, AC-8 pass\n- Chain verification detects a tampered row in a test\n- Retention period left configurable pending counsel advice",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Law corpus v1: full statute base, notifications and circulars",
+    "body": "**Context.** Extends the seed corpus to the full CGST Act and Rules, key IGST provisions, CBIC notifications and circulars and GSTN advisories, with effective dates. Judgments are added only when vetted by the CA advisor. Commercial databases require a licence.\n\n**Tasks**\n- [ ] Ingest and version documents with amendment history\n- [ ] Add a change monitor that flags new notifications and circulars for human review\n- [ ] Advisor spot-checks 30 passages for date accuracy\n- [ ] Document sources and licensing status per document\n\n**Acceptance criteria**\n- Retrieval tests rise to 40 queries at 90%+ top-3\n- Every document has source and licensing status\n- Change monitor produces a weekly list",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Expand eval sets to M2 sizes, collect 50 consented notices and add safety set",
+    "body": "**Context.** M2 gates: recon 150 cases at 98% line agreement, 50 notices at 98% extraction, 25 drafts, 25 safety cases (HANDOFF phase gates; sizes beyond HANDOFF are assumptions). Notice supply is a known risk: no official counts exist.\n\n**Tasks**\n- [ ] Collect 50 consented anonymised notices by 27 Nov 2026 (HANDOFF day-45 item)\n- [ ] Label extraction truth, must-cite provision lists and 25 draft ratings\n- [ ] Build the safety set: income-tax notice, illegible scan, notice for another GSTIN, prompt injection in a notice or supplier reply\n- [ ] Raise CI thresholds to the M2 column in plan section 9\n\n**Acceptance criteria**\n- Sets at M2 sizes loadable by the harness\n- Safety cases escalate 100% of the time\n- CI blocks on any safety-set failure",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Wireframes and usability test of the sign-off flow",
+    "body": "**Context.** The review console is table- and diff-heavy and used by time-pressed CAs and assistants. Test before building every screen in detail.\n\n**Tasks**\n- [ ] Wireframe the ten screens in plan section 5.2\n- [ ] Run five 30-minute sessions with partner staff using clickable prototypes\n- [ ] Prioritise fixes and feed them into the build issues\n\n**Acceptance criteria**\n- Findings document with ranked issues\n- Top five issues resolved before M2 exit",
+    "labels": [
+      "type:design",
+      "priority:P1"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Security checklist, isolation tests and dependency scanning",
+    "body": "**Context.** Incidents (missed deadline or data leak) pause the pilot. Real client data enters only after this passes (gates G3, G4).\n\n**Tasks**\n- [ ] Automated cross-tenant tests for API and storage (AC-9)\n- [ ] Encryption at rest and in transit verified; secrets in a managed store; no portal passwords stored\n- [ ] Dependency and secret scanning in CI; log redaction of GSTINs and amounts in application logs\n- [ ] Backup and restore drill; incident runbook\n\n**Acceptance criteria**\n- AC-9 passes in CI\n- Restore drill completed\n- Checklist reviewed by an external reviewer or counsel's technical contact",
+    "labels": [
+      "type:ops",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Counsel opinion on drafting versus representation; terms of service and liability",
+    "body": "**Context.** Gate G2 (before pilot, 14 Dec 2026) and G6 (before charging, 4 Jan 2027). Rules on who may represent a taxpayer are unverified background knowledge until counsel confirms.\n\n**Tasks**\n- [ ] Receive and file the written opinion\n- [ ] Terms of service with a CA-responsibility clause and a liability cap\n- [ ] Decide professional-indemnity cover\n- [ ] Update product copy and export footers to match the opinion\n\n**Acceptance criteria**\n- Opinion received by 11 Dec 2026\n- Terms reviewed by counsel\n- Product wording consistent with the opinion",
+    "labels": [
+      "type:legal",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Processing agreement, privacy notice, consent and deletion flows; LLM vendor terms",
+    "body": "**Context.** Gates G3 and G4. The firm is likely the data fiduciary and the company a processor (assumption). DPDP duties phase in through about May 2027. Real non-anonymised data must not reach a model before vendor retention and training terms are confirmed.\n\n**Tasks**\n- [ ] Per-firm processing agreement template\n- [ ] Privacy notice and consent log for supplier messaging\n- [ ] Deletion flow that removes files, rows and embeddings, with tests\n- [ ] Written confirmation from the model vendor of retention and training terms\n\n**Acceptance criteria**\n- Template signed by the first pilot firm\n- Deletion test passes\n- Vendor terms filed",
+    "labels": [
+      "type:legal",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Pilot onboarding: shadow mode with 3-5 firms, then 10-15 firms",
+    "body": "**Context.** HANDOFF targets 15 firms active on at least 400 GSTINs by day 90 and at least 8 paying; this plan reaches the decision on 29 Jan 2027, so recruitment from M0 matters. Shadow mode first, paid use after.\n\n**Tasks**\n- [ ] Onboard 3-5 firms on live data from 14 Dec in shadow mode (outputs not acted on)\n- [ ] Scale to 10-15 firms during the week of 4 Jan 2027\n- [ ] Weekly office hours; one onboarding call per firm\n- [ ] Track GSTINs, active weeks, notices processed\n\n**Acceptance criteria**\n- At least 10 firms active by 15 Jan 2027\n- Weekly active on 3 of 4 weeks for at least half of firms\n- No data incident",
+    "labels": [
+      "type:gtm",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Usage and quality telemetry for the pilot",
+    "body": "**Context.** The decision memo needs measured values for every row of HANDOFF section 11: paying firms, price accepted, recon accuracy, citation precision, draft acceptance, time to draft, weekly use, chase resolution, incidents.\n\n**Tasks**\n- [ ] Instrument events: runs, approvals, edits, draft ratings, time to reviewable draft, chase outcomes\n- [ ] Build an internal metrics view with no client names or amounts\n- [ ] Add a one-click accept, minor edit, rewrite rating to each draft\n- [ ] Export weekly metrics to the planning folder\n\n**Acceptance criteria**\n- All HANDOFF section 11 metrics computable from telemetry\n- Metrics exclude personal data\n- Weekly snapshot produced from 21 Dec 2026",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Price test at INR 150, 250 and 400 per GSTIN plus notice fee",
+    "body": "**Context.** No price data exists for this segment (HANDOFF section 8). All prices are assumptions. Gate G6 must be cleared before charging.\n\n**Tasks**\n- [ ] Prepare three offer sheets and a notice fee of INR 2,500 (assumption)\n- [ ] Assign firms to price points without bias and record accept, counter and decline reasons\n- [ ] Record the ICAI 50% discount anchor in each conversation\n- [ ] Summarise acceptance per price point\n\n**Acceptance criteria**\n- At least 10 firms offered a price\n- Acceptance by price point reported\n- Downside case below INR 75 per GSTIN flagged as per HANDOFF trigger",
+    "labels": [
+      "type:gtm",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Pre-3B check dashboard and IMS recommendations",
+    "body": "**Context.** HANDOFF P1: compare ITC claimed with available ITC in 2B and flag DRC-01C exposure; show accept, reject and pending recommendations for IMS invoices. IMS download by file is unverified.\n\n**Tasks**\n- [ ] Confirm the IMS export format on real portal files\n- [ ] Implement the pre-3B comparison per GSTIN and client\n- [ ] Rule-based IMS recommendations with reasons (matched, unmatched, supplier history)\n- [ ] Show exposure in the partner's dashboard\n\n**Acceptance criteria**\n- Pre-3B figures match advisor-calculated values on 10 cases\n- IMS recommendations carry reasons\n- Used by at least 3 pilot firms in the December cycle",
+    "labels": [
+      "type:build",
+      "priority:P1"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Grow eval sets to M3 sizes and run the day-90 regression review",
+    "body": "**Context.** HANDOFF day-90 targets: line agreement at least 99%, citation precision at least 95%, draft acceptance at least 70%, near-100% deadline and demand extraction. Sets grow to about 200 recon cases and about 100 notices.\n\n**Tasks**\n- [ ] Add pilot cases to the recon, extraction and draft sets with advisor labels\n- [ ] Re-run all sets at M3 thresholds; investigate every regression\n- [ ] Publish an internal accuracy report with confidence intervals\n\n**Acceptance criteria**\n- Sets at M3 sizes\n- Report states pass or fail per threshold\n- Open failures have owners",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Evaluate GSP/ASP providers and decide the data-access route",
+    "body": "**Context.** ADR-003 starts with file imports. After the pilot the team decides whether upload burden justifies a licensed provider. GSP/ASP mechanics are unverified; Account Aggregator is not the route for 2B.\n\n**Tasks**\n- [ ] Shortlist 3 providers; compare per-fetch cost, authorisation flow, sandbox access, terms\n- [ ] Test sandbox access to 2B and IMS if available\n- [ ] Estimate cost per GSTIN-month against the INR 15 data fee assumption in HANDOFF section 8\n- [ ] Recommend a route with counsel review\n\n**Acceptance criteria**\n- Comparison table complete\n- Recommendation to proceed, defer or drop\n- Decision recorded as a new ADR",
+    "labels": [
+      "type:research",
+      "priority:P2"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "ICAI member-benefits listing: requirements and application",
+    "body": "**Context.** Suvit and Accu Reco are listed on ICAI's portal, so the channel accepts third-party GST tools; criteria and fees are not in the sources (HANDOFF section 9). HANDOFF plans to apply around day 45 with references; this plan prepares it during the pilot.\n\n**Tasks**\n- [ ] Find the listing criteria, discount expectations, fee and timeline\n- [ ] Prepare references from two pilot firms and a one-page product sheet\n- [ ] Submit the application or record the reason to defer\n\n**Acceptance criteria**\n- Requirements documented\n- Application submitted or deferral reasoned\n- Findings added to docs/research-notes",
+    "labels": [
+      "type:gtm",
+      "priority:P2"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Decision memo: go, pivot or stop on 29 January 2027",
+    "body": "**Context.** The pilot exists to decide. HANDOFF section 11 sets kill or pivot triggers: fewer than 3 paying firms, price only below INR 75, recon accuracy below 95%, citation precision below 90%, draft acceptance below 40%, supply chase resolution below 10%, any missed deadline or data leak, or a competitor shipping notice drafting and CA dashboards free.\n\n**Tasks**\n- [ ] Fill the section 11 table with measured values and sample sizes\n- [ ] Write case studies from two firms (anonymised) with before-and-after notice cases\n- [ ] Update unit economics with observed costs and prices\n- [ ] Recommend go, pivot or stop with next 90-day plan\n\n**Acceptance criteria**\n- Memo circulated by 27 Jan 2027\n- Every threshold has a measured value or an explicit gap\n- Decision recorded on 29 Jan 2027",
+    "labels": [
+      "type:ops",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  }
+]

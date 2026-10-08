@@ -1,0 +1,67 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+.yarn/
+bower_components/
+
+# Build output
+.next/
+out/
+dist/
+build/
+coverage/
+.turbo/
+.vercel/
+*.tsbuildinfo
+
+# Logs and caches
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+.eslintcache
+.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+.supabase/
+
+# Data: no client data or captured content in git
+data/
+captures/
+exports/
+*.sqlite
+*.db
+eval/**/raw/
+eval/**/private/
+
+# Test and tooling artefacts
+playwright-report/
+test-results/
+.playwright/
+
+# Editors and OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
