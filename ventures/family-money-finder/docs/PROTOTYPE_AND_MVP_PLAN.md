@@ -37,10 +37,10 @@ Team: 1 to 3 people from 12 October 2026 (product and operations lead, full-stac
 
 | Milestone | Dates | Weeks | Outcome |
 |---|---|---|---|
-| **M0 Discovery and legal** | Mon 12 Oct to Fri 23 Oct 2026 | 1-2 | Procedures and thresholds compiled; legal opinion commissioned; 20 family interviews |
+| **M0 Discovery & legal** | Mon 12 Oct to Fri 23 Oct 2026 | 1-2 | Procedures and thresholds compiled; legal opinion commissioned; 20 family interviews |
 | **M1 Prototype** | by Fri 30 Oct 2026 | 3 | Concierge search for 10 to 15 families; knowledge base; packs for three institution types; eval harness |
 | **M2 MVP** | by Fri 11 Dec 2026 | 4-9 | Full flow in software; golden-set gates green |
-| **M3 Pilot and decision** | through Fri 29 Jan 2027 | 10-16 | Paid pilot; decision review |
+| **M3 Pilot & decision** | through Fri 29 Jan 2027 | 10-16 | Paid pilot; decision review |
 
 M1 is tight. If the M0 matrix is under 60% complete for the top institutions on 23 October, M1 slips one week and the slip is recorded in [planning/milestones.md](../planning/milestones.md).
 
@@ -309,7 +309,7 @@ All figures are assumptions unless sourced; conversion at ₹88 per US dollar (a
 | Hosting and tools | ₹3 to ₹10 thousand a month hosting (research estimate) plus tools | ₹0.1 to ₹0.4 lakh |
 | **Total** | | **about ₹14 to ₹16 lakh** |
 
-Model cost per family: about 60 document pages and 20 drafting calls, roughly 250k input and 30k output tokens (assumption). At the list prices in [tech_feasibility.md](research/tech_feasibility.md) (Haiku class $1 / $5, Sonnet class $3 / $15 per million tokens; third-party aggregators, verify), that is about $1 to $2 (₹90 to ₹180), consistent with HANDOFF's ₹150. Pilot revenue is not counted as an offset.
+Model cost per family: about 60 document pages and 20 drafting calls, roughly 250k input and 30k output tokens (assumption). At the list prices in [tech_feasibility.md](research/tech_feasibility.md) (Haiku class $1 / $5, Sonnet class $3 / $15 per million tokens; third-party aggregators, verify), that is about $1 to $2 (about ₹90 to ₹180), consistent with HANDOFF's ₹150. Pilot revenue is not counted as an offset.
 
 ## 11 Definition of done
 

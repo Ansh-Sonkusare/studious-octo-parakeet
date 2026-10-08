@@ -122,7 +122,6 @@ flowchart LR
   U["User: WhatsApp or web"] --> API["FastAPI app"]
   API --> STORE[("Private object storage")]
   API --> Q["Postgres job queue"]
-  Q --> P1
   subgraph PIPE["Pipeline workers"]
     direction TB
     P1["Ingest and redact"] --> P2["Extract fields"]
@@ -133,6 +132,7 @@ flowchart LR
     P6 --> P7["X-ray and letter draft"]
     P7 --> P8["Grounding validator"]
   end
+  Q --> P1
   P8 --> RQ["Review queue"]
   RQ --> CON["Reviewer console"]
   CON --> OUT["Approved letter to user"]

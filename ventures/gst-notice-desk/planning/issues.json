@@ -130,7 +130,7 @@
     "body": "**Context.** Section 74A applies from FY2024-25 and Sections 73/74 to earlier years (TaxGuru, cited in docs/HANDOFF.md section 2), so retrieval must filter by the notice period. Use official texts first; commercial databases are licensed, not scraped.\n\n**Tasks**\n- [ ] Collect CGST Act and Rules text (Sections 16, 17(5), 73, 74, 74A first) from official sources, with amendment dates\n- [ ] Chunk by section and sub-section; store effective_from/effective_to and source\n- [ ] Implement hybrid retrieval (BM25 plus embeddings) with a reranker and an as_of filter\n- [ ] Write 20 retrieval tests (query, expected section, period)\n\n**Acceptance criteria**\n- Top-3 retrieval contains the expected section on at least 90% of the 20 tests\n- Every chunk has a date range and source\n- No scraped commercial content",
     "labels": [
       "type:build",
-      "priority:P1"
+      "priority:P0"
     ],
     "milestone": "M1 Prototype"
   },

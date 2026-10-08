@@ -31,7 +31,6 @@
     "body": "## Context\nThe M0 gate requires at least 20 of 30 interviewees to say they would pay to recover the money. Interviews also supply the first concierge cases and consented files, and test the ₹499 plus 10-15% pricing hypothesis (HANDOFF.md section 8; ₹299 versus ₹499 is open question 2).\n\n## Tasks\n- [ ] Recruit from consumer forums, social groups, Reddit and adviser client lists; offer a small incentive\n- [ ] Write an interview guide: what was denied, what they did, why they stopped, what they would pay\n- [ ] Ask each person for consent to share documents, and log it\n- [ ] Run 15 interviews in week 1 and 15 in week 2\n- [ ] Synthesise: reasons for deduction, escalation behaviour, price reactions, preferred channel, language\n- [ ] Write the willingness-to-pay read-out and a pricing recommendation\n\n## Acceptance criteria\n- 30 interviews logged by 23 Oct 2026\n- Read-out states the count who would pay, at what price points, with quotes\n- At least 25 interviewees offered a document upload",
     "labels": [
       "type:research",
-      "type:gtm",
       "priority:P0"
     ],
     "milestone": "M0 Discovery & legal"
@@ -50,7 +49,6 @@
     "body": "## Context\nThe golden set needs about 100 real files (25+ by 23 Oct, 40 by 30 Oct, 100 by 20 Nov). Files are health data and must never enter the repository (CONTRIBUTING.md). Anonymisation must remove identifiers while keeping diagnoses, amounts and dates.\n\n## Tasks\n- [ ] Write the file-sharing consent text, including the right to withdraw\n- [ ] Define the minimum set per case: policy wording or schedule, deduction or rejection letter, discharge summary, itemised bill\n- [ ] Set up encrypted storage with a named access list, outside the repository\n- [ ] Write the anonymisation procedure and check each file with a second person\n- [ ] Maintain a register of files (ID, insurer, product, deduction classes) without personal data\n- [ ] Offer a free Claim X-ray in exchange for consent\n\n## Acceptance criteria\n- 25+ files by 23 Oct 2026 and 40 by 30 Oct 2026, each with recorded consent\n- Register shows spread across the three target insurers and at least four deduction classes\n- No file containing unredacted identifiers is accepted into the golden-set store",
     "labels": [
       "type:research",
-      "type:eval",
       "priority:P0"
     ],
     "milestone": "M0 Discovery & legal"
@@ -69,7 +67,6 @@
     "body": "## Context\nConcierge cases need a trusted channel. IRDAI has warned of fake sites impersonating Bima Bharosa, so a verified WhatsApp Business profile matters. Meta verification can be slow, so apply in week 1 and keep web upload as the primary path.\n\n## Tasks\n- [ ] Register the WhatsApp Business number and start Meta verification\n- [ ] Build a one-page site (English first) with the consent notice and document upload to private storage\n- [ ] Show the AI-and-human disclosure and the no-guarantee statement on the page\n- [ ] Send uploads to a private bucket with no public URLs\n- [ ] Add a simple intake record (case ID, channel, consent version, timestamp)\n- [ ] Test with five dummy uploads\n\n## Acceptance criteria\n- Upload page live by 19 Oct 2026 with consent captured before any file is accepted\n- No document is publicly accessible; access is logged\n- WhatsApp Business verification submitted by 16 Oct 2026",
     "labels": [
       "type:build",
-      "type:gtm",
       "priority:P0"
     ],
     "milestone": "M0 Discovery & legal"
@@ -79,7 +76,6 @@
     "body": "## Context\nOffshore model APIs mean cross-border processing of health data. DPDP allows it unless the destination is restricted; counsel should confirm. Zero-retention terms are gate G5 (HANDOFF.md section 6.5).\n\n## Tasks\n- [ ] Read the model vendor's data-retention, training-use and regional-processing terms and record them\n- [ ] Request zero-retention or equivalent terms for the account\n- [ ] Map data flows: what leaves India, what is redacted first\n- [ ] List sub-processors (hosting, storage, messaging, payments, error tracking)\n- [ ] Write a two-page impact assessment with risks and controls\n- [ ] Send the cross-border question to counsel\n\n## Acceptance criteria\n- Impact assessment filed by 23 Oct 2026\n- Vendor default retention recorded; zero-retention request submitted\n- Data-flow diagram matches the architecture in the plan",
     "labels": [
       "type:legal",
-      "type:research",
       "priority:P0"
     ],
     "milestone": "M0 Discovery & legal"
@@ -107,7 +103,6 @@
     "body": "## Context\nThe taxonomy underpins classification, the golden set and reviewer reason codes. Classes from HANDOFF.md section 5.3: room-rent proportionate deduction, waiting period or pre-existing disease, non-payable item, co-pay or sub-limit, documentation gap, other. Add verdicts (contestable, likely valid, needs human).\n\n## Tasks\n- [ ] Write definitions and decision rules for each class with worked examples from the first consented files\n- [ ] Define ground-truth fields: class, clause with acceptable alternates, amount, verdict, route\n- [ ] Define rules for ambiguous cases and multi-cause deductions\n- [ ] Have the specialist review and approve\n- [ ] Version the guidelines\n\n## Acceptance criteria\n- Guidelines approved by the specialist by 27 Oct 2026\n- Two annotators labelling ten shared files agree on class for at least 85% of deductions (assumption); disagreements resolved and the guide updated",
     "labels": [
       "type:eval",
-      "type:research",
       "priority:P0"
     ],
     "milestone": "M1 Prototype"
@@ -126,7 +121,6 @@
     "body": "## Context\nThe retrieval corpus is clause-segmented and versioned with effective dates (plan section 6.5). A case is matched to the wording version in force; an unknown version blocks automation.\n\n## Tasks\n- [ ] Segment each wording by clause keeping numbering, heading and page\n- [ ] Spot-check 20 clauses per product with the specialist\n- [ ] Load clauses with full-text and vector indexes\n- [ ] Add the IRDAI master circular (effective 1 Aug 2024), Ombudsman rules and the complaint form as dated rules\n- [ ] Implement `get_clause` and `search_irdai_rules(as_of)`\n- [ ] Report recall@5 on a first set of labelled queries\n\n## Acceptance criteria\n- Four products loaded with clause references and page numbers\n- Every rule row has an effective date and source\n- `get_clause` returns verbatim text that matches the source page",
     "labels": [
       "type:build",
-      "type:research",
       "priority:P0"
     ],
     "milestone": "M1 Prototype"
@@ -163,7 +157,6 @@
     "body": "## Context\nRelease decisions depend on measured metrics (plan section 8). The first version should run locally with one command and store aggregate results without customer data.\n\n## Tasks\n- [ ] Implement `make eval` loading the golden set from the secure location\n- [ ] Compute clause-citation precision, invented-clause count, amount accuracy, class accuracy, extraction accuracy and likely-valid false-contest rate\n- [ ] Write a markdown and JSON report with per-class breakdowns and Wilson intervals\n- [ ] Add a 25-file smoke tier\n- [ ] Store results with commit hash, prompt hashes and model IDs\n- [ ] Add the 30-item adversarial set skeleton\n\n## Acceptance criteria\n- Report reproducible from a clean checkout by someone other than the author\n- Hard-fail exit code when any clause is invented\n- Reports contain only aggregates and anonymised IDs",
     "labels": [
       "type:eval",
-      "type:build",
       "priority:P0"
     ],
     "milestone": "M1 Prototype"
@@ -173,7 +166,6 @@
     "body": "## Context\nPer ADR-007 the team sells the outcome manually first. Cases before the payment account is live are free design-partner cases excluded from willingness-to-pay metrics; token fees (₹299 proposed) start once gate G1 closes.\n\n## Tasks\n- [ ] Write a one-page runbook: intake, X-ray, fee terms, letter, submission guidance, tracking, outcome\n- [ ] Set up a case tracker in the private database (not a shared spreadsheet)\n- [ ] Handle the first 10 cases; log time spent per step\n- [ ] Send payment links after G1\n- [ ] Log every manual step performed, to find what to automate after 20 repetitions\n- [ ] Record insurer, product, deduction class, and outcome per case\n\n## Acceptance criteria\n- 10+ cases received and 5 filed by 30 Oct 2026; 2 paid the token fee\n- Time-per-step log exists for every case\n- Each case has a consent record",
     "labels": [
       "type:ops",
-      "type:gtm",
       "priority:P0"
     ],
     "milestone": "M1 Prototype"
@@ -219,7 +211,6 @@
     "body": "## Context\nServer-rendered pages (Jinja2 and HTMX) for the customer journey in plan section 5.2. Must work well on a phone and in English and Hindi.\n\n## Tasks\n- [ ] Design the flow and copy with plain language and the AI-and-human disclosure\n- [ ] Implement consent and upload with itemised toggles\n- [ ] Implement status, X-ray page with clause quotes, fee terms and acceptance\n- [ ] Implement the case timeline and next-deadline display\n- [ ] Implement acknowledgement-number entry\n- [ ] Test on low-end Android and slow networks\n\n## Acceptance criteria\n- US-01 to US-06 accepted\n- Pages meet basic accessibility checks (contrast, labels, keyboard use)\n- Hindi and English copy reviewed by a native speaker",
     "labels": [
       "type:build",
-      "type:design",
       "priority:P0"
     ],
     "milestone": "M2 MVP"
@@ -229,7 +220,6 @@
     "body": "## Context\nThe validator enforces ADR-003 in code. Every numeral and date in the final text must trace to a tool result or source document; every quoted clause must match the corpus verbatim; prohibited language (guarantees, legal advice) is blocked.\n\n## Tasks\n- [ ] Extract all numerals, dates and quotations from drafts\n- [ ] Check each against tool outputs and source extractions with tolerance rules\n- [ ] Check quotes against the corpus text\n- [ ] Add a prohibited-phrase list reviewed by counsel\n- [ ] Regenerate once on failure, then block and notify the reviewer\n- [ ] Test against known-bad drafts, including one with a swapped number\n\n## Acceptance criteria\n- All known-bad test drafts are blocked\n- No approval is possible while the validator fails\n- Validator result is stored with each letter version",
     "labels": [
       "type:build",
-      "type:eval",
       "priority:P0"
     ],
     "milestone": "M2 MVP"
@@ -248,7 +238,6 @@
     "body": "## Context\nA reviewer approves every outbound letter (ADR-004). Edit reason codes (wrong clause, wrong amount, tone, missing fact) feed the golden set. Cases above ₹1 lakh or with pre-existing-disease or non-disclosure grounds need specialist sign-off (assumption).\n\n## Tasks\n- [ ] Queue ordered by age with SLA colouring\n- [ ] Case view: document viewer, extracted fields, deductions with calculation trace, citation panel, validator status\n- [ ] Letter editor with tracked changes and mandatory edit reasons\n- [ ] Approve, reject and escalate-to-specialist actions\n- [ ] Capture reviewer minutes per case\n- [ ] Export confirmed edits as candidate golden-set items\n\n## Acceptance criteria\n- US-08 accepted by the specialist in a walkthrough\n- Approval blocked while the validator fails (tested)\n- Reviewer minutes are recorded on every case",
     "labels": [
       "type:build",
-      "type:design",
       "priority:P0"
     ],
     "milestone": "M2 MVP"
@@ -267,7 +256,6 @@
     "body": "## Context\nGate G4. One-click withdrawal and deletion; documents deleted 90 days after closure unless the user opts to keep them; backups age out within 30 days (assumptions to confirm with counsel).\n\n## Tasks\n- [ ] Implement consent records tied to text versions and purposes\n- [ ] Implement withdrawal and a deletion job covering storage, extractions, embeddings of user data (none expected) and payload store\n- [ ] Implement the retention sweeper\n- [ ] Send deletion confirmation to the user\n- [ ] Run a deletion drill and a restore drill and record results\n- [ ] Add a data-subject request log\n\n## Acceptance criteria\n- US-10 accepted\n- Drill proves content is removed within 7 days and non-identifying metadata remains\n- Counsel confirms the retention periods or replaces them",
     "labels": [
       "type:build",
-      "type:legal",
       "priority:P0"
     ],
     "milestone": "M2 MVP"
@@ -285,7 +273,6 @@
     "title": "Expand corpus to 8-10 products and add a rules library maintenance workflow",
     "body": "## Context\nThe rules library has no owner in the market data, so the team must keep it current: wordings change by version and IRDAI issues circulars. The specialist owns it (plan section 6.5).\n\n## Tasks\n- [ ] Ingest and segment wordings for the remaining products\n- [ ] Spot-check segmentation with the specialist\n- [ ] Build the corpus manager UI: upload a version, segment, preview, activate with effective date\n- [ ] Add a monthly circular review task\n- [ ] Re-run retrieval evaluation across the full corpus\n- [ ] Choose the embedding model by retrieval eval on 50 labelled queries\n\n## Acceptance criteria\n- 8-10 products loaded by 20 Nov 2026\n- US-09 accepted\n- Recall@5 reported; reranker added only if below 90% (assumption)",
     "labels": [
-      "type:research",
       "type:build",
       "priority:P0"
     ],
@@ -323,7 +310,6 @@
     "body": "## Context\nGate G5 and part of G4. Health-data breach is low likelihood but very high impact (HANDOFF.md section 12). Statutory notification timelines are to be confirmed by counsel.\n\n## Tasks\n- [ ] Commission a light external security review (about ₹40,000, assumption)\n- [ ] Fix findings rated high before M2 gate\n- [ ] Add dependency and container scanning to CI\n- [ ] Write the breach runbook with named owners, contact list and notification steps; rehearse once\n- [ ] Verify that logs and error tracker contain no document text\n- [ ] Confirm zero-retention vendor terms are signed\n\n## Acceptance criteria\n- No high findings open at the M2 gate\n- Runbook rehearsal recorded\n- Gate G5 ticked",
     "labels": [
       "type:build",
-      "type:legal",
       "priority:P0"
     ],
     "milestone": "M2 MVP"
@@ -333,7 +319,6 @@
     "body": "## Context\nThe public pilot opens on 14 Dec 2026. Each gate in plan section 9 needs evidence on file. If the written opinion returns a blocker, the pilot pauses and the product is restructured before launch.\n\n## Tasks\n- [ ] Collect evidence for each gate and have counsel or the lead sign it off\n- [ ] Confirm the verified WhatsApp profile and landing page disclosures\n- [ ] Confirm that no proof content is published without recorded consent (G2)\n- [ ] Confirm the payment partner's e-mandate position (G6) and keep UPI links if not confirmed\n- [ ] Hold a go/no-go meeting on 11 Dec 2026\n\n## Acceptance criteria\n- Signed gate checklist stored in the private legal folder\n- Go/no-go decision recorded\n- Any open item has an owner and date",
     "labels": [
       "type:legal",
-      "type:ops",
       "priority:P0"
     ],
     "milestone": "M3 Pilot & decision"
@@ -361,7 +346,6 @@
     "body": "## Context\nThe recovery metric is full or partial reversal at the insurer stage within 30 days across at least 50 filed cases (continue at 25% or more, pivot or stop below 15%). Ombudsman outcomes may take longer than the pilot, so leading indicators are used.\n\n## Tasks\n- [ ] Record each insurer response date, result and recovered amount with proof\n- [ ] Record the arguments that won and lost, by insurer and product\n- [ ] Prepare Bima Bharosa and Ombudsman filings for unresolved cases after 30 days\n- [ ] Report reversal rate with sample size and interval\n- [ ] Anonymise winning cases for proof content only where consent exists\n\n## Acceptance criteria\n- Outcome logged for every matured case with source evidence\n- Reversal rate for the 21 Dec cohort reported on the freeze date\n- Outcome data supports the arguments-that-win analysis",
     "labels": [
       "type:ops",
-      "type:eval",
       "priority:P0"
     ],
     "milestone": "M3 Pilot & decision"
@@ -371,7 +355,6 @@
     "body": "## Context\nDecision date is Friday 29 Jan 2027. The thresholds are in HANDOFF.md section 11; pivot paths: sell the engine B2B2C if acquisition fails, flat per-filing fee if fee collection fails, stop if recovery fails.\n\n## Tasks\n- [ ] Rebuild the unit-economics model from actuals: acceptance, collection, reviewer minutes, model cost per case, gateway fees, CAC by channel\n- [ ] Compare every metric with its threshold and state sample sizes\n- [ ] Draft the memo by Mon 25 Jan; review with advisers on Wed 27 Jan; issue on Fri 29 Jan\n- [ ] If fewer than 50 cases have matured, give a provisional verdict and a time-boxed extension\n- [ ] List the next 90 days under each of the three outcomes\n\n## Acceptance criteria\n- Memo delivered on 29 Jan 2027 with a clear recommendation\n- All five HANDOFF.md section 11 questions answered with data\n- Assumptions replaced by actuals are listed",
     "labels": [
       "type:gtm",
-      "type:ops",
       "priority:P0"
     ],
     "milestone": "M3 Pilot & decision"

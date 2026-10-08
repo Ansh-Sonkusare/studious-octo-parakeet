@@ -12,11 +12,12 @@ Evidence flags used in these files: sourced finding, inference, gap. HANDOFF add
 | [financial_gaps_sizing.md](financial_gaps_sizing.md) | Fact sheet of sized consumer and small-business problems, with source status | Rows 37-41 (MSME finance gap; Samadhaan applications, claims and pending amounts); Conflicts section (date inconsistencies) |
 | [global_b2b_ai_fintech.md](global_b2b_ai_fintech.md) | Global B2B AI fintech map: traction, pricing, transferability | **Section 2** (AI for accountants and tax professionals; the "sell to the accounting firm" model); Section 5 (emerging-market transferability); Section 6 (sales cycles and ACVs) |
 | [agentic_rails_trends.md](agentic_rails_trends.md) | Agentic AI in finance and India's public payment rails | Section 4 (WhatsApp, vernacular voice, Sarvam; lender collections agents as a crowded space); Section 5 (RBI FREE-AI, NPCI principle, e-mandate rules, audit trails); Section 1 (Account Aggregator, UPI context, lower priority) |
+| [regulation_and_rails.md](regulation_and_rails.md) | Indian regulatory framework and market rails, written for a mutual-fund startup (SEBI adviser rules, distribution, data rails, payments, DPDP) | Transferable only: Q6 (Account Aggregator as a data rail); Q7 (payments, e-mandate and pooling, for the no-money-handling rule); Q8 (DPDP Act and Rules 2025, IT Act SPDI Rules, cross-border processing). The SEBI sections (Q1-Q5, Q9) do not apply |
 | [tech_feasibility.md](tech_feasibility.md) | Build blueprint for a **different project** (a mutual-fund assistant) | Transferable only: Section 4 (retrieval plus tools versus fine-tuning, FinanceBench and CA-Ben evidence); Section 5 (golden-set evaluation, human-in-the-loop, audit logs); Section 6 (LLM cost ranges, Sarvam speech-to-text pricing). Sections 1-3 do not apply |
 
 ## Gaps in this folder
 
-- HANDOFF Section 15 lists a `regulation_and_rails` research note. It is not present in this folder. Until it is added, the legal rows in HANDOFF Section 7 are the only regulatory summary, and counsel's opinion is the real source (see [issue list](../../planning/issues.json)).
+- No research note covers MSME-specific law in depth: the legal rows in HANDOFF Section 7 are the only regulatory summary for this project, and counsel's opinion is the real source (see [issue list](../../planning/issues.json)).
 - No research file covers the Tally XML export format, WhatsApp template and opt-in rules, or TReDS platform terms. These are open items in the M0 and M2 plans.
 - Unconfirmed items stay unconfirmed here: presidential assent to the MSMED (Amendment) Bill 2026, the Section 16 interest basis and compounding, the ₹250 crore TReDS onboarding threshold, and the ₹8.1 lakh crore total beyond Recordent.
 

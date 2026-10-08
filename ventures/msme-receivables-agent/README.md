@@ -46,7 +46,7 @@ Success targets (proposed, to ratify at kickoff): 100 suppliers via at least 15 
 | [docs/DECISIONS.md](docs/DECISIONS.md) | Decision records (ADR-001 to ADR-008) |
 | [docs/research/](docs/research/README.md) | Research notes and an index of the parts that matter here |
 | [planning/milestones.md](planning/milestones.md) | Milestones M0-M3 with due dates and exit criteria |
-| [planning/issues.json](planning/issues.json) | 39 issues ready to import into a tracker |
+| [planning/issues.json](planning/issues.json) | 40 issues ready to import into a tracker |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Branching, pull-request checklist, data rules |
 
 Planned code layout (not yet created) is in the plan, Section 7.

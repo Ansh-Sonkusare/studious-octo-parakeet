@@ -31,10 +31,10 @@ Assumes a dedicated team of 1-3 from Mon 12 Oct 2026 (Assumption: product and CA
 
 | Milestone | Window | Due | One-line outcome |
 |---|---|---|---|
-| M0 Discovery and legal | Weeks 1-2 | Fri 23 Oct 2026 | CAs committed; legal opinion commissioned; rule specification written |
+| M0 Discovery & legal | Weeks 1-2 | Fri 23 Oct 2026 | CAs committed; legal opinion commissioned; rule specification written |
 | M1 Prototype | Weeks 1-3 (build overlaps M0) | Fri 30 Oct 2026 | Concierge collections live for 3-5 suppliers; dashboard, interest calculator, eval harness working |
 | M2 MVP | Weeks 4-9 | Fri 11 Dec 2026 | HANDOFF P0 features live for design-partner CAs; 300-case golden set at 100% |
-| M3 Pilot and decision | Weeks 10-16 | Fri 29 Jan 2027 | Outcome data and a continue/pivot/stop memo |
+| M3 Pilot & decision | Weeks 10-16 | Fri 29 Jan 2027 | Outcome data and a continue/pivot/stop memo |
 
 **Note (Inference).** HANDOFF Section 10 runs 13 weeks; this plan runs 16 because it adds a 3-week prototype first. The 60-day recovery metric is readable only for invoices first reminded by 30 Nov 2026 (30 Nov + 60 days = 29 Jan). Later cohorts are read at 30 days and labelled interim. The holdout is a delayed-start group: matched invoices get their first reminder 30 days later (Assumption), so no supplier is denied the service.
 

@@ -80,10 +80,10 @@ Labels follow [HANDOFF.md](../docs/HANDOFF.md): **Assumption** = number to repla
 
 **Scope**
 - Paid pilot with 40 to 50 families (assumption), including at least 10 NRI cases and local representatives in two cities.
-- Partner outreach to CAs, advocates and advisers using anonymised results; Project 1 cross-sell test.
+- Partner outreach to CAs, advocates and advisers using anonymised results; cross-sell test with Project 1 (the health-claim recovery agent).
 - Weekly eval runs and tracking of Found, Ready, Filed, Engaged and Paid stages.
 
 **Exit criteria**
 - [ ] Metrics reported against HANDOFF section 11 at day 90 and week 16, with and without IEPF: upload rate (at least 40%), discovery value (at least 50%), first-submission acceptance (at least 70%) and requirement accuracy (at least 95%), fee acceptance (at least 30%) and success fees collected (at least 70%), claims paid (at least 10; zero outside IEPF is a stop signal), reviewer time (under 3 hours) and acquisition cost (under 30% of revenue).
 - [ ] Cost per family and unit economics recomputed from actuals.
-- [ ] Decision memo written: continue, pivot (white-label to CAs, flat per-pack fees, nominee and KYC audit, or fold into Project 1) or stop.
+- [ ] Decision memo written: continue, pivot (white-label to CAs, flat per-pack fees, nominee and KYC audit, or fold into Project 1, the health-claim recovery agent) or stop.

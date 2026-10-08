@@ -1,6 +1,6 @@
 # Handoff: GST Reconciliation and Notice Desk for CA Firms
 
-As of 8 October 2026 (evidence cut-off 7 October 2026). Rank 3 of 14, weighted score 3.70/5 ([report, Table 10](../reports/India%20AI%20personal%20finance%20MVP.md)).
+As of 8 October 2026 (evidence cut-off 7 October 2026). Rank 3 of 14, weighted score 3.70/5 ([report, Table 10](research/00-full-research-report.md)).
 
 Labels: **Fact** is sourced and linked. **Assumption** or **estimate** is a working number to replace with pilot data. **Unverified** means background knowledge or a single weak source; confirm before relying on it.
 
@@ -12,7 +12,7 @@ Labels: **Fact** is sourced and linked. **Assumption** or **estimate** is a work
 
 **Why now.**
 - IMS (late 2024) made invoice acceptance a monthly, invoice-by-invoice decision ([CAalley](https://caalley.com/news-updates/indian-news/itc-fraud-worth-rs-74-782-crore-detected-in-fy26-maharashtra-gujarat-lead)).
-- Notices are increasingly machine-generated and templated, so machine-drafted replies are feasible (inference, [research note](../research_notes/India%20AI%20personal%20finance%20MVP/unsolved_smb_payments.md)).
+- Notices are increasingly machine-generated and templated, so machine-drafted replies are feasible (inference, [research note](research/unsolved_smb_payments.md)).
 - Detected fake ITC rose from ₹36,373 cr in FY24 to ₹74,782 cr in FY26, about 2.1x ([Jurishour](https://www.jurishour.in/gst/cgst-detects-fake-itc-fraud-fy26-unearthed/)).
 - Agents sold to accounting firms drew the largest 2026 rounds (Basis at $1.15B).
 
@@ -47,7 +47,7 @@ ITC depends on the supplier's filing, not on the buyer's payment or the genuine 
 | **Article assistant** (daily user) | Download 2B, match to Tally, chase suppliers, compile notice annexures | One work queue; pre-filled supplier messages; one-click evidence pack |
 | **SME client** (passive beneficiary) | Keep credit, avoid notices, answer the CA quickly | A short WhatsApp request ("approve nudge to Supplier X"), nothing to learn |
 
-Direct-to-SME selling is avoided: MSME bookkeeping apps lose money (Vyapar lost ₹63 cr in FY25, [Entrackr](https://entrackr.com/fintrackr/vyapar-posts-rs-63-cr-loss-in-fy25-cash-reserve-fades-93-10819211)), while a CA serves dozens to hundreds of clients (inference, [B2B note](../research_notes/India%20AI%20personal%20finance%20MVP/b2b_fintech_gaps.md)).
+Direct-to-SME selling is avoided: MSME bookkeeping apps lose money (Vyapar lost ₹63 cr in FY25, [Entrackr](https://entrackr.com/fintrackr/vyapar-posts-rs-63-cr-loss-in-fy25-cash-reserve-fades-93-10819211)), while a CA serves dozens to hundreds of clients (inference, [B2B note](research/b2b_fintech_gaps.md)).
 
 ## 4 Competitive landscape
 
@@ -62,7 +62,7 @@ Direct-to-SME selling is avoided: MSME bookkeeping apps lose money (Vyapar lost 
 | **Zoho Books** | Not researched | Unknown | Medium |
 | **Tally add-ons** (e.g. [AI Accountant](https://www.aiaccountant.com/blog/ultimate-guide-tally-prime-automation)) | Invoice matching, GST verification | Data-entry layer | Low-medium |
 
-**Open ground (inference).** With AI data entry native to Tally, what remains is exception handling, 2B-versus-books reconciliation, multi-client CA dashboards, notice reading and draft replies, and month-end checklists ([B2B note](../research_notes/India%20AI%20personal%20finance%20MVP/b2b_fintech_gaps.md)).
+**Open ground (inference).** With AI data entry native to Tally, what remains is exception handling, 2B-versus-books reconciliation, multi-client CA dashboards, notice reading and draft replies, and month-end checklists ([B2B note](research/b2b_fintech_gaps.md)).
 
 **Global analogs.**
 
@@ -74,7 +74,7 @@ Direct-to-SME selling is avoided: MSME bookkeeping apps lose money (Vyapar lost 
 | **Integral** (Germany) | EUR 18M Series A, Sept 2026; licensed professionals review and sign off ([Vestbee](https://vestbee.com/insights/articles/integral-lands-18-m)) | Human sign-off is a feature |
 | **Intuit UK VAT agent** | Beta, drafts for approval ([Intuit](https://quickbooks.intuit.com/uk/press/intuits-all-in-one-platform-introduces-a-virtual-team-of-ai-agents-to-help)) | Platforms ship agents too |
 
-Winners sell to accounting firms, not SMB owners ([global note](../research_notes/India%20AI%20personal%20finance%20MVP/global_b2b_ai_fintech.md)). Valuations rest on thin disclosed ARR: evidence of interest, not unit economics.
+Winners sell to accounting firms, not SMB owners ([global note](research/global_b2b_ai_fintech.md)). Valuations rest on thin disclosed ARR: evidence of interest, not unit economics.
 
 ## 5 Product specification
 
@@ -120,7 +120,7 @@ Winners sell to accounting firms, not SMB owners ([global note](../research_note
 
 ## 6 Technical architecture
 
-**Components (suggested; aligned with the report's [build table](../reports/India%20AI%20personal%20finance%20MVP.md)).**
+**Components (suggested; aligned with the report's [build table](research/00-full-research-report.md)).**
 
 | Component | Implementation |
 |---|---|
@@ -138,7 +138,7 @@ Winners sell to accounting firms, not SMB owners ([global note](../research_note
 3. **Tally exports**, later a connector; Zoho and Excel secondary.
 4. **Account Aggregator** is not the route for 2B: GSTN joined in Nov 2022 with GSTR-1 and 3B data, aimed at lenders, with sole-proprietor limits ([FinBox](https://finbox.in/blog/how-gstn-on-account-aggregator-can-help-msme-lenders)).
 
-**AI approach.** Retrieval over GST law plus deterministic reconciliation. The 2024-26 evidence favours retrieval and tool calls over fine-tuning because rules change and numbers must be exact ([tech note](../research_notes/India%20AI%20personal%20finance%20MVP/tech_feasibility.md)). The model may state only tool-computed figures or cited provisions. Fine-tune later, if at all, only the embedder or a narrow classifier.
+**AI approach.** Retrieval over GST law plus deterministic reconciliation. The 2024-26 evidence favours retrieval and tool calls over fine-tuning because rules change and numbers must be exact ([tech note](research/tech_feasibility.md)). The model may state only tool-computed figures or cited provisions. Fine-tune later, if at all, only the embedder or a narrow classifier.
 
 **Evaluation plan.**
 - Reconciliation set: about 200 CA-labelled cases (assumed size); exact match on ₹ at risk.
@@ -169,7 +169,7 @@ Winners sell to accounting firms, not SMB owners ([global note](../research_note
 - [ ] Processing agreement, privacy notice, consent and deletion flows
 - [ ] WhatsApp template approvals and supplier opt-out handling
 - [ ] Terms of service with a CA-responsibility clause; indemnity position
-- [ ] Private limited company; GST registration once required ([report 10.7](../reports/India%20AI%20personal%20finance%20MVP.md))
+- [ ] Private limited company; GST registration once required ([report 10.7](research/00-full-research-report.md))
 - [ ] Law-database licensing: use official texts freely, license commercial databases, do not scrape them
 
 ## 8 Business model
@@ -191,7 +191,7 @@ All numbers are **assumptions** for pilot testing.
 | CAC and payback | ₹15,000 ÷ ₹9,500 | ≈ 1.6 months |
 | Lifetime | 3% monthly churn → 33 months × ₹9,500 | ≈ ₹3.1 lakh, about 21x CAC |
 
-Token prices (Sonnet-class) come from third-party aggregators in the [tech note](../research_notes/India%20AI%20personal%20finance%20MVP/tech_feasibility.md) and need verification; the exchange rate, token counts, data fee, WhatsApp cost, CAC and churn are estimates.
+Token prices (Sonnet-class) come from third-party aggregators in the [tech note](research/tech_feasibility.md) and need verification; the exchange rate, token counts, data fee, WhatsApp cost, CAC and churn are estimates.
 
 **Scale arithmetic.** 100 firms × ₹1.40 lakh ≈ ₹1.4 cr a year. 2% of 98,967 firms ≈ 1,979 firms ≈ ₹27.7 cr. A ₹100 cr ceiling needs about 7,140 firms (7.2%). Break-even on an assumed ₹6 lakh monthly team cost is about 63 firms.
 
@@ -199,7 +199,7 @@ Token prices (Sonnet-class) come from third-party aggregators in the [tech note]
 
 ## 9 Go-to-market
 
-**Principle.** Sell the outcome manually first, charge from the first case, and automate only steps done at least 20 times ([report 10.1](../reports/India%20AI%20personal%20finance%20MVP.md)).
+**Principle.** Sell the outcome manually first, charge from the first case, and automate only steps done at least 20 times ([report 10.1](research/00-full-research-report.md)).
 
 1. **ICAI member-benefits portal.** Suvit is listed at a 50% discount ([ICAI](https://bs.icai.org/suvit-2/)) and Accu Reco is also listed ([ICAI CMP](https://betacmp.icai.org/?p=1502)), proving the channel accepts third-party GST tools. Listing criteria and fees are not in the sources. Apply around day 45 with named references.
 2. **CA communities** (assumed channels): ICAI branch and study-circle events, WhatsApp, Telegram and LinkedIn CA groups, GST-practitioner forums. Lead with anonymised before-and-after notice cases and a monthly "ITC at risk" benchmark.

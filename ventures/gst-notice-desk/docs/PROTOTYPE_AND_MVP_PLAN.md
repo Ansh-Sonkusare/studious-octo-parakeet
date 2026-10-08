@@ -138,23 +138,23 @@ Firm dashboard; client/period run (upload, mapping, summary); reconciliation wor
 ```mermaid
 flowchart LR
   subgraph Inputs
-    A[2B and IMS exports]
-    B[Purchase register]
-    C[Notice PDFs and photos]
-    L[Law corpus]
+    A["2B and IMS exports"]
+    B["Purchase register"]
+    C["Notice PDFs and photos"]
+    L["Law corpus"]
   end
-  subgraph Core[Python / FastAPI]
+  subgraph Core["Python / FastAPI"]
     I[Importers and normalisers]
     R[Deterministic reconciliation]
     K[Cause rules]
-    X[Notice extractor - small model]
+    X["Notice extractor: small model"]
     E[Evidence builder]
     S[Law retrieval]
-    D[Drafter - mid-tier model]
+    D["Drafter: mid-tier model"]
     V[Verifier]
   end
-  DB[(Postgres + pgvector<br/>object storage)]
-  subgraph UI[Next.js console]
+  DB[("Postgres + pgvector<br/>object storage")]
+  subgraph UI["Next.js console"]
     W[Workbench and notice workspace]
     G[CA sign-off gate]
   end
@@ -166,7 +166,7 @@ flowchart LR
   DB --> E --> D
   S --> D --> V --> DB
   DB --> W --> G
-  G -->|approved| OUT[DOCX / PDF - CA files on portal]
+  G -->|approved| OUT["DOCX / PDF: CA files on portal"]
   G -->|approved| M[Supplier message]
 ```
 
@@ -212,7 +212,7 @@ These are matching tolerances tuned on the labelled set, not statements of what 
 
 A small model may read ledger narrations to propose a blocked-credit hint, labelled "suggested"; it never changes a number.
 
-**ITC at risk** = IGST + CGST + SGST + cess on register lines that are unmatched, matched only at tiers 3-5 pending confirmation, or flagged blocked. Each supplier total lists its lines.
+**ITC at risk** = IGST + CGST + SGST + cess on register lines that are unmatched, matched only at tiers 3-4 pending confirmation, or flagged blocked. Each supplier total lists its lines.
 
 ### 6.4 Data model
 
@@ -349,7 +349,7 @@ People and legal dominate; compute is small.
 
 - **M0.** 20 CA interviews logged (notices per client, CA time per notice); at least 8 of 20 confirm a paid pain (HANDOFF phase-0 gate); teardown notes for Clear, Suvit, Zoho, Tally, Accu Reco filed; 3-5 partners signed under G1; counsel engaged; CA advisor appointed.
 - **M1.** Demo run with at least 3 partners; section 4 criteria met; eval harness in CI; findings memo with failure list.
-- **M2.** All P0 stories pass acceptance criteria; AC-9 and AC-10 green; security checklist done; one firm completes a month unaided; G3 and G4 cleared.
+- **M2.** All P0 stories pass acceptance criteria; AC-9 and AC-10 green; security checklist done; one firm completes a month unaided; G2, G3 and G4 cleared (G2 at the latest by pilot start on 14 Dec).
 - **M3.** Two monthly cycles observed; HANDOFF section 11 table filled with measured values; price test at INR 150/250/400 complete; ICAI application submitted or deferred; go/pivot/stop memo.
 
 ## 12 Timeline risks and dependencies

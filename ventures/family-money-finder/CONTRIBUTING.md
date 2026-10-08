@@ -6,7 +6,7 @@ This is a private repository for a product that handles a bereaved family's sens
 
 - Never commit real names, PAN, Aadhaar (full or partial), account or folio numbers, policy numbers, death certificates, relationship proofs, statements, screenshots of portals, or interview recordings and notes.
 - Golden-set items and demos use **synthetic families** only. Consented real cases are stored outside the repository with identifiers removed, and referenced by a consent id.
-- Do not paste real data into issues, pull requests, prompts, logs or test fixtures. Mask PAN in anything you share.
+- Do not paste real data into issues, pull requests, prompts, logs or test fixtures. Mask PAN in anything shared.
 - Never commit secrets or API keys. Use `.env` files (ignored) and commit `.env.example` only.
 - If real data is committed by mistake, tell the team immediately; the history must be purged, not just reverted.
 

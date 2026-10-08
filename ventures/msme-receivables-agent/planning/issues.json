@@ -252,6 +252,15 @@
     "milestone": "M2 MVP"
   },
   {
+    "title": "Supplier onboarding, supplier ledger view and free exposure audit",
+    "body": "## Context\nP0 stories S-1 (consent and upload), S-3 (what each buyer owes, interest and 43B(h) exposure) and C-4 (free exposure audit on a client ledger, the CA lead magnet) in plan Section 5. The M1 Streamlit dashboard is the starting point; the MVP version runs on the multi-tenant web app. M2 exit criteria also need at least 6 CAs and 15 suppliers onboarded (Assumption).\n\n## Tasks\n- [ ] Build the CA invite and supplier onboarding flow: consent capture (gate G0), Udyam number, buyer contacts, tone and protected buyers\n- [ ] Build the supplier view of buyers, amounts owed, accrued interest and 43B(h) exposure with as-of date and rule-set version\n- [ ] Productionise the free exposure audit: upload a debtors ledger and get a report for the CA\n- [ ] Onboard design-partner CAs and suppliers from M1 and the M0 pipeline\n\n## Acceptance criteria\n- Stories S-1, S-3 and C-4 pass their acceptance criteria\n- Exposure audit returns a report in under 5 minutes for a 5,000-row ledger\n- Every figure shown equals engine output\n- At least 6 CAs and 15 suppliers onboarded by Fri 11 Dec 2026 (Assumption)",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
     "title": "Filing pack v1 and TReDS eligibility flag",
     "body": "## Context\nBuilds on pack v0 and CA defect list. Gate G3 (counsel's view on non-lawyers assembling filings) governs delivery. TReDS is referral only; eligibility needs buyer and invoice on a platform, and platform terms are not researched.\n\n## Tasks\n- [ ] Fix defects from the v0 review; add a completeness checklist\n- [ ] Add the TReDS eligibility flag from buyer and invoice attributes\n- [ ] Research one platform's onboarding terms and record them\n- [ ] Produce 3 packs for review before M3\n\n## Acceptance criteria\n- Story C-3 passes\n- Missing items listed on the first page\n- Flag stored without any money movement\n",
     "labels": [
@@ -288,11 +297,11 @@
     "milestone": "M2 MVP"
   },
   {
-    "title": "DPDP retention, deletion flow, breach runbook and security checklist",
-    "body": "## Context\nRules notified Nov 2025, most duties from about May 2027. Build notice, retention and deletion now. Includes redaction before model calls and vendor no-training terms.\n\n## Tasks\n- [ ] Define retention periods per table (counsel to confirm)\n- [ ] Implement deletion for a supplier or buyer contact\n- [ ] Write the breach runbook and test it once\n- [ ] Complete a security checklist: secrets, backups, access review, dependency scanning\n\n## Acceptance criteria\n- Story A-3 passes\n- Runbook rehearsed with a tabletop exercise\n- No personal data in model prompts (test)\n",
+    "title": "DPDP retention, deletion flow, breach runbook, security checklist and M2 release",
+    "body": "## Context\nRules notified Nov 2025, most duties from about May 2027. Build notice, retention and deletion now. Includes redaction before model calls and vendor no-training terms. Story A-3 is P0, and week 9 of the plan (7-11 Dec) closes M2 with hardening, a full eval run and a tagged release.\n\n## Tasks\n- [ ] Define retention periods per table (counsel to confirm)\n- [ ] Implement deletion for a supplier or buyer contact\n- [ ] Write the breach runbook and test it once\n- [ ] Complete a security checklist: secrets, backups, access review, dependency scanning\n- [ ] Run all blocking eval suites on the release candidate and tag the M2 release on Fri 11 Dec 2026\n\n## Acceptance criteria\n- Story A-3 passes\n- Runbook rehearsed with a tabletop exercise\n- No personal data in model prompts (test)\n- Release tagged with the eval report attached\n",
     "labels": [
       "type:legal",
-      "priority:P1"
+      "priority:P0"
     ],
     "milestone": "M2 MVP"
   },

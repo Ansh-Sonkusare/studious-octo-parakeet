@@ -27,4 +27,4 @@ These are repeated from the source files and HANDOFF because they decide what di
 
 ## Note on links
 
-HANDOFF.md links to `reports/` and `research_notes/` folders of the original research repository. The same material sits in this folder; use these local copies.
+HANDOFF.md links point to the copies in this folder: the report is [00-full-research-report.md](00-full-research-report.md) and the notes sit alongside it. Its Sources section (section 15) still names the original `reports/` and `research_notes/` paths as plain text; those map to the same files here.

@@ -35,10 +35,10 @@ Team: **PL** product and compliance lead, **ENG** AI/backend engineer, **FS** fu
 
 | Milestone | Weeks | Dates | Headline outcome |
 |---|---|---|---|
-| M0 Discovery and legal | 1 to 2 | 12 to 23 Oct 2026 | Ad-code status known; 15 interviews; labelled-set collection started; rules corpus v0; legal opinion commissioned |
+| M0 Discovery & legal | 1 to 2 | 12 to 23 Oct 2026 | Ad-code status known; 15 interviews; labelled-set collection started; rules corpus v0; legal opinion commissioned |
 | M1 Prototype | 3 | 26 to 30 Oct 2026 | Classifier and rule checker on 150 labelled real posts; evidence archive; sample 24-hour report; eval harness |
 | M2 MVP | 4 to 9 | 2 Nov to 11 Dec 2026 | Hosted MVP; versioned rule packs; 300+ labelled items |
-| M3 Pilot and decision | 10 to 16 | 14 Dec 2026 to 29 Jan 2027 | 5+ weekly firms; pricing tests; 500-item eval; penetration test; decision memo |
+| M3 Pilot & decision | 10 to 16 | 14 Dec 2026 to 29 Jan 2027 | 5+ weekly firms; pricing tests; 500-item eval; penetration test; decision memo |
 
 **Reconciliation with HANDOFF.** The Phase 1 gate (F1 at least 0.85 on 300+ items, 5 firms onboarded) becomes the **Week 6 checkpoint, 20 Nov**. The day-90 check (5 weekly, 10 paying) is the **Week 13 checkpoint, 8 Jan 2027**. The decision window runs three weeks past day 90 so January conversions count **[Assumption]**. M0 targets 15 interviews (HANDOFF Phase 0 says 20); the other 5 finish by 13 Nov.
 

@@ -274,7 +274,7 @@
     "body": "## Context\nN1 (P0) and N2 (P1): NRIs cannot attend branches. NRO repatriation is capped at $1M a year; Forms 15CA and 15CB require a CA. Cross-border inheritance demand evidence is weak, so validate first (ADR-005).\n\n## Tasks\n- [ ] Remote consent and identity capture without a branch visit\n- [ ] Mark each step as remote, local representative or branch\n- [ ] Repatriation checklist referencing the CA step (cost about ₹3 to 10 thousand, vendor estimate)\n- [ ] Test with 3 NRI interviewees\n\n## Acceptance criteria\n- NRI dry-run case completes with at least one local-representative step identified\n- Checklist reviewed by a CA\n",
     "labels": [
       "type:build",
-      "priority:P1"
+      "priority:P0"
     ],
     "milestone": "M2 MVP"
   },
