@@ -263,7 +263,7 @@ Open questions: HANDOFF.md section 7. Counsel decides each gate; this is not leg
 |---|---|---|---|
 | **G0** | First real customer document | Counsel-reviewed consent and privacy notice; secure upload | 19 Oct |
 | **G1** | Taking any payment | Entity and payment account live; terms and fee disclosure reviewed; written no-insurer-money, no-sales policy | 26 Oct |
-| **G2** | Advertising recoveries | Consent recorded per proof item | 14 Dec |
+| **G2** | Advertising recoveries | Consent recorded per proof item | 11 Dec |
 | **G3** | Pilot launch | Written opinion on Ombudsman representation, Advocates Act, success-fee enforceability: no blocker | 13 Nov |
 | **G4** | Pilot launch | Consent, retention, deletion flows live and drilled; AI disclosure shown ("AI drafts, a human reviews, no guaranteed outcome") | 11 Dec |
 | **G5** | Pilot launch | Zero-retention vendor terms; breach runbook rehearsed | 11 Dec |
@@ -298,7 +298,7 @@ Non-people cost is about ₹10.3 lakh over 16 weeks. Team time at HANDOFF.md sec
 |---|---|
 | **M0** (23 Oct) | 30 interviews synthesised; 20+ would pay; no concierge blocker in counsel's preliminary view; G0 closed; specialist engaged; 25+ consented files; incorporation filed; four wordings acquired |
 | **M1** (30 Oct) | Section 4 criteria met; demo delivered; golden set v0 stored securely |
-| **M2** (11 Dec) | P0 stories accepted; section 8 gates passed on the sealed holdout; G1-G5 closed; deletion and restore drills passed; reviewer SLA met on 20+ shadow cases; `v0.1.0` tagged |
+| **M2** (11 Dec) | P0 stories accepted; section 8 gates passed on the sealed holdout; G1-G5 and G7 closed; deletion and restore drills passed; reviewer SLA met on 20+ shadow cases; `v0.1.0` tagged |
 | **M3** (29 Jan) | Data frozen 22 Jan; the five HANDOFF.md section 11 metrics reported with sample sizes; unit economics on actuals; decision memo reviewed |
 
 ## 12. Risks to the timeline and dependencies

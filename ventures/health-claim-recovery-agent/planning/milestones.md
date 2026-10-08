@@ -61,7 +61,7 @@ M0 and M1 overlap: prototype build starts in week 2 while discovery and legal wo
 **Exit criteria**
 - [ ] All P0 user stories (US-01 to US-11) accepted.
 - [ ] Release gates passed on the sealed holdout: clause-citation precision at least 95%, zero invented clauses, amounts within ±2% on at least 95% of deductions, class accuracy at least 90%, 100% correct refusals on the adversarial set.
-- [ ] Gates G1 to G5 closed (payments, written legal opinion, consent and deletion, AI disclosure, vendor terms and breach runbook).
+- [ ] Gates G1 to G5 and G7 closed: payments, consent for proof content, written legal opinion, consent and deletion flows with AI disclosure, vendor terms and breach runbook, caregiver authorisation.
 - [ ] Backup-restore drill and data-deletion drill passed.
 - [ ] Reviewer turnaround within the 4-working-hour target on at least 20 shadow-mode cases.
 - [ ] Release tagged `v0.1.0`.

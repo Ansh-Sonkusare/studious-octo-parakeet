@@ -1,0 +1,379 @@
+[
+  {
+    "title": "Incorporate private limited company and open bank and payment accounts",
+    "body": "## Context\nA company, a bank account and a payment-gateway account are needed before any fee can be collected (gate G1, target 26 Oct 2026) and before B2B contracts. Until then, concierge cases are free design-partner cases excluded from willingness-to-pay metrics. See HANDOFF.md section 7 and docs/PROTOTYPE_AND_MVP_PLAN.md section 9.\n\n## Tasks\n- [ ] Choose a company-formation provider or chartered accountant and file incorporation in week 1\n- [ ] Open a current account\n- [ ] Apply for Razorpay onboarding (KYC, business category check for claim-assistance services)\n- [ ] Decide GST registration timing with the accountant\n- [ ] Store registration documents in the private ops folder (never in this repository)\n\n## Acceptance criteria\n- Incorporation filed by 16 Oct 2026 and certificate in hand by 26 Oct 2026 (assumption: 7-14 working days)\n- Payment account approved, or a written ETA and fallback recorded\n- Gate G1 checklist item 'entity and payment account live' is ticked",
+    "labels": [
+      "type:ops",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Commission legal opinion on Ombudsman representation, Advocates Act and success-fee enforceability",
+    "body": "## Context\nThe central legal risk is whether a non-lawyer service may assist complainants before the Insurance Ombudsman and whether drafting complaints is legal practice. Representation rules are unverified (HANDOFF.md section 7, questions 1 to 6). The written opinion is gate G3 and blocks the public pilot; a preliminary view is needed by the M0 gate.\n\n## Tasks\n- [ ] Shortlist two firms with insurance and consumer-law experience and agree scope and fee\n- [ ] Send the six open questions from HANDOFF.md section 7, including offshore model processing and the proposed internal insurer ombudsman\n- [ ] Add the caregiver-acting-for-parent authorisation question (gate G7)\n- [ ] Obtain a preliminary oral or written view by 23 Oct 2026\n- [ ] Obtain the written opinion by 13 Nov 2026\n- [ ] Summarise constraints in a one-page 'what we may and may not do' note for the team\n\n## Acceptance criteria\n- Preliminary view received by 23 Oct 2026 with no blocker for concierge, or a restructuring plan if there is one\n- Written opinion received by 13 Nov 2026 and filed in the private legal folder\n- Product constraints from the opinion are reflected in the terms and in DECISIONS.md",
+    "labels": [
+      "type:legal",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Draft and review consent notice, privacy notice and concierge terms",
+    "body": "## Context\nEvery uploaded document is health data. Gate G0 (target 19 Oct 2026) requires a counsel-reviewed consent and privacy notice before the first real customer document. The IT Act SPDI Rules apply now and DPDP duties from about May 2027, so the text should meet the DPDP standard (regulation_and_rails.md Q8).\n\n## Tasks\n- [ ] Write itemised consent: processing for the case, AI use, cross-border model processing, optional anonymised proof content (default off)\n- [ ] Write privacy notice covering retention (90 days after closure, assumption), deletion and contact\n- [ ] Write concierge terms: fees, no guaranteed outcome, AI drafts and a human reviews, user signs and submits\n- [ ] Include the written policy: no money from insurers, brokers or hospitals; no policy sales; no client money\n- [ ] Add a caregiver authorisation form\n- [ ] Counsel reviews; English and Hindi versions\n- [ ] Version each text so consents store the text version\n\n## Acceptance criteria\n- Counsel sign-off recorded before 19 Oct 2026\n- Consent text has a version identifier usable by the consents table\n- Hindi and English versions are consistent in meaning (checked by a native speaker)",
+    "labels": [
+      "type:legal",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Run 30 interviews with recently rejected or short-paid claimants",
+    "body": "## Context\nThe M0 gate requires at least 20 of 30 interviewees to say they would pay to recover the money. Interviews also supply the first concierge cases and consented files, and test the ₹499 plus 10-15% pricing hypothesis (HANDOFF.md section 8; ₹299 versus ₹499 is open question 2).\n\n## Tasks\n- [ ] Recruit from consumer forums, social groups, Reddit and adviser client lists; offer a small incentive\n- [ ] Write an interview guide: what was denied, what they did, why they stopped, what they would pay\n- [ ] Ask each person for consent to share documents, and log it\n- [ ] Run 15 interviews in week 1 and 15 in week 2\n- [ ] Synthesise: reasons for deduction, escalation behaviour, price reactions, preferred channel, language\n- [ ] Write the willingness-to-pay read-out and a pricing recommendation\n\n## Acceptance criteria\n- 30 interviews logged by 23 Oct 2026\n- Read-out states the count who would pay, at what price points, with quotes\n- At least 25 interviewees offered a document upload",
+    "labels": [
+      "type:research",
+      "type:gtm",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Engage a part-time claims specialist (ex-TPA or insurer) and a backup",
+    "body": "## Context\nThe specialist reviews letters, adjudicates the golden set and owns the rules library. Plan assumes 8-10 hours a week at about ₹1,500 per hour (assumption). Reviewer supply is open question 7 in HANDOFF.md.\n\n## Tasks\n- [ ] Source candidates through networks and professional groups\n- [ ] Agree scope, weekly hours, rate, confidentiality and conflict-of-interest terms (no insurer or hospital ties)\n- [ ] Run a paid trial review of three sample cases\n- [ ] Engage a second person as backup\n- [ ] Schedule fixed weekly hours through January 2027\n\n## Acceptance criteria\n- Primary specialist engaged by 16 Oct 2026 and backup named by 30 Oct 2026\n- Signed confidentiality and no-conflict declaration on file\n- Trial review shows the specialist can review a case in about 20 minutes or a reason is documented",
+    "labels": [
+      "type:ops",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Collect 100 consented, anonymised claim files: consent, intake and anonymisation procedure",
+    "body": "## Context\nThe golden set needs about 100 real files (25+ by 23 Oct, 40 by 30 Oct, 100 by 20 Nov). Files are health data and must never enter the repository (CONTRIBUTING.md). Anonymisation must remove identifiers while keeping diagnoses, amounts and dates.\n\n## Tasks\n- [ ] Write the file-sharing consent text, including the right to withdraw\n- [ ] Define the minimum set per case: policy wording or schedule, deduction or rejection letter, discharge summary, itemised bill\n- [ ] Set up encrypted storage with a named access list, outside the repository\n- [ ] Write the anonymisation procedure and check each file with a second person\n- [ ] Maintain a register of files (ID, insurer, product, deduction classes) without personal data\n- [ ] Offer a free Claim X-ray in exchange for consent\n\n## Acceptance criteria\n- 25+ files by 23 Oct 2026 and 40 by 30 Oct 2026, each with recorded consent\n- Register shows spread across the three target insurers and at least four deduction classes\n- No file containing unredacted identifiers is accepted into the golden-set store",
+    "labels": [
+      "type:research",
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Verify primary data points: Ombudsman totals, Bima Bharosa health data, award cap, time limits",
+    "body": "## Context\nSeveral figures are secondary or conflicting: FY25 Ombudsman totals (37,431 versus 53,102), the '41% in favour' figure, health-only Bima Bharosa counts, the current award cap and the filing windows used by the deadline calculator (HANDOFF.md section 13, item 6; research notes 'Gaps').\n\n## Tasks\n- [ ] Fetch the Council for Insurance Ombudsmen annual report and the relevant Lok Sabha replies\n- [ ] Reconcile the FY25 totals and recompute the 'in favour' rate with a clear definition\n- [ ] Confirm the Ombudsman filing window, the insurer response period and the award cap from the Insurance Ombudsman Rules\n- [ ] Confirm the IRDAI master circular provisions on waiting periods, moratorium and non-payable items against the primary text\n- [ ] Record each verified fact with source and date in a rules note for the specialist\n- [ ] Record corrections in a new note under docs/ rather than editing HANDOFF.md or the research files\n\n## Acceptance criteria\n- Each [V] item in the plan's calculator section has a primary-source reference or a documented 'not found'\n- The reconciled FY25 figures are written down with their definitions\n- Open items passed to counsel are listed",
+    "labels": [
+      "type:research",
+      "priority:P1"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Stand up the front door: WhatsApp Business number, consent-first upload page, one-page site",
+    "body": "## Context\nConcierge cases need a trusted channel. IRDAI has warned of fake sites impersonating Bima Bharosa, so a verified WhatsApp Business profile matters. Meta verification can be slow, so apply in week 1 and keep web upload as the primary path.\n\n## Tasks\n- [ ] Register the WhatsApp Business number and start Meta verification\n- [ ] Build a one-page site (English first) with the consent notice and document upload to private storage\n- [ ] Show the AI-and-human disclosure and the no-guarantee statement on the page\n- [ ] Send uploads to a private bucket with no public URLs\n- [ ] Add a simple intake record (case ID, channel, consent version, timestamp)\n- [ ] Test with five dummy uploads\n\n## Acceptance criteria\n- Upload page live by 19 Oct 2026 with consent captured before any file is accepted\n- No document is publicly accessible; access is logged\n- WhatsApp Business verification submitted by 16 Oct 2026",
+    "labels": [
+      "type:build",
+      "type:gtm",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Review model-vendor data terms and write a short data-protection impact assessment",
+    "body": "## Context\nOffshore model APIs mean cross-border processing of health data. DPDP allows it unless the destination is restricted; counsel should confirm. Zero-retention terms are gate G5 (HANDOFF.md section 6.5).\n\n## Tasks\n- [ ] Read the model vendor's data-retention, training-use and regional-processing terms and record them\n- [ ] Request zero-retention or equivalent terms for the account\n- [ ] Map data flows: what leaves India, what is redacted first\n- [ ] List sub-processors (hosting, storage, messaging, payments, error tracking)\n- [ ] Write a two-page impact assessment with risks and controls\n- [ ] Send the cross-border question to counsel\n\n## Acceptance criteria\n- Impact assessment filed by 23 Oct 2026\n- Vendor default retention recorded; zero-retention request submitted\n- Data-flow diagram matches the architecture in the plan",
+    "labels": [
+      "type:legal",
+      "type:research",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Pick the first 8-10 products and acquire policy wordings (four by 23 Oct)",
+    "body": "## Context\nThe corpus starts with insurers drawing the most FY25 Ombudsman health complaints: Star Health 12,186, Care 4,423, Niva Bupa 3,983, Aditya Birla 2,354. Historical wording versions are hard to obtain (HANDOFF.md open question 5). Wording PDFs are public documents but are fetched by script and not committed.\n\n## Tasks\n- [ ] Rank retail products per insurer by market share and complaint volume\n- [ ] Download current wordings, schedules and prospectuses; record source URL, date and SHA-256 hash\n- [ ] Identify which wording version applies to policies issued in the last four years\n- [ ] Choose four products for M1 and 8-10 for M2\n- [ ] Draft the corpus manifest format used by `corpus/`\n\n## Acceptance criteria\n- Four wordings acquired and hashed by 23 Oct 2026\n- Shortlist of 8-10 products agreed with the specialist\n- Manifest lists version, effective dates and source for each file",
+    "labels": [
+      "type:research",
+      "priority:P0"
+    ],
+    "milestone": "M0 Discovery & legal"
+  },
+  {
+    "title": "Scaffold the repository, CI and secret and PII scanning",
+    "body": "## Context\nThe repository must never contain customer data (CONTRIBUTING.md). CI should run linting, tests and a secret scan from the first commit. Layout follows docs/PROTOTYPE_AND_MVP_PLAN.md section 7.\n\n## Tasks\n- [ ] Create the Python project with FastAPI, formatting, linting and tests\n- [ ] Add the directory skeleton from the plan\n- [ ] Add pre-commit hooks and a CI secret scan, plus a check that blocks common document file types outside `corpus/` manifests and `eval/` fixtures\n- [ ] Add a Makefile with `test`, `eval` and `lint` targets\n- [ ] Add a synthetic-fixture generator for tests\n- [ ] Document local setup in a short README section\n\n## Acceptance criteria\n- CI is green on an empty change\n- A commit adding a PDF outside allowed paths or an API key fails the check\n- A new developer can run tests from a clean checkout in under 15 minutes",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Define deduction taxonomy v1 and annotation guidelines",
+    "body": "## Context\nThe taxonomy underpins classification, the golden set and reviewer reason codes. Classes from HANDOFF.md section 5.3: room-rent proportionate deduction, waiting period or pre-existing disease, non-payable item, co-pay or sub-limit, documentation gap, other. Add verdicts (contestable, likely valid, needs human).\n\n## Tasks\n- [ ] Write definitions and decision rules for each class with worked examples from the first consented files\n- [ ] Define ground-truth fields: class, clause with acceptable alternates, amount, verdict, route\n- [ ] Define rules for ambiguous cases and multi-cause deductions\n- [ ] Have the specialist review and approve\n- [ ] Version the guidelines\n\n## Acceptance criteria\n- Guidelines approved by the specialist by 27 Oct 2026\n- Two annotators labelling ten shared files agree on class for at least 85% of deductions (assumption); disagreements resolved and the guide updated",
+    "labels": [
+      "type:eval",
+      "type:research",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Build golden set v0: 40 files and about 100 annotated deductions",
+    "body": "## Context\nGolden set v0 allows the M1 criteria to be measured. Real files stay in encrypted storage outside the repository; only schemas, synthetic fixtures and aggregate results are committed.\n\n## Tasks\n- [ ] Select 40 files from the consented register covering all target insurers and classes\n- [ ] Annotate independently by the engineer and a second annotator, then adjudicate with the specialist\n- [ ] Split 60/40 into development and holdout\n- [ ] Store with an access list and a hash manifest\n- [ ] Write the loader and schema in `eval/`\n\n## Acceptance criteria\n- About 100 adjudicated deductions by 29 Oct 2026\n- Holdout split is sealed (not used for tuning)\n- No identifiable data in the repository",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Build wording corpus v0 (four products) and IRDAI rules library v0",
+    "body": "## Context\nThe retrieval corpus is clause-segmented and versioned with effective dates (plan section 6.5). A case is matched to the wording version in force; an unknown version blocks automation.\n\n## Tasks\n- [ ] Segment each wording by clause keeping numbering, heading and page\n- [ ] Spot-check 20 clauses per product with the specialist\n- [ ] Load clauses with full-text and vector indexes\n- [ ] Add the IRDAI master circular (effective 1 Aug 2024), Ombudsman rules and the complaint form as dated rules\n- [ ] Implement `get_clause` and `search_irdai_rules(as_of)`\n- [ ] Report recall@5 on a first set of labelled queries\n\n## Acceptance criteria\n- Four products loaded with clause references and page numbers\n- Every rule row has an effective date and source\n- `get_clause` returns verbatim text that matches the source page",
+    "labels": [
+      "type:build",
+      "type:research",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Document ingestion and extraction for five document types using model vision",
+    "body": "## Context\nCurrent frontier models can read PDFs and photographed documents directly (HANDOFF.md section 6.1). Extraction must return amounts, dates and line items with page references and confidence so the grounding validator can trace every figure.\n\n## Tasks\n- [ ] Classify document type: policy schedule or wording, settlement letter, rejection letter, discharge summary, itemised bill\n- [ ] Extract structured fields against a schema, with source page and confidence per field\n- [ ] Redact identifiers before model calls and re-insert by code\n- [ ] Handle multi-page PDFs and phone photos; flag illegible pages\n- [ ] Cache extraction results to cut evaluation cost\n- [ ] Measure field accuracy on golden set v0\n\n## Acceptance criteria\n- Required-field accuracy reported on the development split\n- Illegible or low-confidence inputs are flagged, not guessed\n- Pipeline runs without sending names, phone numbers or policy numbers to the model",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Calculators v0: proportionate deduction, co-pay, sub-limit and settlement reconciliation",
+    "body": "## Context\nNumbers must come only from deterministic code (ADR-003). The model never does arithmetic. Parameters (room-rent cap, co-pay percentage, sub-limits, order of application) come from the matched wording.\n\n## Tasks\n- [ ] Implement `compute_proportionate_deduction` including an ICU variant\n- [ ] Implement `apply_copay` and `apply_sublimit` with configurable order of application\n- [ ] Implement `reconcile_settlement`: claimed minus deductions equals paid within ₹1, otherwise flag\n- [ ] Return a human-readable trace with each result\n- [ ] Write unit tests from hand-worked examples and property tests (monotonicity, non-negative results, idempotence)\n- [ ] Have the specialist check three worked examples\n\n## Acceptance criteria\n- All unit and property tests pass in CI\n- Each result includes inputs, formula and clause reference\n- Specialist confirms worked examples match insurer practice",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Claim X-ray v0: classify, cite, calculate and render",
+    "body": "## Context\nThe X-ray is the hero deliverable and the main demo item: each deduction with class, clause quote, amount, verdict, route and deadline. Likely-valid deductions are marked so the product never charges for unwinnable items. Waiting-period and pre-existing-disease cases are classified and cited but routed to a human.\n\n## Tasks\n- [ ] Implement the deduction classifier (small model, mid-tier on low confidence)\n- [ ] Implement the citation step: the model selects `clause_id` from retrieved candidates and code verifies verbatim quotes\n- [ ] Wire in the calculators and build the recoverable range\n- [ ] Render the X-ray as a web page and PDF with model-written text using placeholders filled by code\n- [ ] Refuse guarantees and legal advice with a standard message\n- [ ] Time the end-to-end run\n\n## Acceptance criteria\n- Median upload-to-X-ray under 10 minutes on real files\n- Zero invented clauses on the development split\n- Output states 'automated analysis, reviewed before any letter is sent' and no guaranteed outcome",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Eval harness v0: CLI, metrics and reproducible report",
+    "body": "## Context\nRelease decisions depend on measured metrics (plan section 8). The first version should run locally with one command and store aggregate results without customer data.\n\n## Tasks\n- [ ] Implement `make eval` loading the golden set from the secure location\n- [ ] Compute clause-citation precision, invented-clause count, amount accuracy, class accuracy, extraction accuracy and likely-valid false-contest rate\n- [ ] Write a markdown and JSON report with per-class breakdowns and Wilson intervals\n- [ ] Add a 25-file smoke tier\n- [ ] Store results with commit hash, prompt hashes and model IDs\n- [ ] Add the 30-item adversarial set skeleton\n\n## Acceptance criteria\n- Report reproducible from a clean checkout by someone other than the author\n- Hard-fail exit code when any clause is invented\n- Reports contain only aggregates and anonymised IDs",
+    "labels": [
+      "type:eval",
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Run concierge operations: runbook, case tracker, first 10 cases and token pricing",
+    "body": "## Context\nPer ADR-007 the team sells the outcome manually first. Cases before the payment account is live are free design-partner cases excluded from willingness-to-pay metrics; token fees (₹299 proposed) start once gate G1 closes.\n\n## Tasks\n- [ ] Write a one-page runbook: intake, X-ray, fee terms, letter, submission guidance, tracking, outcome\n- [ ] Set up a case tracker in the private database (not a shared spreadsheet)\n- [ ] Handle the first 10 cases; log time spent per step\n- [ ] Send payment links after G1\n- [ ] Log every manual step performed, to find what to automate after 20 repetitions\n- [ ] Record insurer, product, deduction class, and outcome per case\n\n## Acceptance criteria\n- 10+ cases received and 5 filed by 30 Oct 2026; 2 paid the token fee\n- Time-per-step log exists for every case\n- Each case has a consent record",
+    "labels": [
+      "type:ops",
+      "type:gtm",
+      "priority:P0"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "M1 demo and review: 12-minute walkthrough and backlog re-rank",
+    "body": "## Context\nThe M1 gate on Friday 30 Oct 2026 uses the demo script in plan section 4. The demo shows the real flow, a likely-valid case, failure handling and the eval report.\n\n## Tasks\n- [ ] Prepare a consented real case and a fallback case\n- [ ] Rehearse twice with the specialist\n- [ ] Present to advisers; record questions and objections\n- [ ] Check every M1 success criterion against measured results\n- [ ] Re-rank the M2 backlog from feedback\n\n## Acceptance criteria\n- Demo delivered on 30 Oct 2026\n- M1 criteria checklist completed with evidence\n- Updated M2 backlog published in the issue tracker",
+    "labels": [
+      "type:ops",
+      "priority:P1"
+    ],
+    "milestone": "M1 Prototype"
+  },
+  {
+    "title": "Database schema, migrations, auth and role-based access with row-level security",
+    "body": "## Context\nData model in plan section 6.3. Roles: claimant, caregiver, reviewer, specialist, admin, partner. Reviewers see assigned cases only; production access is break-glass and logged.\n\n## Tasks\n- [ ] Write migrations for the tables in section 6.3\n- [ ] Implement authentication with staff multi-factor authentication\n- [ ] Implement row-level security and role checks with tests\n- [ ] Encrypt names, contacts and policy numbers at application level with managed-KMS keys\n- [ ] Hash phone numbers for lookup\n- [ ] Set up Supabase in the Mumbai region (verify availability) with backups\n\n## Acceptance criteria\n- A reviewer cannot read an unassigned case (tested)\n- Encrypted fields are unreadable in a raw database dump\n- Backup restore tested once before M2 gate",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Pipeline orchestrator and Postgres-backed job queue",
+    "body": "## Context\nThe pipeline is an explicit state machine (plan section 6.6), not an open agent loop, with retries, idempotency and clear failure states, including 'held for human'.\n\n## Tasks\n- [ ] Implement the job queue and worker process\n- [ ] Implement the state machine from ingest to review queue\n- [ ] Add retries with back-off and a dead-letter state\n- [ ] Record model, prompt and corpus versions on every analysis\n- [ ] Hold cases with unknown wording version or low extraction confidence and notify the user\n- [ ] Add structured logs with no document text\n\n## Acceptance criteria\n- A case moves from upload to review queue unaided in staging\n- Killing a worker mid-job does not duplicate or lose work\n- p90 machine time under 5 minutes on the golden-set files",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "WhatsApp Cloud API intake as a fixed state machine (English and Hindi)",
+    "body": "## Context\nWhatsApp is the preferred channel for many users, but verification can lag. Web intake is the primary path; use an Indian BSP (Gupshup or Interakt) if Meta verification lags past week 4.\n\n## Tasks\n- [ ] Webhook receiver with signature verification\n- [ ] Menu, media upload, status and 'talk to a human' flows\n- [ ] Approved message templates for notifications outside the 24-hour window\n- [ ] Consent capture before accepting documents\n- [ ] Media download into private storage\n- [ ] Rate limiting and abuse handling\n\n## Acceptance criteria\n- A user can submit documents and receive an X-ray link on WhatsApp in staging\n- No document is processed before consent is stored\n- Fallback decision (direct versus BSP) recorded by 6 Nov 2026",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Web case page: consent, upload, status, X-ray view, fee terms and timeline",
+    "body": "## Context\nServer-rendered pages (Jinja2 and HTMX) for the customer journey in plan section 5.2. Must work well on a phone and in English and Hindi.\n\n## Tasks\n- [ ] Design the flow and copy with plain language and the AI-and-human disclosure\n- [ ] Implement consent and upload with itemised toggles\n- [ ] Implement status, X-ray page with clause quotes, fee terms and acceptance\n- [ ] Implement the case timeline and next-deadline display\n- [ ] Implement acknowledgement-number entry\n- [ ] Test on low-end Android and slow networks\n\n## Acceptance criteria\n- US-01 to US-06 accepted\n- Pages meet basic accessibility checks (contrast, labels, keyboard use)\n- Hindi and English copy reviewed by a native speaker",
+    "labels": [
+      "type:build",
+      "type:design",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Grounding validator: block untraceable numbers, dates and quotations",
+    "body": "## Context\nThe validator enforces ADR-003 in code. Every numeral and date in the final text must trace to a tool result or source document; every quoted clause must match the corpus verbatim; prohibited language (guarantees, legal advice) is blocked.\n\n## Tasks\n- [ ] Extract all numerals, dates and quotations from drafts\n- [ ] Check each against tool outputs and source extractions with tolerance rules\n- [ ] Check quotes against the corpus text\n- [ ] Add a prohibited-phrase list reviewed by counsel\n- [ ] Regenerate once on failure, then block and notify the reviewer\n- [ ] Test against known-bad drafts, including one with a swapped number\n\n## Acceptance criteria\n- All known-bad test drafts are blocked\n- No approval is possible while the validator fails\n- Validator result is stored with each letter version",
+    "labels": [
+      "type:build",
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Letter generation: insurer grievance, Bima Bharosa and Ombudsman (Annexure VI-A) templates",
+    "body": "## Context\nLetters are templates with model-written reasoning sections; values are placeholders filled by code. Escalation drafts are produced after 30 days without resolution. Filing uses the user's own login and OTP.\n\n## Tasks\n- [ ] Obtain the current Ombudsman complaint form and Bima Bharosa field requirements and record them\n- [ ] Write the three templates with specialist input\n- [ ] Implement `draft_letter` with placeholder filling\n- [ ] Generate escalation drafts from the stored case history\n- [ ] Generate English and Hindi covering notes\n- [ ] Run a specialist review of ten generated letters\n\n## Acceptance criteria\n- Letters for ten golden-set cases pass the validator and specialist review\n- Templates carry no unverifiable claims\n- Each letter lists the evidence enclosures",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Reviewer console: queue, evidence side by side, letter editor, approve or reject",
+    "body": "## Context\nA reviewer approves every outbound letter (ADR-004). Edit reason codes (wrong clause, wrong amount, tone, missing fact) feed the golden set. Cases above ₹1 lakh or with pre-existing-disease or non-disclosure grounds need specialist sign-off (assumption).\n\n## Tasks\n- [ ] Queue ordered by age with SLA colouring\n- [ ] Case view: document viewer, extracted fields, deductions with calculation trace, citation panel, validator status\n- [ ] Letter editor with tracked changes and mandatory edit reasons\n- [ ] Approve, reject and escalate-to-specialist actions\n- [ ] Capture reviewer minutes per case\n- [ ] Export confirmed edits as candidate golden-set items\n\n## Acceptance criteria\n- US-08 accepted by the specialist in a walkthrough\n- Approval blocked while the validator fails (tested)\n- Reviewer minutes are recorded on every case",
+    "labels": [
+      "type:build",
+      "type:design",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Append-only hash-chained audit log with separate encrypted payload store",
+    "body": "## Context\nAudit design in plan section 6.7: events carry references and hashes, bodies live in a payload store that can be deleted on request while event metadata remains without identifiers.\n\n## Tasks\n- [ ] Create the audit table with previous-hash and row-hash columns and insert-only rights\n- [ ] Log consents, model calls, tool calls, retrieved passages, drafts, edits, approvals, filings and payments\n- [ ] Create the encrypted payload store keyed by hash\n- [ ] Build a verifier that walks the chain\n- [ ] Build an admin audit viewer for one case\n- [ ] Agree metadata retention with counsel\n\n## Acceptance criteria\n- Verifier detects a tampered row in a test\n- US-11 accepted: any letter can be reconstructed with passages, tool calls, model and prompt versions\n- Deleting a case's payloads leaves no identifiers in the log",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Consent, retention and deletion flows with drills",
+    "body": "## Context\nGate G4. One-click withdrawal and deletion; documents deleted 90 days after closure unless the user opts to keep them; backups age out within 30 days (assumptions to confirm with counsel).\n\n## Tasks\n- [ ] Implement consent records tied to text versions and purposes\n- [ ] Implement withdrawal and a deletion job covering storage, extractions, embeddings of user data (none expected) and payload store\n- [ ] Implement the retention sweeper\n- [ ] Send deletion confirmation to the user\n- [ ] Run a deletion drill and a restore drill and record results\n- [ ] Add a data-subject request log\n\n## Acceptance criteria\n- US-10 accepted\n- Drill proves content is removed within 7 days and non-identifying metadata remains\n- Counsel confirms the retention periods or replaces them",
+    "labels": [
+      "type:build",
+      "type:legal",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Deadline tracker, reminders and escalation notifications",
+    "body": "## Context\nDeadlines are computed by `compute_deadlines` from stored dates and effective-dated rules (windows to be verified in M0). Reminders go out at day 20 and day 28 after the grievance (assumption), then the escalation drafts are prepared.\n\n## Tasks\n- [ ] Implement `compute_deadlines` and tests against verified rules\n- [ ] Create deadline rows on each filing event\n- [ ] Daily scanner job and reminder sending (WhatsApp templates and email)\n- [ ] Show the next deadline on the case page\n- [ ] Alert reviewers when a deadline is within 3 days and nothing is drafted\n\n## Acceptance criteria\n- US-06 and US-07 accepted\n- Deadline results match the specialist's hand calculations on ten cases\n- No reminder is sent after a case is closed or deleted",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Expand corpus to 8-10 products and add a rules library maintenance workflow",
+    "body": "## Context\nThe rules library has no owner in the market data, so the team must keep it current: wordings change by version and IRDAI issues circulars. The specialist owns it (plan section 6.5).\n\n## Tasks\n- [ ] Ingest and segment wordings for the remaining products\n- [ ] Spot-check segmentation with the specialist\n- [ ] Build the corpus manager UI: upload a version, segment, preview, activate with effective date\n- [ ] Add a monthly circular review task\n- [ ] Re-run retrieval evaluation across the full corpus\n- [ ] Choose the embedding model by retrieval eval on 50 labelled queries\n\n## Acceptance criteria\n- 8-10 products loaded by 20 Nov 2026\n- US-09 accepted\n- Recall@5 reported; reranker added only if below 90% (assumption)",
+    "labels": [
+      "type:research",
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Golden set v1: 100 files, 200-300 deductions, sealed holdout, adversarial set and CI gating",
+    "body": "## Context\nRelease gates from HANDOFF.md section 6.4: clause-citation precision at least 95%, zero invented clauses, amounts within ±2%. The holdout is used only for gates, never for tuning.\n\n## Tasks\n- [ ] Complete annotation of the 100 files by 20 Nov and obtain specialist sign-off by 27 Nov\n- [ ] Seal the 40% holdout\n- [ ] Finish the 30-item adversarial set: guarantee and legal-advice prompts, hidden instructions in documents, unknown products, illegible scans, inconsistent totals\n- [ ] Wire the full eval into CI for prompt, schema, model, retrieval and corpus changes with a 1-point non-regression rule\n- [ ] Archive release-candidate results\n- [ ] Report intervals alongside point estimates\n\n## Acceptance criteria\n- Gate thresholds in plan section 8 pass on the sealed holdout by 11 Dec 2026\n- A deliberately broken prompt is blocked by CI\n- Pinned model IDs are enforced in CI",
+    "labels": [
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Razorpay: upfront payment link, success-fee invoice and webhooks",
+    "body": "## Context\nCollect the upfront fee (₹499 proposed; ₹299 token during concierge) and invoice the success fee (10-15% of recovered amount only) by UPI link after recovery is confirmed. No client money is held (ADR-005). E-mandate is a P1 follow-up pending gate G6.\n\n## Tasks\n- [ ] Create payment links and verify webhooks idempotently\n- [ ] Block drafting until upfront payment is confirmed\n- [ ] Implement `compute_fee` with counsel's GST treatment\n- [ ] Generate the success-fee link when the user records a recovery with proof\n- [ ] Reconcile payments in a ledger view\n- [ ] Test refunds and failed payments\n\n## Acceptance criteria\n- US-04 accepted\n- Fee base excludes likely-valid deductions and unrecovered amounts (tested)\n- Ledger matches the gateway dashboard for 20 test payments",
+    "labels": [
+      "type:build",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Hindi voice notes with Sarvam speech-to-text and user confirmation",
+    "body": "## Context\nSpeech-to-text costs about ₹30 per audio hour (Sarvam pricing in research). Voice helps caregivers and users uncomfortable typing; the transcript is always shown for confirmation.\n\n## Tasks\n- [ ] Integrate speech-to-text for WhatsApp voice notes\n- [ ] Show the transcript and ask the user to confirm or correct it\n- [ ] Redact identifiers before any further model use\n- [ ] Handle Hindi-English mixed speech\n- [ ] Measure word error rate on ten recordings\n\n## Acceptance criteria\n- US-12 accepted\n- Unconfirmed transcripts are never used in letters\n- Cost per minute logged",
+    "labels": [
+      "type:build",
+      "priority:P1"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Security hardening, external review and breach runbook",
+    "body": "## Context\nGate G5 and part of G4. Health-data breach is low likelihood but very high impact (HANDOFF.md section 12). Statutory notification timelines are to be confirmed by counsel.\n\n## Tasks\n- [ ] Commission a light external security review (about ₹40,000, assumption)\n- [ ] Fix findings rated high before M2 gate\n- [ ] Add dependency and container scanning to CI\n- [ ] Write the breach runbook with named owners, contact list and notification steps; rehearse once\n- [ ] Verify that logs and error tracker contain no document text\n- [ ] Confirm zero-retention vendor terms are signed\n\n## Acceptance criteria\n- No high findings open at the M2 gate\n- Runbook rehearsal recorded\n- Gate G5 ticked",
+    "labels": [
+      "type:build",
+      "type:legal",
+      "priority:P0"
+    ],
+    "milestone": "M2 MVP"
+  },
+  {
+    "title": "Pilot launch checklist: sign off legal and compliance gates G1-G7",
+    "body": "## Context\nThe public pilot opens on 14 Dec 2026. Each gate in plan section 9 needs evidence on file. If the written opinion returns a blocker, the pilot pauses and the product is restructured before launch.\n\n## Tasks\n- [ ] Collect evidence for each gate and have counsel or the lead sign it off\n- [ ] Confirm the verified WhatsApp profile and landing page disclosures\n- [ ] Confirm that no proof content is published without recorded consent (G2)\n- [ ] Confirm the payment partner's e-mandate position (G6) and keep UPI links if not confirmed\n- [ ] Hold a go/no-go meeting on 11 Dec 2026\n\n## Acceptance criteria\n- Signed gate checklist stored in the private legal folder\n- Go/no-go decision recorded\n- Any open item has an owner and date",
+    "labels": [
+      "type:legal",
+      "type:ops",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Run the pilot: 50-100 live cases with weekly metrics review",
+    "body": "## Context\nCohort cut-off is Monday 21 Dec 2026 (50 filed) so the 30-day window closes by 20 Jan; data freeze Friday 22 Jan 2027. Every letter is human-reviewed. Cumulative filed-case targets: 35 by 11 Dec, 50 by 21 Dec, 80 by 22 Jan (assumptions).\n\n## Tasks\n- [ ] Handle cases through the MVP with the reviewer and specialist\n- [ ] Hold a weekly metrics review: funnel, correctness, edit rate, reviewer minutes, outcomes, fee collection\n- [ ] Record every exception that needed manual work\n- [ ] Feed confirmed reviewer edits into the golden set weekly\n- [ ] Raise a scope or capacity flag in any week where qualified-lead flow is under 60% of plan\n\n## Acceptance criteria\n- At least 50 cases filed by 21 Dec 2026 and 50-100 by the freeze\n- Weekly metrics notes exist for each week of the pilot\n- Validator block rate and invented-clause rate reported weekly",
+    "labels": [
+      "type:ops",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Acquisition channel tests: landing pages in English and Hindi, partners and HR teams",
+    "body": "## Context\nChannels in priority order: intent search, proof-led content, 3-5 adviser partners and 2 HR teams, communities (HANDOFF.md section 9). Stop any channel whose acquisition cost exceeds the expected fee. The funnel arithmetic in the plan implies roughly 420 qualified leads for 50 filed cases at threshold conversion rates.\n\n## Tasks\n- [ ] Publish English and Hindi pages for 'claim rejected' and 'room rent deduction', starting with Star Health, Care and Niva Bupa queries\n- [ ] Onboard 3-5 partners with tracked intake links and a no-insurer-money agreement reviewed by counsel\n- [ ] Pilot with 2 employer HR teams\n- [ ] Seed communities honestly, disclosing the service\n- [ ] Tag every lead with channel and partner\n- [ ] Calculate cost per qualified lead and per paid case weekly\n\n## Acceptance criteria\n- Every case carries a channel tag\n- CAC by channel reported by the freeze\n- At least 40% of qualified leads upload documents, or the shortfall is explained",
+    "labels": [
+      "type:gtm",
+      "priority:P1"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Track insurer responses and log outcomes (insurer, Bima Bharosa, Ombudsman)",
+    "body": "## Context\nThe recovery metric is full or partial reversal at the insurer stage within 30 days across at least 50 filed cases (continue at 25% or more, pivot or stop below 15%). Ombudsman outcomes may take longer than the pilot, so leading indicators are used.\n\n## Tasks\n- [ ] Record each insurer response date, result and recovered amount with proof\n- [ ] Record the arguments that won and lost, by insurer and product\n- [ ] Prepare Bima Bharosa and Ombudsman filings for unresolved cases after 30 days\n- [ ] Report reversal rate with sample size and interval\n- [ ] Anonymise winning cases for proof content only where consent exists\n\n## Acceptance criteria\n- Outcome logged for every matured case with source evidence\n- Reversal rate for the 21 Dec cohort reported on the freeze date\n- Outcome data supports the arguments-that-win analysis",
+    "labels": [
+      "type:ops",
+      "type:eval",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  },
+  {
+    "title": "Unit economics on actual data and the decision memo (continue, pivot to B2B2C, or stop)",
+    "body": "## Context\nDecision date is Friday 29 Jan 2027. The thresholds are in HANDOFF.md section 11; pivot paths: sell the engine B2B2C if acquisition fails, flat per-filing fee if fee collection fails, stop if recovery fails.\n\n## Tasks\n- [ ] Rebuild the unit-economics model from actuals: acceptance, collection, reviewer minutes, model cost per case, gateway fees, CAC by channel\n- [ ] Compare every metric with its threshold and state sample sizes\n- [ ] Draft the memo by Mon 25 Jan; review with advisers on Wed 27 Jan; issue on Fri 29 Jan\n- [ ] If fewer than 50 cases have matured, give a provisional verdict and a time-boxed extension\n- [ ] List the next 90 days under each of the three outcomes\n\n## Acceptance criteria\n- Memo delivered on 29 Jan 2027 with a clear recommendation\n- All five HANDOFF.md section 11 questions answered with data\n- Assumptions replaced by actuals are listed",
+    "labels": [
+      "type:gtm",
+      "type:ops",
+      "priority:P0"
+    ],
+    "milestone": "M3 Pilot & decision"
+  }
+]
