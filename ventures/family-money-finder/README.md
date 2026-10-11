@@ -53,6 +53,9 @@ IEPF claims are slow, so pilot metrics use leading indicators (found, ready, fil
 | [planning/milestones.md](planning/milestones.md) | M0 to M3 goals, dates and exit criteria |
 | [planning/issues.json](planning/issues.json) | Backlog as JSON (title, body, labels, milestone), ready to import into GitHub |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Branching, pull request checklist, data rules |
+| [CLAUDE.md](CLAUDE.md) | Orientation and working rules for AI coding assistants and new contributors |
+| [scripts/seed_github.py](scripts/seed_github.py) | Creates labels, milestones and issues from `planning/`; `--sync` completes existing ones |
+| [.github/](.github/) | Issue templates (task, research question) and pull-request checklist |
 
 Planned code layout (not yet created) is in section 7 of the plan: `apps/web`, `packages/*`, `workers/cas-parser`, `eval/`, `supabase/`.
 

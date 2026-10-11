@@ -48,6 +48,9 @@ Success targets (proposed, to ratify at kickoff): 100 suppliers via at least 15 
 | [planning/milestones.md](planning/milestones.md) | Milestones M0-M3 with due dates and exit criteria |
 | [planning/issues.json](planning/issues.json) | 40 issues ready to import into a tracker |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Branching, pull-request checklist, data rules |
+| [CLAUDE.md](CLAUDE.md) | Orientation and working rules for AI coding assistants and new contributors |
+| [scripts/seed_github.py](scripts/seed_github.py) | Creates labels, milestones and issues from `planning/`; `--sync` completes existing ones |
+| [.github/](.github/) | Issue templates (task, research question) and pull-request checklist |
 
 Planned code layout (not yet created) is in the plan, Section 7.
 

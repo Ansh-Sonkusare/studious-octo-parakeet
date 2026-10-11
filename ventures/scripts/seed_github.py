@@ -9,8 +9,13 @@ venture folder and creates, through the GitHub REST API:
 3. one issue per entry in ``issues.json``, with its labels and milestone.
 
 The script is idempotent: a label, milestone or issue whose name or title already exists
-in the repository (open or closed) is skipped, never edited or duplicated. Re-running after
-a partial failure therefore only creates what is missing.
+in the repository (open or closed) is skipped and never duplicated. Without ``--sync`` it is
+also never edited; with ``--sync`` it is completed (colour, milestone, missing labels) but
+nothing is removed. Re-running after a partial failure therefore only creates what is missing.
+
+Epic issues: an issue titled ``Epic — <milestone title>`` (for example
+``Epic — M1 Prototype``) is treated as the parent of that milestone's work and, with
+``--sync``, is attached to the milestone of the same name.
 
 Standard library only (``urllib``); Python 3.8 or later.
 
@@ -35,6 +40,11 @@ Options
     --sleep SECONDS      Pause between issue creations (default 1.0, to respect GitHub's
                          secondary rate limits on content creation)
     --api-url URL        API base URL (default https://api.github.com; set for GHES)
+    --sync               Also bring existing objects in line: set label colours and
+                         descriptions, attach the milestone to existing issues that have
+                         none (matched by title, including "Epic — <milestone>" issues),
+                         and add any labels from issues.json they are missing. Nothing is
+                         removed, and a milestone already set on an issue is left alone.
 
 Token: a fine-grained personal access token with "Issues: Read and write" on the target
 repository (labels and milestones fall under the Issues permission), or a classic token
@@ -292,16 +302,22 @@ def run(args) -> int:
     gh = GitHub(token, args.owner, repo_name, args.api_url)
     gh.request("GET", "")  # fails early with a clear error if the repo is missing or forbidden
 
-    existing_labels = {lab["name"].lower() for lab in gh.paginate("/labels")}
-    made = skipped = 0
+    existing_labels = {lab["name"].lower(): lab for lab in gh.paginate("/labels")}
+    made = skipped = updated = 0
     for name, (colour, desc) in labels.items():
-        if name.lower() in existing_labels:
+        current = existing_labels.get(name.lower())
+        if current is not None:
             skipped += 1
+            if args.sync and (current.get("color", "").lower() != colour or (desc and current.get("description") != desc)):
+                gh.request("PATCH", "/labels/" + urllib.parse.quote(current["name"], safe=""),
+                           {"color": colour, "description": desc or current.get("description") or ""})
+                updated += 1
+                print(f"  label updated: {name}")
             continue
         gh.request("POST", "/labels", {"name": name, "color": colour, "description": desc})
         made += 1
         print(f"  label created: {name}")
-    print(f"Labels: {made} created, {skipped} already present")
+    print(f"Labels: {made} created, {skipped} already present" + (f", {updated} updated" if args.sync else ""))
 
     existing_ms = {m["title"]: m["number"] for m in gh.paginate("/milestones", {"state": "all"})}
     made = 0
@@ -318,12 +334,33 @@ def run(args) -> int:
         print(f"  milestone created: {title} (due {due})")
     print(f"Milestones: {made} created, {len(milestones) - made} already present")
 
-    existing_titles = {i["title"] for i in gh.paginate("/issues", {"state": "all"})
-                       if "pull_request" not in i}
-    made = skipped = 0
+    existing = {i["title"]: i for i in gh.paginate("/issues", {"state": "all"})
+                if "pull_request" not in i}
+    existing_titles = set(existing)
+    made = skipped = synced = 0
+    if args.sync:
+        for title, current in existing.items():
+            m = re.fullmatch(r"Epic\s+[—-]\s+(.+)", title.strip())
+            if m and m.group(1) in existing_ms and not current.get("milestone"):
+                gh.request("PATCH", f"/issues/{current['number']}", {"milestone": existing_ms[m.group(1)]})
+                synced += 1
+                print(f"  issue #{current['number']} synced: milestone {m.group(1)}")
     for issue in issues:
         if issue["title"] in existing_titles:
             skipped += 1
+            current = existing.get(issue["title"])
+            if args.sync and current is not None:
+                patch = {}
+                if not current.get("milestone"):
+                    patch["milestone"] = existing_ms[issue["milestone"]]
+                have = {lab["name"] for lab in current.get("labels", [])}
+                missing = [x for x in issue["labels"] if x not in have]
+                if missing:
+                    patch["labels"] = sorted(have) + missing
+                if patch:
+                    gh.request("PATCH", f"/issues/{current['number']}", patch)
+                    synced += 1
+                    print(f"  issue #{current['number']} synced: {', '.join(patch)}")
             continue
         created, _ = gh.request("POST", "/issues", {
             "title": issue["title"],
@@ -335,7 +372,7 @@ def run(args) -> int:
         made += 1
         print(f"  issue #{created['number']} created: {issue['title']}")
         time.sleep(args.sleep)
-    print(f"Issues: {made} created, {skipped} already present")
+    print(f"Issues: {made} created, {skipped} already present" + (f", {synced} synced" if args.sync else ""))
     return 0
 
 
@@ -349,6 +386,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--builtin-dates", action="store_true", help="ignore milestones.md due dates")
     parser.add_argument("--sleep", type=float, default=1.0, help="seconds between issue creations")
     parser.add_argument("--api-url", default="https://api.github.com", help="GitHub API base URL")
+    parser.add_argument("--sync", action="store_true",
+                        help="complete existing labels and issues (colours, milestone, missing labels)")
     args = parser.parse_args(argv)
     try:
         return run(args)

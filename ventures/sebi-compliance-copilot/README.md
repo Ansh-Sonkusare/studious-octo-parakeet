@@ -52,6 +52,9 @@ The team plan assumes 1 to 3 dedicated people starting Mon 12 Oct 2026. Timing d
 | [planning/milestones.md](planning/milestones.md) | Milestones, goals and exit criteria |
 | [planning/issues.json](planning/issues.json) | 39 issues ready to import into the tracker, grouped by milestone, with labels |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Branching, pull-request checklist, data rules |
+| [CLAUDE.md](CLAUDE.md) | Orientation and working rules for AI coding assistants and new contributors |
+| [scripts/seed_github.py](scripts/seed_github.py) | Creates labels, milestones and issues from `planning/`; `--sync` completes existing ones |
+| [.github/](.github/) | Issue templates (task, research question) and pull-request checklist |
 
 Code directories (`apps/`, `packages/`, `rules/`, `eval/`) are planned in section 7 of the plan and do not exist yet.
 

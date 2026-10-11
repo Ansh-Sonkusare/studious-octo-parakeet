@@ -49,6 +49,9 @@ Success in the pilot (proposed thresholds): clause-citation precision at least 9
 | [planning/milestones.md](planning/milestones.md) | The four milestones with dates, goals and exit criteria |
 | [planning/issues.json](planning/issues.json) | Seed backlog of 40 issues (title, body, labels, milestone) ready to import into an issue tracker |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Branching, pull-request checklist, data rules |
+| [CLAUDE.md](CLAUDE.md) | Orientation and working rules for AI coding assistants and new contributors |
+| [scripts/seed_github.py](scripts/seed_github.py) | Creates labels, milestones and issues from `planning/`; `--sync` completes existing ones |
+| [.github/](.github/) | Issue templates (task, research question) and pull-request checklist |
 | `src/`, `eval/`, `corpus/`, `tests/`, `site/`, `infra/` | Planned implementation directories; see the proposed layout in the plan (section 7). Not yet created |
 
 ## Key risks

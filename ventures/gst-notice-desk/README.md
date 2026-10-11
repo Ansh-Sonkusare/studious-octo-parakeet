@@ -57,6 +57,9 @@ M1 is tight (one week after discovery) and may slip to 6 November if partner dat
 | [planning/milestones.md](planning/milestones.md) | M0-M3 goals, due dates, exit criteria |
 | [planning/issues.json](planning/issues.json) | 40 work items with labels and milestones, ready to import as GitHub issues |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Branching, pull request checklist (including eval regression), no real client data |
+| [CLAUDE.md](CLAUDE.md) | Orientation and working rules for AI coding assistants and new contributors |
+| [scripts/seed_github.py](scripts/seed_github.py) | Creates labels, milestones and issues from `planning/`; `--sync` completes existing ones |
+| [.github/](.github/) | Issue templates (task, research question) and pull-request checklist |
 
 Planned code layout (not yet created): `apps/api`, `apps/web`, `packages/recon`, `packages/importers`, `packages/notices`, `packages/law`, `tools/anonymise`, `evals/`. See the plan, section 7.
 
