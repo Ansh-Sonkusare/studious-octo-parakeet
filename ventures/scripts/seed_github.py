@@ -86,6 +86,7 @@ LABELS = {
     "priority:P0": ("d93f0b", "Must have for the milestone"),
     "priority:P1": ("e99695", "Should have; first to cut if the milestone slips"),
     "priority:P2": ("f9d0c4", "Nice to have"),
+    "epic": ("3e4b9e", "Parent issue grouping one milestone's work (Epic — <milestone>)"),
 }
 DEFAULT_LABEL_COLOUR = "ededed"
 
