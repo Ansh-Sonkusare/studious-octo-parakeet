@@ -50,7 +50,8 @@ The team plan assumes 1 to 3 dedicated people starting Mon 12 Oct 2026. Timing d
 | [docs/DECISIONS.md](docs/DECISIONS.md) | Decision records (ADRs) |
 | [docs/research/](docs/research/README.md) | Research reports and notes, with an index |
 | [planning/milestones.md](planning/milestones.md) | Milestones, goals and exit criteria |
-| [planning/issues.json](planning/issues.json) | 39 issues ready to import into the tracker, grouped by milestone, with labels |
+| [planning/issues.json](planning/issues.json) | Source of the backlog (title, body, labels, milestone); already seeded as GitHub issues with milestones and epics |
+| [planning/github-issues.md](planning/github-issues.md) | Index of the GitHub epics and issues created from `issues.json`, with links and how to attach GitHub milestones |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Branching, pull-request checklist, data rules |
 | [CLAUDE.md](CLAUDE.md) | Orientation and working rules for AI coding assistants and new contributors |
 | [scripts/seed_github.py](scripts/seed_github.py) | Creates labels, milestones and issues from `planning/`; `--sync` completes existing ones |
@@ -82,4 +83,4 @@ Full list: [HANDOFF section 12](docs/HANDOFF.md).
 3. Commission the legal opinion on the "no licence" position and offshore model use.
 4. Sign three design partners with data-use consent.
 5. Start collecting public posts for the labelled set and finalise the labelling guide.
-6. Create the repository scaffold and import `planning/issues.json`.
+6. Create the repository scaffold; the backlog is already live as GitHub issues (see [planning/github-issues.md](planning/github-issues.md)).

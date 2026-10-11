@@ -47,7 +47,8 @@ Success in the pilot (proposed thresholds): clause-citation precision at least 9
 | [docs/DECISIONS.md](docs/DECISIONS.md) | Decision log (lightweight ADRs) |
 | [docs/research/](docs/research/README.md) | Desk research behind the project, with an index |
 | [planning/milestones.md](planning/milestones.md) | The four milestones with dates, goals and exit criteria |
-| [planning/issues.json](planning/issues.json) | Seed backlog of 40 issues (title, body, labels, milestone) ready to import into an issue tracker |
+| [planning/issues.json](planning/issues.json) | Source of the backlog (title, body, labels, milestone); already seeded as GitHub issues with milestones and epics |
+| [planning/github-issues.md](planning/github-issues.md) | Index of the seeded GitHub issues: epic and issue numbers per milestone, and how to attach GitHub milestones |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Branching, pull-request checklist, data rules |
 | [CLAUDE.md](CLAUDE.md) | Orientation and working rules for AI coding assistants and new contributors |
 | [scripts/seed_github.py](scripts/seed_github.py) | Creates labels, milestones and issues from `planning/`; `--sync` completes existing ones |
@@ -69,7 +70,7 @@ The full list is in [docs/HANDOFF.md](docs/HANDOFF.md) section 12 and the schedu
 ## How to contribute and next actions
 
 1. Read [docs/HANDOFF.md](docs/HANDOFF.md), then the [plan](docs/PROTOTYPE_AND_MVP_PLAN.md), then [CONTRIBUTING.md](CONTRIBUTING.md).
-2. Import [planning/issues.json](planning/issues.json) into the tracker and create the four milestones from [planning/milestones.md](planning/milestones.md).
+2. Work from the GitHub issues: each milestone has an `Epic — <milestone>` parent issue with its sub-issues; see [planning/github-issues.md](planning/github-issues.md).
 3. Start the week-1 items: engage counsel and a claims specialist, file incorporation, begin interviews, draft the consent notice, apply for WhatsApp Business verification.
 4. Scaffold the code repository layout and CI (issue in M1).
 5. Never commit real customer documents or personal data.

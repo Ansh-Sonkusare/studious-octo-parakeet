@@ -55,7 +55,8 @@ M1 is tight (one week after discovery) and may slip to 6 November if partner dat
 | [docs/DECISIONS.md](docs/DECISIONS.md) | Initial architecture and product decision records (ADR-001 to 008) |
 | [docs/research/](docs/research/README.md) | Research files behind the handoff, indexed by relevance |
 | [planning/milestones.md](planning/milestones.md) | M0-M3 goals, due dates, exit criteria |
-| [planning/issues.json](planning/issues.json) | 40 work items with labels and milestones, ready to import as GitHub issues |
+| [planning/issues.json](planning/issues.json) | Source of the backlog (title, body, labels, milestone); already seeded as GitHub issues with milestones and epics |
+| [planning/github-issues.md](planning/github-issues.md) | Index of the 44 seeded GitHub issues (4 epics, 40 work items) by milestone, and how to attach GitHub milestones |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Branching, pull request checklist (including eval regression), no real client data |
 | [CLAUDE.md](CLAUDE.md) | Orientation and working rules for AI coding assistants and new contributors |
 | [scripts/seed_github.py](scripts/seed_github.py) | Creates labels, milestones and issues from `planning/`; `--sync` completes existing ones |

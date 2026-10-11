@@ -51,7 +51,8 @@ IEPF claims are slow, so pilot metrics use leading indicators (found, ready, fil
 | [docs/DECISIONS.md](docs/DECISIONS.md) | Architecture and product decision records |
 | [docs/research/](docs/research/README.md) | Research notes and full report behind the handoff (index inside) |
 | [planning/milestones.md](planning/milestones.md) | M0 to M3 goals, dates and exit criteria |
-| [planning/issues.json](planning/issues.json) | Backlog as JSON (title, body, labels, milestone), ready to import into GitHub |
+| [planning/issues.json](planning/issues.json) | Source of the backlog (title, body, labels, milestone); already seeded as GitHub issues with milestones and epics |
+| [planning/github-issues.md](planning/github-issues.md) | Index of the seeded GitHub issues: four epics and 39 sub-issues by milestone, with the command to attach GitHub milestones |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Branching, pull request checklist, data rules |
 | [CLAUDE.md](CLAUDE.md) | Orientation and working rules for AI coding assistants and new contributors |
 | [scripts/seed_github.py](scripts/seed_github.py) | Creates labels, milestones and issues from `planning/`; `--sync` completes existing ones |
